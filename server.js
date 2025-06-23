@@ -250,19 +250,44 @@ app.post('/api/flow/upload', upload.single('file'), async (req, res) => {
             }
 
             // Leer los archivos extraídos
-            const inputFiles = jsonFiles.map(filePath => {
-                const stats = fs.statSync(filePath);
-                const content = fs.readFileSync(filePath, 'utf8');
-                const filename = path.basename(filePath);
-                
-                return {
-                    name: filename,
-                    path: filePath,
-                    size: stats.size,
-                    modified: stats.mtime,
-                    content // Incluir el contenido del archivo
-                };
-            });
+            const inputFiles = [];
+            for (const filePath of jsonFiles) {
+                try {
+                    const stats = fs.statSync(filePath);
+                    const content = fs.readFileSync(filePath, 'utf8');
+                    const filename = path.basename(filePath);
+                    
+                    // Verificar que el contenido es válido
+                    console.log(`Verificando ${filename}: ${content.length} bytes`);
+                    console.log(`Primeros 50 caracteres: ${content.substring(0, 50)}`);
+                    
+                    // Validar que parece ser JSON
+                    if (!content.trim().startsWith('{') && !content.trim().startsWith('[')) {
+                        console.warn(`⚠️ Archivo ${filename} no parece ser JSON válido, omitiendo...`);
+                        continue;
+                    }
+                    
+                    // Intentar parsear para verificar validez
+                    try {
+                        JSON.parse(content);
+                        console.log(`✅ ${filename} es JSON válido`);
+                    } catch (jsonError) {
+                        console.warn(`⚠️ Archivo ${filename} tiene JSON inválido: ${jsonError.message}, omitiendo...`);
+                        continue;
+                    }
+                    
+                    inputFiles.push({
+                        name: filename,
+                        path: filePath,
+                        size: stats.size,
+                        modified: stats.mtime,
+                        content // Incluir el contenido del archivo
+                    });
+                } catch (fileError) {
+                    console.error(`Error al leer ${filePath}:`, fileError.message);
+                    continue;
+                }
+            }
 
             if (inputFiles.length === 0) {
                 console.log('Error: No se encontraron archivos JSON');
@@ -292,8 +317,23 @@ app.post('/api/flow/upload', upload.single('file'), async (req, res) => {
                 const tcode = path.basename(inputFile, '.json').toLowerCase();
                 console.log(`Procesando ${tcode}...`);
                 
-                const rawData = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
-                parsedFlows[tcode] = parser.parseRawData(rawData, tcode);
+                try {
+                    const fileContent = fs.readFileSync(inputFile, 'utf8');
+                    console.log(`  Archivo ${tcode}: ${fileContent.length} caracteres`);
+                    console.log(`  Primeros 100 caracteres: ${fileContent.substring(0, 100)}`);
+                    
+                    // Verificar que el contenido parece ser JSON válido
+                    if (!fileContent.trim().startsWith('{') && !fileContent.trim().startsWith('[')) {
+                        throw new Error(`El archivo ${tcode} no parece ser JSON válido. Comienza con: ${fileContent.substring(0, 50)}`);
+                    }
+                    
+                    const rawData = JSON.parse(fileContent);
+                    parsedFlows[tcode] = parser.parseRawData(rawData, tcode);
+                    console.log(`  ✅ ${tcode} procesado correctamente`);
+                } catch (parseError) {
+                    console.error(`❌ Error al procesar ${tcode}:`, parseError.message);
+                    throw new Error(`Error en archivo ${tcode}: ${parseError.message}`);
+                }
             }
             
             // 3. Generar prefijos y alias
@@ -504,6 +544,99 @@ app.get('/api/export/zip', (req, res) => {
     } catch (error) {
         console.error('Error al exportar ZIP:', error);
         res.status(500).json({ error: error.message });
+    }
+});
+
+// Endpoint para diagnosticar archivos ZIP
+app.post('/api/debug/zip', upload.single('file'), async (req, res) => {
+    try {
+        const file = req.file;
+        if (!file) {
+            return res.status(400).json({ error: 'No se ha proporcionado ningún archivo' });
+        }
+
+        const zipPath = path.resolve(file.path);
+        const extractPath = path.resolve(config.inputDir, 'debug-extract');
+
+        console.log('🔍 Diagnóstico de ZIP iniciado');
+        console.log('- Archivo:', zipPath);
+        console.log('- Tamaño:', file.size);
+
+        // Crear directorio de extracción temporal
+        if (!fs.existsSync(extractPath)) {
+            fs.mkdirSync(extractPath, { recursive: true });
+        }
+
+        const extract = require('extract-zip');
+        await extract(zipPath, { dir: extractPath });
+
+        // Analizar contenido
+        const allFiles = fs.readdirSync(extractPath, { recursive: true });
+        const analysis = {
+            totalFiles: allFiles.length,
+            jsonFiles: [],
+            otherFiles: [],
+            errors: []
+        };
+
+        for (const file of allFiles) {
+            const filePath = path.join(extractPath, file);
+            const stats = fs.statSync(filePath);
+            
+            if (stats.isFile() && file.toLowerCase().endsWith('.json')) {
+                try {
+                    const content = fs.readFileSync(filePath, 'utf8');
+                    const preview = content.substring(0, 100);
+                    
+                    let isValidJson = false;
+                    try {
+                        JSON.parse(content);
+                        isValidJson = true;
+                    } catch (jsonError) {
+                        analysis.errors.push({
+                            file: file,
+                            error: jsonError.message,
+                            preview: preview
+                        });
+                    }
+                    
+                    analysis.jsonFiles.push({
+                        name: file,
+                        size: stats.size,
+                        valid: isValidJson,
+                        preview: preview
+                    });
+                } catch (readError) {
+                    analysis.errors.push({
+                        file: file,
+                        error: `Error al leer: ${readError.message}`
+                    });
+                }
+            } else if (stats.isFile()) {
+                analysis.otherFiles.push({
+                    name: file,
+                    size: stats.size
+                });
+            }
+        }
+
+        // Limpiar archivos temporales
+        fs.rmSync(extractPath, { recursive: true, force: true });
+        if (fs.existsSync(zipPath)) {
+            fs.unlinkSync(zipPath);
+        }
+
+        res.json({
+            success: true,
+            analysis: analysis
+        });
+
+    } catch (error) {
+        console.error('Error en diagnóstico de ZIP:', error);
+        res.status(500).json({ 
+            error: error.message,
+            stack: error.stack 
+        });
     }
 });
 
