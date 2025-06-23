@@ -13,6 +13,8 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - DEBUG=1
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/files/input"]

@@ -254,16 +254,31 @@ app.post('/api/flow/upload', upload.single('file'), async (req, res) => {
             for (const filePath of jsonFiles) {
                 try {
                     const stats = fs.statSync(filePath);
-                    const content = fs.readFileSync(filePath, 'utf8');
                     const filename = path.basename(filePath);
+                    
+                    // Leer con manejo robusto de encoding
+                    let content;
+                    try {
+                        content = fs.readFileSync(filePath, 'utf8');
+                    } catch (encodingError) {
+                        console.log(`  Reintentando lectura con buffer para ${filename}`);
+                        const buffer = fs.readFileSync(filePath);
+                        content = buffer.toString('utf8');
+                    }
+                    
+                    // Limpiar contenido
+                    content = content.replace(/^\uFEFF/, ''); // Remover BOM
+                    content = content.trim(); // Remover espacios
                     
                     // Verificar que el contenido es válido
                     console.log(`Verificando ${filename}: ${content.length} bytes`);
                     console.log(`Primeros 50 caracteres: ${content.substring(0, 50)}`);
+                    console.log(`Carácter en pos 20: "${content.charAt(20)}" (código: ${content.charCodeAt(20)})`);
                     
                     // Validar que parece ser JSON
-                    if (!content.trim().startsWith('{') && !content.trim().startsWith('[')) {
+                    if (!content.startsWith('{') && !content.startsWith('[')) {
                         console.warn(`⚠️ Archivo ${filename} no parece ser JSON válido, omitiendo...`);
+                        console.warn(`   Contenido: ${content.substring(0, 100)}`);
                         continue;
                     }
                     
@@ -318,12 +333,26 @@ app.post('/api/flow/upload', upload.single('file'), async (req, res) => {
                 console.log(`Procesando ${tcode}...`);
                 
                 try {
-                    const fileContent = fs.readFileSync(inputFile, 'utf8');
+                    // Leer con diferentes encodings para compatibilidad
+                    let fileContent;
+                    try {
+                        fileContent = fs.readFileSync(inputFile, 'utf8');
+                    } catch (encodingError) {
+                        console.log(`  Reintentando con encoding latin1 para ${tcode}`);
+                        const buffer = fs.readFileSync(inputFile);
+                        fileContent = buffer.toString('utf8');
+                    }
+                    
+                    // Limpiar caracteres problemáticos
+                    fileContent = fileContent.replace(/^\uFEFF/, ''); // Remover BOM
+                    fileContent = fileContent.trim(); // Remover espacios
+                    
                     console.log(`  Archivo ${tcode}: ${fileContent.length} caracteres`);
                     console.log(`  Primeros 100 caracteres: ${fileContent.substring(0, 100)}`);
+                    console.log(`  Encoding info - Carácter en pos 20: "${fileContent.charAt(20)}" (código: ${fileContent.charCodeAt(20)})`);
                     
                     // Verificar que el contenido parece ser JSON válido
-                    if (!fileContent.trim().startsWith('{') && !fileContent.trim().startsWith('[')) {
+                    if (!fileContent.startsWith('{') && !fileContent.startsWith('[')) {
                         throw new Error(`El archivo ${tcode} no parece ser JSON válido. Comienza con: ${fileContent.substring(0, 50)}`);
                     }
                     
