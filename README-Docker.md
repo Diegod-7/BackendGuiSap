@@ -86,6 +86,25 @@ Puedes modificar las siguientes variables en el archivo `docker-compose.yml`:
 
 ## Solución de Problemas
 
+### Error "No se encontraron archivos JSON en el ZIP"
+
+Este error puede ocurrir por varias razones:
+
+1. **Verificar estructura del ZIP**: Asegúrate de que el ZIP contiene archivos `.json` directamente o en subdirectorios
+2. **Verificar permisos**: Los directorios deben tener permisos de escritura
+3. **Verificar logs**: Revisa los logs del contenedor para más detalles
+
+```bash
+# Ver logs detallados
+docker-compose logs -f
+
+# Verificar información de debug
+curl http://localhost:3000/api/debug/info
+
+# Ejecutar diagnóstico dentro del contenedor
+docker-compose exec sap-gui-flow node diagnose.js
+```
+
 ### El contenedor no inicia
 
 ```bash
@@ -94,6 +113,9 @@ docker-compose logs
 
 # Reconstruir sin caché
 docker-compose build --no-cache
+
+# Verificar estado de contenedores
+docker-compose ps
 ```
 
 ### Puerto ocupado
@@ -110,5 +132,26 @@ ports:
 En sistemas Linux/Mac, asegúrate de que los directorios tengan los permisos correctos:
 
 ```bash
+# Dar permisos a los directorios
 chmod 755 sap-gui-env output
+
+# Si usas Docker en Linux, cambiar propietario
+sudo chown -R 1001:1001 sap-gui-env output
+```
+
+### Problemas en producción
+
+Para diagnosticar problemas en producción:
+
+1. **Endpoint de debug**: `GET /api/debug/info`
+2. **Logs detallados**: Verificar logs del servidor
+3. **Script de diagnóstico**: `node diagnose.js`
+4. **Verificar variables de entorno**: `DEBUG=1` para más información
+
+```bash
+# Ejecutar diagnóstico local
+node diagnose.js
+
+# En Docker
+docker-compose exec sap-gui-flow node diagnose.js
 ``` 

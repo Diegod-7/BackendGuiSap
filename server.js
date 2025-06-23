@@ -193,37 +193,88 @@ app.post('/api/flow/upload', upload.single('file'), async (req, res) => {
             return res.status(400).json({ error: 'El archivo debe ser un ZIP' });
         }
 
-        const extractPath = config.inputDir;
-        const zipPath = file.path;
+        const extractPath = path.resolve(config.inputDir);
+        const zipPath = path.resolve(file.path);
+
+        console.log('Información de debug:');
+        console.log('- Archivo ZIP:', zipPath);
+        console.log('- Directorio de extracción:', extractPath);
+        console.log('- Archivo existe:', fs.existsSync(zipPath));
+        console.log('- Directorio existe:', fs.existsSync(extractPath));
+
+        // Asegurar que el directorio de extracción existe
+        if (!fs.existsSync(extractPath)) {
+            fs.mkdirSync(extractPath, { recursive: true });
+            console.log('Directorio de extracción creado');
+        }
 
         // Extraer el archivo ZIP
         const extract = require('extract-zip');
         try {
-            await extract(zipPath, { dir: path.resolve(extractPath) });
+            console.log('Iniciando extracción del ZIP...');
+            await extract(zipPath, { dir: extractPath });
             console.log('Archivo ZIP extraído correctamente');
             
+            // Verificar contenido del directorio después de la extracción
+            const allFiles = fs.readdirSync(extractPath);
+            console.log('Archivos en el directorio después de la extracción:', allFiles);
+            
+            // Buscar archivos JSON de forma recursiva
+            const findJsonFiles = (dir) => {
+                const files = [];
+                const items = fs.readdirSync(dir);
+                
+                for (const item of items) {
+                    const fullPath = path.join(dir, item);
+                    const stat = fs.statSync(fullPath);
+                    
+                    if (stat.isDirectory()) {
+                        // Buscar recursivamente en subdirectorios
+                        files.push(...findJsonFiles(fullPath));
+                    } else if (item.toLowerCase().endsWith('.json')) {
+                        files.push(fullPath);
+                    }
+                }
+                
+                return files;
+            };
+
+            // Buscar archivos JSON
+            const jsonFiles = findJsonFiles(extractPath);
+            console.log('Archivos JSON encontrados:', jsonFiles);
+
             // Eliminar el archivo ZIP después de extraerlo
-            fs.unlinkSync(zipPath);
+            if (fs.existsSync(zipPath)) {
+                fs.unlinkSync(zipPath);
+                console.log('Archivo ZIP eliminado');
+            }
 
             // Leer los archivos extraídos
-            const inputFiles = fs.readdirSync(extractPath)
-                .filter(file => file.endsWith('.json'))
-                .map(filename => {
-                    const filePath = path.join(extractPath, filename);
-                    const stats = fs.statSync(filePath);
-                    const content = fs.readFileSync(filePath, 'utf8');
-                    return {
-                        name: filename,
-                        path: filePath,
-                        size: stats.size,
-                        modified: stats.mtime,
-                        content // Incluir el contenido del archivo
-                    };
-                });
+            const inputFiles = jsonFiles.map(filePath => {
+                const stats = fs.statSync(filePath);
+                const content = fs.readFileSync(filePath, 'utf8');
+                const filename = path.basename(filePath);
+                
+                return {
+                    name: filename,
+                    path: filePath,
+                    size: stats.size,
+                    modified: stats.mtime,
+                    content // Incluir el contenido del archivo
+                };
+            });
 
             if (inputFiles.length === 0) {
+                console.log('Error: No se encontraron archivos JSON');
+                console.log('Contenido del directorio:', fs.readdirSync(extractPath));
+                
                 return res.status(400).json({ 
-                    error: 'No se encontraron archivos JSON en el ZIP'
+                    error: 'No se encontraron archivos JSON en el ZIP',
+                    debug: {
+                        extractPath,
+                        allFiles: fs.readdirSync(extractPath),
+                        zipOriginalName: file.originalname
+                    }
                 });
             }
 
@@ -310,11 +361,33 @@ app.post('/api/flow/upload', upload.single('file'), async (req, res) => {
             
         } catch (err) {
             console.error('Error al extraer o procesar el archivo ZIP:', err);
-            res.status(500).json({ error: err.message });
+            
+            // Limpiar archivo ZIP si existe
+            if (fs.existsSync(zipPath)) {
+                try {
+                    fs.unlinkSync(zipPath);
+                    console.log('Archivo ZIP limpiado después del error');
+                } catch (cleanupError) {
+                    console.error('Error al limpiar archivo ZIP:', cleanupError);
+                }
+            }
+            
+            res.status(500).json({ 
+                error: err.message,
+                details: {
+                    zipPath,
+                    extractPath,
+                    originalName: file.originalname,
+                    fileSize: file.size
+                }
+            });
         }
     } catch (error) {
         console.error('Error al procesar el archivo ZIP:', error);
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ 
+            error: error.message,
+            stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+        });
     }
 });
 
@@ -431,6 +504,45 @@ app.get('/api/export/zip', (req, res) => {
     } catch (error) {
         console.error('Error al exportar ZIP:', error);
         res.status(500).json({ error: error.message });
+    }
+});
+
+// Endpoint de debug para diagnóstico
+app.get('/api/debug/info', (req, res) => {
+    try {
+        const debugInfo = {
+            timestamp: new Date().toISOString(),
+            environment: process.env.NODE_ENV || 'development',
+            directories: {
+                inputDir: {
+                    path: path.resolve(config.inputDir),
+                    exists: fs.existsSync(config.inputDir),
+                    files: fs.existsSync(config.inputDir) ? fs.readdirSync(config.inputDir) : []
+                },
+                outputDir: {
+                    path: path.resolve(config.outputDir),
+                    exists: fs.existsSync(config.outputDir),
+                    files: fs.existsSync(config.outputDir) ? fs.readdirSync(config.outputDir) : []
+                }
+            },
+            process: {
+                cwd: process.cwd(),
+                platform: process.platform,
+                nodeVersion: process.version,
+                uptime: process.uptime()
+            }
+        };
+
+        res.json({
+            success: true,
+            debug: debugInfo
+        });
+    } catch (error) {
+        console.error('Error en debug info:', error);
+        res.status(500).json({ 
+            error: error.message,
+            stack: error.stack 
+        });
     }
 });
 
