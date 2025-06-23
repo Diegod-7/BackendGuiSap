@@ -1,0 +1,173 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_WERKS_%_APP_%-TEXT",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_WERKS",
+      "next": "step3",
+      "controlType": "GuiTextField"
+    },
+    "step3": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%B102034_BLOCK_1000",
+      "next": "step4",
+      "controlType": "__ComObject"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_WERKS",
+      "next": "step5",
+      "controlType": "GuiTextField"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step6",
+      "controlType": "__ComObject"
+    },
+    "step6": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_WERKS",
+      "paramKey": "PWerks",
+      "next": "step7",
+      "paramValue": "2100",
+      "controlType": "GuiTextField"
+    },
+    "step7": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step8",
+      "controlType": "__ComObject"
+    },
+    "step8": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_POPER",
+      "next": "step9",
+      "controlType": "GuiTextField"
+    },
+    "step9": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell/shellcont[1]/shell",
+      "next": "step10",
+      "controlType": "GuiGridView"
+    },
+    "step10": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_POPER",
+      "paramKey": "PPoper",
+      "next": "step11",
+      "paramValue": "1",
+      "controlType": "GuiTextField"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step12",
+      "controlType": "__ComObject"
+    },
+    "step12": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
+      "next": "step13",
+      "controlType": "__ComObject"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_BDATJ",
+      "next": "step14",
+      "controlType": "GuiTextField"
+    },
+    "step14": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%B102034_BLOCK_1000",
+      "next": "step15",
+      "controlType": "__ComObject"
+    },
+    "step15": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step16",
+      "controlType": "__ComObject"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[8]",
+      "next": "step17",
+      "controlType": "GuiButton"
+    },
+    "step17": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_VARIAN",
+      "next": "step18",
+      "controlType": "GuiTextField"
+    },
+    "step18": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step19",
+      "controlType": "__ComObject"
+    },
+    "step19": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%F103036_1000",
+      "next": "step20",
+      "controlType": "GuiTextField"
+    },
+    "step20": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step21",
+      "controlType": "__ComObject"
+    },
+    "step21": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[2]",
+      "next": "step22",
+      "controlType": "GuiButton"
+    },
+    "step22": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+      "next": "step23",
+      "controlType": "GuiButton"
+    },
+    "step23": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+      "next": "step24",
+      "controlType": "GuiButton"
+    },
+    "step24": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell/shellcont[1]/shell",
+      "controlType": "GuiGridView",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "s_p99_41000062",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiMainWindow",
+      "GuiTextField",
+      "__ComObject",
+      "GuiGridView",
+      "GuiButton"
+    ]
+  }
+}

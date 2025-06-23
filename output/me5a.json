@@ -1,0 +1,521 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step3",
+      "controlType": "__ComObject"
+    },
+    "step3": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
+      "paramKey": "BaEkgrpHigh",
+      "next": "step4",
+      "paramValue": "900",
+      "controlType": "GuiTextField"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
+      "next": "step5",
+      "controlType": "GuiTextField"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
+      "next": "step6",
+      "controlType": "GuiTextField"
+    },
+    "step6": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
+      "paramKey": "BaEkgrpHigh",
+      "next": "step7",
+      "paramValue": "900",
+      "controlType": "GuiTextField"
+    },
+    "step7": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
+      "paramKey": "PLstub",
+      "next": "step8",
+      "paramValue": "ALV",
+      "controlType": "GuiTextField"
+    },
+    "step8": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
+      "next": "step9",
+      "controlType": "GuiTextField"
+    },
+    "step9": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step10",
+      "controlType": "__ComObject"
+    },
+    "step10": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]",
+      "next": "step11",
+      "controlType": "GuiFrameWindow"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "next": "step12",
+      "controlType": "GuiTextField"
+    },
+    "step12": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "paramKey": "SWerksLow",
+      "next": "step13",
+      "paramValue": "2000",
+      "controlType": "GuiTextField"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,4]",
+      "next": "step14",
+      "controlType": "__ComObject"
+    },
+    "step14": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BSART-LOW",
+      "next": "step15",
+      "controlType": "GuiTextField"
+    },
+    "step15": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step16",
+      "controlType": "__ComObject"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "next": "step17",
+      "controlType": "GuiTextField"
+    },
+    "step17": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ZUGBA",
+      "next": "step18",
+      "controlType": "GuiCheckBox"
+    },
+    "step18": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "paramKey": "SWerksHigh",
+      "next": "step19",
+      "paramValue": "2200",
+      "controlType": "GuiTextField"
+    },
+    "step19": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ZUGBA",
+      "paramKey": "AssignedPurchaseRequisitions",
+      "next": "step20",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step20": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step21",
+      "controlType": "__ComObject"
+    },
+    "step21": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ZUGBA",
+      "next": "step22",
+      "controlType": "GuiCheckBox"
+    },
+    "step22": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
+      "next": "step23",
+      "controlType": "GuiButton"
+    },
+    "step23": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_MEMORY",
+      "next": "step24",
+      "controlType": "GuiCheckBox"
+    },
+    "step24": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_MEMORY",
+      "paramKey": "AlsoListHeldPreqs",
+      "next": "step25",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step25": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_MEMORY",
+      "next": "step26",
+      "controlType": "GuiCheckBox"
+    },
+    "step26": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+      "next": "step27",
+      "controlType": "GuiGridView"
+    },
+    "step27": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ERLBA",
+      "next": "step28",
+      "controlType": "GuiCheckBox"
+    },
+    "step28": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+      "next": "step29",
+      "controlType": "GuiGridView"
+    },
+    "step29": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_BSTBA",
+      "next": "step30",
+      "controlType": "GuiCheckBox"
+    },
+    "step30": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step31",
+      "controlType": "GuiGridView"
+    },
+    "step31": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_BSTBA",
+      "paramKey": "PartlyOrderedRequisitions",
+      "next": "step32",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step32": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step33",
+      "controlType": "GuiGridView"
+    },
+    "step33": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_BSTBA",
+      "next": "step34",
+      "controlType": "GuiCheckBox"
+    },
+    "step34": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
+      "next": "step35",
+      "controlType": "GuiButton"
+    },
+    "step35": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
+      "next": "step36",
+      "controlType": "GuiCheckBox"
+    },
+    "step36": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step37",
+      "controlType": "GuiGridView"
+    },
+    "step37": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
+      "paramKey": "ReleasedRequisitionsOnly",
+      "next": "step38",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step38": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step39",
+      "controlType": "GuiGridView"
+    },
+    "step39": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
+      "next": "step40",
+      "controlType": "GuiCheckBox"
+    },
+    "step40": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step41",
+      "controlType": "GuiGridView"
+    },
+    "step41": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELGS",
+      "next": "step42",
+      "controlType": "GuiCheckBox"
+    },
+    "step42": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step43",
+      "controlType": "GuiGridView"
+    },
+    "step43": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELGS",
+      "paramKey": "RequisnsForOverallRelease",
+      "next": "step44",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step44": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step45",
+      "controlType": "GuiGridView"
+    },
+    "step45": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELGS",
+      "next": "step46",
+      "controlType": "GuiCheckBox"
+    },
+    "step46": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+      "next": "step47",
+      "controlType": "GuiButton"
+    },
+    "step47": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
+      "next": "step48",
+      "controlType": "GuiCheckBox"
+    },
+    "step48": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELPO",
+      "next": "step49",
+      "controlType": "GuiCheckBox"
+    },
+    "step49": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+      "next": "step50",
+      "controlType": "GuiGridView"
+    },
+    "step50": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELPO",
+      "paramKey": "RequisnsForItemWiseRelease",
+      "next": "step51",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step51": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+      "next": "step52",
+      "controlType": "GuiGridView"
+    },
+    "step52": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELPO",
+      "next": "step53",
+      "controlType": "GuiCheckBox"
+    },
+    "step53": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+      "next": "step54",
+      "controlType": "GuiGridView"
+    },
+    "step54": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ERLBA",
+      "next": "step55",
+      "controlType": "GuiCheckBox"
+    },
+    "step55": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+      "next": "step56",
+      "controlType": "GuiGridView"
+    },
+    "step56": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+      "next": "step57",
+      "controlType": "__ComObject"
+    },
+    "step57": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+      "next": "step58",
+      "controlType": "GuiGridView"
+    },
+    "step58": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[34]",
+      "next": "step59",
+      "controlType": "GuiButton"
+    },
+    "step59": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/titl",
+      "next": "step60",
+      "controlType": "__ComObject"
+    },
+    "step60": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+      "next": "step61",
+      "controlType": "GuiGridView"
+    },
+    "step61": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+      "next": "step62",
+      "controlType": "__ComObject"
+    },
+    "step62": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[43]",
+      "next": "step63",
+      "controlType": "GuiButton"
+    },
+    "step63": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+      "next": "step64",
+      "controlType": "__ComObject"
+    },
+    "step64": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]",
+      "next": "step65",
+      "controlType": "GuiButton"
+    },
+    "step65": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
+      "next": "step66",
+      "controlType": "GuiTextField"
+    },
+    "step66": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
+      "paramKey": "BaEkgrpHigh",
+      "next": "step67",
+      "paramValue": "900",
+      "controlType": "GuiTextField"
+    },
+    "step67": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
+      "next": "step68",
+      "controlType": "GuiTextField"
+    },
+    "step68": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
+      "paramKey": "PLstub",
+      "next": "step69",
+      "paramValue": "ALV",
+      "controlType": "GuiTextField"
+    },
+    "step69": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "next": "step70",
+      "controlType": "GuiTextField"
+    },
+    "step70": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "paramKey": "SWerksLow",
+      "next": "step71",
+      "paramValue": "2000",
+      "controlType": "GuiTextField"
+    },
+    "step71": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step72",
+      "controlType": "__ComObject"
+    },
+    "step72": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "next": "step73",
+      "controlType": "GuiTextField"
+    },
+    "step73": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "paramKey": "SWerksHigh",
+      "next": "step74",
+      "paramValue": "2100",
+      "controlType": "GuiTextField"
+    },
+    "step74": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "next": "step75",
+      "controlType": "GuiTextField"
+    },
+    "step75": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "paramKey": "SWerksHigh",
+      "next": "step76",
+      "paramValue": "2200",
+      "controlType": "GuiTextField"
+    },
+    "step76": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step77",
+      "controlType": "__ComObject"
+    },
+    "step77": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
+      "controlType": "GuiButton",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "me5a",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiMainWindow",
+      "GuiTextField",
+      "__ComObject",
+      "GuiFrameWindow",
+      "GuiCheckBox",
+      "GuiButton",
+      "GuiGridView"
+    ]
+  }
+}

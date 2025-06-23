@@ -1,0 +1,367 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
+      "next": "step3",
+      "controlType": "GuiTextField"
+    },
+    "step3": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
+      "paramKey": "SvaldValue",
+      "next": "step4",
+      "paramValue": "2000",
+      "controlType": "GuiTextField"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]",
+      "next": "step5",
+      "controlType": "GuiFrameWindow"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
+      "next": "step6",
+      "controlType": "__ComObject"
+    },
+    "step6": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
+      "next": "step7",
+      "controlType": "__ComObject"
+    },
+    "step7": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
+      "next": "step8",
+      "controlType": "__ComObject"
+    },
+    "step8": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKSTGR",
+      "next": "step9",
+      "controlType": "GuiTextField"
+    },
+    "step9": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKSTGR",
+      "next": "step10",
+      "controlType": "GuiTextField"
+    },
+    "step10": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKSTGR",
+      "paramKey": "Kstgr",
+      "next": "step11",
+      "paramValue": "0001",
+      "controlType": "GuiTextField"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step12",
+      "controlType": "__ComObject"
+    },
+    "step12": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
+      "next": "step13",
+      "controlType": "GuiTextField"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
+      "next": "step14",
+      "controlType": "GuiTextField"
+    },
+    "step14": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
+      "paramKey": "Koagr",
+      "next": "step15",
+      "paramValue": "CE_STD",
+      "controlType": "GuiTextField"
+    },
+    "step15": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step16",
+      "controlType": "__ComObject"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step17",
+      "controlType": "__ComObject"
+    },
+    "step17": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-LOW",
+      "next": "step18",
+      "controlType": "GuiTextField"
+    },
+    "step18": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-LOW",
+      "next": "step19",
+      "controlType": "GuiTextField"
+    },
+    "step19": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-LOW",
+      "paramKey": "RBudatLow",
+      "next": "step20",
+      "paramValue": "01.03.2025",
+      "controlType": "GuiTextField"
+    },
+    "step20": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-LOW",
+      "next": "step21",
+      "controlType": "GuiTextField"
+    },
+    "step21": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
+      "next": "step22",
+      "controlType": "GuiTextField"
+    },
+    "step22": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
+      "next": "step23",
+      "controlType": "GuiTextField"
+    },
+    "step23": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
+      "next": "step24",
+      "controlType": "GuiTextField"
+    },
+    "step24": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
+      "next": "step25",
+      "controlType": "GuiTextField"
+    },
+    "step25": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
+      "paramKey": "RBudatHigh",
+      "next": "step26",
+      "paramValue": "30.03.2025",
+      "controlType": "GuiTextField"
+    },
+    "step26": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_DISVAR",
+      "next": "step27",
+      "controlType": "GuiTextField"
+    },
+    "step27": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_DISVAR",
+      "next": "step28",
+      "controlType": "GuiTextField"
+    },
+    "step28": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_DISVAR_%_APP_%-TEXT",
+      "next": "step29",
+      "controlType": "GuiTextField"
+    },
+    "step29": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_DISVAR_%_APP_%-TEXT",
+      "next": "step30",
+      "controlType": "GuiTextField"
+    },
+    "step30": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step31",
+      "controlType": "__ComObject"
+    },
+    "step31": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step32",
+      "controlType": "__ComObject"
+    },
+    "step32": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[14]",
+      "next": "step33",
+      "controlType": "GuiButton"
+    },
+    "step33": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step34",
+      "controlType": "__ComObject"
+    },
+    "step34": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+      "next": "step35",
+      "controlType": "GuiButton"
+    },
+    "step35": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[14]",
+      "next": "step36",
+      "controlType": "GuiButton"
+    },
+    "step36": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+      "next": "step37",
+      "controlType": "GuiButton"
+    },
+    "step37": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+      "next": "step38",
+      "controlType": "GuiGridView"
+    },
+    "step38": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[43]",
+      "next": "step39",
+      "controlType": "GuiButton"
+    },
+    "step39": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING",
+      "next": "step40",
+      "controlType": "GuiButton"
+    },
+    "step40": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
+      "next": "step41",
+      "controlType": "__ComObject"
+    },
+    "step41": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step42",
+      "controlType": "GuiGridView"
+    },
+    "step42": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
+      "next": "step43",
+      "controlType": "GuiButton"
+    },
+    "step43": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+      "next": "step44",
+      "controlType": "GuiButton"
+    },
+    "step44": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+      "next": "step45",
+      "controlType": "GuiComboBox"
+    },
+    "step45": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500",
+      "next": "step46",
+      "controlType": "__ComObject"
+    },
+    "step46": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+      "next": "step47",
+      "controlType": "GuiComboBox"
+    },
+    "step47": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+      "paramKey": "G51ScreenUspecLbox",
+      "next": "step48",
+      "paramValue": "User-Specific                                                                                                                                                                                                                                                  ",
+      "controlType": "GuiComboBox"
+    },
+    "step48": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+      "next": "step49",
+      "controlType": "GuiGridView"
+    },
+    "step49": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+      "next": "step50",
+      "controlType": "GuiComboBox"
+    },
+    "step50": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+      "paramKey": "G51ScreenUspecLbox",
+      "next": "step51",
+      "paramValue": "Global                                                                                                                                                                                                                                                         ",
+      "controlType": "GuiComboBox"
+    },
+    "step51": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+      "next": "step52",
+      "controlType": "GuiGridView"
+    },
+    "step52": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+      "next": "step53",
+      "controlType": "GuiComboBox"
+    },
+    "step53": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+      "paramKey": "G51ScreenUspecLbox",
+      "next": "step54",
+      "paramValue": "All                                                                                                                                                                                                                                                            ",
+      "controlType": "GuiComboBox"
+    },
+    "step54": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500",
+      "controlType": "__ComObject",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "ksb1",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiTextField",
+      "GuiFrameWindow",
+      "__ComObject",
+      "GuiButton",
+      "GuiMainWindow",
+      "GuiGridView",
+      "GuiComboBox"
+    ]
+  }
+}

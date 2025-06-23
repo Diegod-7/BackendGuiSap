@@ -1,0 +1,272 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-LOW",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-LOW",
+      "paramKey": "ElEkorgLow",
+      "next": "step3",
+      "paramValue": "2000",
+      "controlType": "GuiTextField"
+    },
+    "step3": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-LOW",
+      "next": "step4",
+      "controlType": "GuiTextField"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLISTU",
+      "next": "step5",
+      "controlType": "GuiTextField"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step6",
+      "controlType": "__ComObject"
+    },
+    "step6": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-HIGH",
+      "next": "step7",
+      "controlType": "GuiTextField"
+    },
+    "step7": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "next": "step8",
+      "controlType": "GuiTextField"
+    },
+    "step8": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-HIGH",
+      "paramKey": "ElEkorgHigh",
+      "next": "step9",
+      "paramValue": "2000",
+      "controlType": "GuiTextField"
+    },
+    "step9": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "paramKey": "SEkgrpHigh",
+      "next": "step10",
+      "paramValue": "900",
+      "controlType": "GuiTextField"
+    },
+    "step10": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step11",
+      "controlType": "__ComObject"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step12",
+      "controlType": "__ComObject"
+    },
+    "step12": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step13",
+      "controlType": "__ComObject"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "next": "step14",
+      "controlType": "GuiTextField"
+    },
+    "step14": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,4]",
+      "next": "step15",
+      "controlType": "__ComObject"
+    },
+    "step15": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "paramKey": "SEkgrpHigh",
+      "next": "step16",
+      "paramValue": "900",
+      "controlType": "GuiTextField"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step17",
+      "controlType": "__ComObject"
+    },
+    "step17": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "next": "step18",
+      "controlType": "GuiTextField"
+    },
+    "step18": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "next": "step19",
+      "controlType": "GuiTextField"
+    },
+    "step19": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "paramKey": "SWerksLow",
+      "next": "step20",
+      "paramValue": "2000",
+      "controlType": "GuiTextField"
+    },
+    "step20": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "paramKey": "SBedatLow",
+      "next": "step21",
+      "paramValue": "01.01.2025",
+      "controlType": "GuiTextField"
+    },
+    "step21": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "next": "step22",
+      "controlType": "GuiTextField"
+    },
+    "step22": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-LOW",
+      "next": "step23",
+      "controlType": "GuiTextField"
+    },
+    "step23": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "paramKey": "SWerksHigh",
+      "next": "step24",
+      "paramValue": "2100",
+      "controlType": "GuiTextField"
+    },
+    "step24": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "next": "step25",
+      "controlType": "GuiTextField"
+    },
+    "step25": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EINDT-LOW",
+      "next": "step26",
+      "controlType": "GuiTextField"
+    },
+    "step26": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "paramKey": "SBedatHigh",
+      "next": "step27",
+      "paramValue": "31.12.2024",
+      "controlType": "GuiTextField"
+    },
+    "step27": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "next": "step28",
+      "controlType": "GuiTextField"
+    },
+    "step28": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-HIGH",
+      "next": "step29",
+      "controlType": "GuiTextField"
+    },
+    "step29": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "paramKey": "SBedatLow",
+      "next": "step30",
+      "paramValue": "01.01.2025",
+      "controlType": "GuiTextField"
+    },
+    "step30": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "next": "step31",
+      "controlType": "GuiTextField"
+    },
+    "step31": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "next": "step32",
+      "controlType": "GuiTextField"
+    },
+    "step32": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "paramKey": "SBedatHigh",
+      "next": "step33",
+      "paramValue": "30.01.2025",
+      "controlType": "GuiTextField"
+    },
+    "step33": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step34",
+      "controlType": "__ComObject"
+    },
+    "step34": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
+      "next": "step35",
+      "controlType": "GuiButton"
+    },
+    "step35": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+      "next": "step36",
+      "controlType": "GuiButton"
+    },
+    "step36": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+      "next": "step37",
+      "controlType": "GuiButton"
+    },
+    "step37": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+      "next": "step38",
+      "controlType": "GuiButton"
+    },
+    "step38": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
+      "controlType": "__ComObject",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "me2l",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiTextField",
+      "GuiMainWindow",
+      "__ComObject",
+      "GuiButton"
+    ]
+  }
+}

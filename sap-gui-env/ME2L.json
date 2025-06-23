@@ -1,0 +1,3366 @@
+{
+  "Tcode": "ME2L",
+  "Start": "2025-04-28T20:38:22.745Z",
+  "Steps": [
+    {
+      "Step": "1.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-LOW",
+      "ControlName": "EL_EKORG-LOW",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:01:39.2355198-04:00"
+    },
+    {
+      "Step": "1.2",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Purchasing Documents per Vendor",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T09:56:27.4707385-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Purchasing Documents per Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_LIFNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor"
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_EKORG_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Purchasing Organization"
+        },
+        {
+          "FriendlyName": "Scope of List",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_LISTU_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Scope of List"
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SELPA_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Selection Parameters"
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BSART_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Document Type"
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EKGRP_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Purchasing Group"
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_WERKS_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Plant"
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PSTYP_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Item Category"
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_KNTTP_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Account Assignment Category"
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EINDT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Delivery Date"
+        },
+        {
+          "FriendlyName": "Validity Key Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_GULDT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Validity Key Date"
+        },
+        {
+          "FriendlyName": "Range of Coverage to",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_RWEIT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Range of Coverage to"
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EBELN_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Document Number"
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Material"
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATKL_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Material Group"
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BEDAT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Document Date"
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EAN11_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Intern. Article No. (EAN/UPC)"
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_IDNLF_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor's Material Number"
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_LTSNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor Subrange"
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_AKTNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Promotion"
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISO_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Season"
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISJ_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Season Year"
+        },
+        {
+          "FriendlyName": "Short Text",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_TXZ01_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Short Text"
+        },
+        {
+          "FriendlyName": "Vendor Name",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_NAME1_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor Name"
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Enter   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Back",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[3]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Open Command Field",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[423]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Save as Variant...   (Ctrl+S)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Exit",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[15]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Execute and Print   (Ctrl+P)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[86]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[71]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[71]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Execute   (F8)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[8]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_LIFNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Scope of List",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLISTU",
+          "ControlType": "GuiTextField",
+          "Value": "BEST"
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSELPA-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BSART-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-LOW",
+          "ControlType": "GuiTextField",
+          "Value": "219"
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PSTYP-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KNTTP-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EINDT-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Validity Key Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_GULDT",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Range of Coverage to",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_RWEIT",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EBELN-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATKL-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_IDNLF-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_LTSNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_AKTNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_SAISO-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_SAISJ-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Short Text",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_TXZ01",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor Name",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_NAME1",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Get Variant...   (Shift+F5)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[17]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Choose...",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[25]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_LIFNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_EKORG_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SELPA_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BSART_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EKGRP_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_WERKS_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PSTYP_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_KNTTP_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EINDT_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EBELN_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATKL_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BEDAT_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EAN11_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_IDNLF_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_LTSNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_AKTNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISO_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISJ_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_LIFNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSELPA-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BSART-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PSTYP-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KNTTP-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EINDT-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EBELN-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATKL-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_IDNLF-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_LTSNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_AKTNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_SAISO-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_SAISJ-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_EL_LIFNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_EL_EKORG_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_SELPA_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_BSART_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EKGRP_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_WERKS_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_PSTYP_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_KNTTP_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EINDT_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EBELN_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_MATNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_MATKL_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_BEDAT_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EAN11_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_IDNLF_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_LTSNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_AKTNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_SAISO_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_SAISJ_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "New GUI Window",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[419]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "ControlType": "Unknown",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Generates shortcut",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[418]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "ControlType": "Unknown",
+          "Value": null
+        }
+      ],
+      "ScanHash": "916a9ce902"
+    },
+    {
+      "Step": "2.1",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-LOW",
+      "ControlName": "EL_EKORG-LOW",
+      "Value": "2000",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:01:41.0951024-04:00"
+    },
+    {
+      "Step": "2.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-LOW",
+      "ControlName": "S_EKGRP-LOW",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:56:38.1167219-04:00"
+    },
+    {
+      "Step": "3.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLISTU",
+      "ControlName": "LISTU",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:01:41.0951024-04:00"
+    },
+    {
+      "Step": "3.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "ControlName": "usr",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T09:56:46.5786532-04:00"
+    },
+    {
+      "Step": "4.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-HIGH",
+      "ControlName": "EL_EKORG-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:01:41.8861186-04:00"
+    },
+    {
+      "Step": "4.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "ControlName": "S_EKGRP-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:56:50.1168882-04:00"
+    },
+    {
+      "Step": "5.1",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-HIGH",
+      "ControlName": "EL_EKORG-HIGH",
+      "Value": "2000",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:01:44.5657559-04:00"
+    },
+    {
+      "Step": "5.2",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "ControlName": "S_EKGRP-HIGH",
+      "Value": "900",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:56:52.8139017-04:00"
+    },
+    {
+      "Step": "6.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "ControlName": "usr",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T10:01:44.5813812-04:00"
+    },
+    {
+      "Step": "6.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "ControlName": "usr",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T09:56:52.8139017-04:00"
+    },
+    {
+      "Step": "7.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "ControlName": "usr",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T10:01:46.6574178-04:00"
+    },
+    {
+      "Step": "7.2",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Parameters Defining Scope of Purchasing Lists 21 Entries",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T09:57:26.5017581-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Parameters Defining Scope of Purchasing Lists 21 Entries",
+          "Id": "/app/con[0]/ses[0]/wnd[1]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,1]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,1]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,3]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,3]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,4]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,4]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,5]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,5]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,6]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,6]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,7]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,7]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,8]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,8]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,9]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,9]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,10]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,10]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,11]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,11]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,12]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,12]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,13]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,13]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,14]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,14]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,15]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,15]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,16]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,16]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,17]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,17]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,18]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,18]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,19]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,19]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,20]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,20]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,21]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,21]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,22]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,22]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,23]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,23]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,1]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,1]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,3]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,3]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,4]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,4]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,5]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,5]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,6]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,6]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,7]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,7]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,8]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,8]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,9]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,9]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,10]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,10]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,11]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,11]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,12]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,12]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,13]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,13]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,14]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,14]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,15]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,15]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,16]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,16]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,17]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,17]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,18]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,18]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,19]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,19]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,20]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,20]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,21]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,21]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,22]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,22]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,23]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[12,23]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Copy   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Restrict Values   (Shift+F5)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[17]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Insert in personal list   (F6)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[6]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Find   (Ctrl+F)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[71]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel   (F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Documents per Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "ControlType": "__ComObject",
+          "Value": null
+        }
+      ],
+      "ScanHash": "6dabcfa46d"
+    },
+    {
+      "Step": "8.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "ControlName": "S_EKGRP-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:01:56.4223651-04:00"
+    },
+    {
+      "Step": "8.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,4]",
+      "ControlName": "",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T09:57:31.0558200-04:00"
+    },
+    {
+      "Step": "9.1",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "ControlName": "S_EKGRP-HIGH",
+      "Value": "900",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:00.9060409-04:00"
+    },
+    {
+      "Step": "9.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "ControlName": "usr",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T09:57:31.5194053-04:00"
+    },
+    {
+      "Step": "10.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "ControlName": "S_WERKS-LOW",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:00.9206434-04:00"
+    },
+    {
+      "Step": "10.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "ControlName": "S_BEDAT-LOW",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:57:40.8768488-04:00"
+    },
+    {
+      "Step": "11.1",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "ControlName": "S_WERKS-LOW",
+      "Value": "2000",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:03.9540706-04:00"
+    },
+    {
+      "Step": "11.2",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "ControlName": "S_BEDAT-LOW",
+      "Value": "01.01.2025",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:57:46.9699702-04:00"
+    },
+    {
+      "Step": "12.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "ControlName": "S_WERKS-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:03.9697034-04:00"
+    },
+    {
+      "Step": "12.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-LOW",
+      "ControlName": "S_EAN11-LOW",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:57:46.9906113-04:00"
+    },
+    {
+      "Step": "13.1",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "ControlName": "S_WERKS-HIGH",
+      "Value": "2100",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:17.0594586-04:00"
+    },
+    {
+      "Step": "13.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "ControlName": "S_BEDAT-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:57:48.3770960-04:00"
+    },
+    {
+      "Step": "14.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EINDT-LOW",
+      "ControlName": "S_EINDT-LOW",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:17.0805593-04:00"
+    },
+    {
+      "Step": "14.2",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "ControlName": "S_BEDAT-HIGH",
+      "Value": "31.12.2024",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:57:56.4392096-04:00"
+    },
+    {
+      "Step": "15.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "ControlName": "S_BEDAT-LOW",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:19.0633478-04:00"
+    },
+    {
+      "Step": "15.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-HIGH",
+      "ControlName": "S_EAN11-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:57:56.4704413-04:00"
+    },
+    {
+      "Step": "16.1",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "ControlName": "S_BEDAT-LOW",
+      "Value": "01.01.2025",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:28.2980488-04:00"
+    },
+    {
+      "Step": "16.2",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "ControlName": "S_BEDAT-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T09:57:58.2676241-04:00"
+    },
+    {
+      "Step": "17.1",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "ControlName": "S_BEDAT-HIGH",
+      "Value": "",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:28.3231116-04:00"
+    },
+    {
+      "Step": "17.2",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Cancel SAP Application",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T10:00:39.8985691-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Cancel SAP Application",
+          "Id": "/app/con[0]/ses[0]/wnd[0]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[0,0]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[0,0]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[0,9]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[0,9]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Enter   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Back",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[3]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,2]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,2]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,3]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,3]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,4]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,4]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,5]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,5]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,6]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,6]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,7]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,7]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,11]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,11]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,12]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,12]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,13]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,13]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,14]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,14]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,15]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[1,15]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Open Command Field",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[423]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,3]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,3]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,4]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,4]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,5]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,5]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,6]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,6]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,7]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,7]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,12]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,12]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,13]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,13]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,14]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,14]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,15]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/lbl[5,15]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[0]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[0]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Exit",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[15]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Print   (Ctrl+P)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[86]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Find   (Ctrl+F)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[71]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Find Next   (Ctrl+G)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "First Page   (Ctrl+Page up)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Previous Page   (Page up)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Next Page   (Page down)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Last Page   (Ctrl+Page down)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "New GUI Window",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[419]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "ControlType": "Unknown",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Generates shortcut",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[418]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "ControlType": "Unknown",
+          "Value": null
+        }
+      ],
+      "ScanHash": "677977149a"
+    },
+    {
+      "Step": "18",
+      "Action": "input",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "ControlName": "S_BEDAT-HIGH",
+      "Value": "30.01.2025",
+      "ControlType": "GuiTextField",
+      "Timestamp": "2025-04-28T10:02:36.8606713-04:00"
+    },
+    {
+      "Step": "19",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "ControlName": "usr",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T10:02:36.8606713-04:00"
+    },
+    {
+      "Step": "20",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Purchasing Documents per Vendor",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T10:04:39.3121439-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Purchasing Documents per Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_LIFNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor"
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_EKORG_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Purchasing Organization"
+        },
+        {
+          "FriendlyName": "Scope of List",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_LISTU_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Scope of List"
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SELPA_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Selection Parameters"
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BSART_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Document Type"
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EKGRP_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Purchasing Group"
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_WERKS_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Plant"
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PSTYP_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Item Category"
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_KNTTP_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Account Assignment Category"
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EINDT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Delivery Date"
+        },
+        {
+          "FriendlyName": "Validity Key Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_GULDT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Validity Key Date"
+        },
+        {
+          "FriendlyName": "Range of Coverage to",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_RWEIT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Range of Coverage to"
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EBELN_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Document Number"
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Material"
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATKL_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Material Group"
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BEDAT_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Document Date"
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EAN11_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Intern. Article No. (EAN/UPC)"
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_IDNLF_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor's Material Number"
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_LTSNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor Subrange"
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_AKTNR_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Promotion"
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISO_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Season"
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISJ_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Season Year"
+        },
+        {
+          "FriendlyName": "Short Text",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_TXZ01_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Short Text"
+        },
+        {
+          "FriendlyName": "Vendor Name",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_NAME1_%_APP_%-TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "Vendor Name"
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Enter   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Back",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[3]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Open Command Field",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[423]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Save as Variant...   (Ctrl+S)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Exit",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[15]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Execute and Print   (Ctrl+P)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[86]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[71]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[71]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Execute   (F8)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[8]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_LIFNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-LOW",
+          "ControlType": "GuiTextField",
+          "Value": "2000"
+        },
+        {
+          "FriendlyName": "Scope of List",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLISTU",
+          "ControlType": "GuiTextField",
+          "Value": "ALV"
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSELPA-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BSART-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-LOW",
+          "ControlType": "GuiTextField",
+          "Value": "219"
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+          "ControlType": "GuiTextField",
+          "Value": "2000"
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PSTYP-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KNTTP-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EINDT-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Validity Key Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_GULDT",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Range of Coverage to",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_RWEIT",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EBELN-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATKL-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+          "ControlType": "GuiTextField",
+          "Value": "01.01.2025"
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_IDNLF-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_LTSNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_AKTNR-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_SAISO-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_SAISJ-LOW",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Short Text",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_TXZ01",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor Name",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_NAME1",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Get Variant...   (Shift+F5)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[17]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Choose...",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[25]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_LIFNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_EL_EKORG_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SELPA_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BSART_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EKGRP_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_WERKS_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PSTYP_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_KNTTP_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EINDT_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EBELN_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_MATKL_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_BEDAT_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_EAN11_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_IDNLF_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_LTSNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_AKTNR_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISO_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_SAISJ_%_APP_%-TO_TEXT",
+          "ControlType": "GuiTextField",
+          "Value": "to"
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_LIFNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Organization",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": "2000"
+        },
+        {
+          "FriendlyName": "Selection Parameters",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSELPA-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Type",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BSART-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Purchasing Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": "900"
+        },
+        {
+          "FriendlyName": "Plant",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": "2100"
+        },
+        {
+          "FriendlyName": "Item Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PSTYP-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Account Assignment Category",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KNTTP-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Delivery Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EINDT-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EBELN-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Material Group",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_MATKL-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Document Date",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": "30.01.2025"
+        },
+        {
+          "FriendlyName": "Intern. Article No. (EAN/UPC)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor's Material Number",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_IDNLF-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Vendor Subrange",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_LTSNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Promotion",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_AKTNR-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_SAISO-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Season Year",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_SAISJ-HIGH",
+          "ControlType": "GuiTextField",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_EL_LIFNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_EL_EKORG_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_SELPA_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_BSART_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EKGRP_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_WERKS_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_PSTYP_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_KNTTP_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EINDT_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EBELN_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_MATNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_MATKL_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_BEDAT_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_EAN11_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_IDNLF_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_LTSNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_AKTNR_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_SAISO_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Multiple selection",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/btn%_S_SAISJ_%_APP_%-VALU_PUSH",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "New GUI Window",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[419]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "ControlType": "Unknown",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Generates shortcut",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[418]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "ControlType": "Unknown",
+          "Value": null
+        }
+      ],
+      "ScanHash": "916a9ce902"
+    },
+    {
+      "Step": "21",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
+      "ControlName": "Sort in Ascending Order   (Ctrl+F4)",
+      "Value": "",
+      "ControlType": "GuiButton",
+      "Timestamp": "2025-04-28T10:04:50.8757217-04:00"
+    },
+    {
+      "Step": "22",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Purchasing Documents per Vendor",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T10:07:01.7658636-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Purchasing Documents per Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/subGRID1:SAPLSLVC_FULLSCREEN:0500",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/subGRID1:SAPLSLVC_FULLSCREEN:0500",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+          "ControlType": "GuiGridView",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Enter   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Back",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[3]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Open Command Field",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[423]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Exit",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[15]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Print   (Ctrl+P)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[86]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Find   (Ctrl+F)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[71]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Details   (F2)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[2]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Sort in Ascending Order   (Ctrl+F4)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Sort in Descending Order   (Ctrl+Shift+F4)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[40]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Set Filter   (Ctrl+F5)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[29]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Total   (Ctrl+F6)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[30]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Print Preview   (Ctrl+Shift+F10)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[46]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Spreadsheet...   (Ctrl+Shift+F7)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[43]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Word Processing...   (Ctrl+Shift+F8)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[44]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Local File...   (Ctrl+Shift+F9)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[45]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Mail Recipient   (Ctrl+F7)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[31]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "ABC Analysis   (Ctrl+F1)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[25]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Graphic View   (Ctrl+Shift+F11)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[47]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Change Layout...   (Ctrl+F8)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Choose Layout...   (Ctrl+F9)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Save Layout...   (Ctrl+F10)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[34]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Information   (Ctrl+F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[36]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Print Preview",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[7]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Delivery Schedule   (Shift+F11)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[23]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Account Assignment   (Shift+F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[24]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "New GUI Window",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[419]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "ControlType": "Unknown",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Generates shortcut",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[418]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "ControlType": "Unknown",
+          "Value": null
+        }
+      ],
+      "ScanHash": "861a183f66"
+    },
+    {
+      "Step": "23",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+      "ControlName": "Change Layout...   (Ctrl+F8)",
+      "Value": "",
+      "ControlType": "GuiButton",
+      "Timestamp": "2025-04-28T10:07:30.5495833-04:00"
+    },
+    {
+      "Step": "24",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Change Layout",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T10:08:03.0618525-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Change Layout",
+          "Id": "/app/con[0]/ses[0]/wnd[1]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/lblLAYOUT",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/lblLAYOUT",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+          "ControlType": "GuiGridView",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Displayed Columns",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "txtGS_SCREEN-LAYOUT_TITLE",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/txtGS_SCREEN-LAYOUT_TITLE",
+          "ControlType": "GuiTextField",
+          "Value": "/DOSSA ( Volumen PO )"
+        },
+        {
+          "FriendlyName": "Sort Order",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R2",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Filter",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R3",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Hide selected fields (F6)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Show selected fields (F7)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+          "ControlType": "GuiGridView",
+          "Value": null
+        },
+        {
+          "FriendlyName": "View",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R4",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Adopt   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Display",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R5",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Select Layout   (Ctrl+F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[36]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Save Layout   (Ctrl+F10)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[34]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Save As...",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[35]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Reset",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[48]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel   (F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        }
+      ],
+      "ScanHash": "54b2d8003e"
+    },
+    {
+      "Step": "25",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+      "ControlName": "Choose Layout...   (Ctrl+F9)",
+      "Value": "",
+      "ControlType": "GuiButton",
+      "Timestamp": "2025-04-28T10:08:21.9887814-04:00"
+    },
+    {
+      "Step": "26",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Choose Layout",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T10:08:47.7333845-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Choose Layout",
+          "Id": "/app/con[0]/ses[0]/wnd[1]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/lbl%#AUTOTEXT001",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/lbl%#AUTOTEXT001",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
+          "ControlType": "GuiGridView",
+          "Value": null
+        },
+        {
+          "FriendlyName": "cmbG51_SCREEN-USPEC_LBOX",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX",
+          "ControlType": "GuiComboBox",
+          "Value": "All"
+        },
+        {
+          "FriendlyName": "Adopt   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel   (F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[1]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+          "ControlType": "GuiGridView",
+          "Value": null
+        }
+      ],
+      "ScanHash": "423988ed94"
+    },
+    {
+      "Step": "27",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+      "ControlName": "Cancel",
+      "Value": "",
+      "ControlType": "GuiButton",
+      "Timestamp": "2025-04-28T10:08:59.3583280-04:00"
+    },
+    {
+      "Step": "28",
+      "Action": "scan",
+      "ControlId": "wnd[0]",
+      "ControlName": "Purchasing Documents per Vendor",
+      "Value": "",
+      "ControlType": "GuiMainWindow",
+      "Timestamp": "2025-04-28T10:11:01.7179717-04:00",
+      "Controls": [
+        {
+          "FriendlyName": "Purchasing Documents per Vendor",
+          "Id": "/app/con[0]/ses[0]/wnd[0]",
+          "ControlType": "GuiFrameWindow",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/titl",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/subGRID1:SAPLSLVC_FULLSCREEN:0500",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/subGRID1:SAPLSLVC_FULLSCREEN:0500",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
+          "ControlType": "GuiGridView",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Enter   (Enter)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Back",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[3]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Open Command Field",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[423]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+          "ControlType": "__ComObject",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[11]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Exit",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[15]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Cancel",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Print   (Ctrl+P)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[86]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Find   (Ctrl+F)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[71]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Details   (F2)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[2]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[84]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Sort in Ascending Order   (Ctrl+F4)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[80]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Sort in Descending Order   (Ctrl+Shift+F4)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[40]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[81]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Set Filter   (Ctrl+F5)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[29]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[82]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[83]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Total   (Ctrl+F6)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[30]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Print Preview   (Ctrl+Shift+F10)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[46]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Spreadsheet...   (Ctrl+Shift+F7)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[43]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[1]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Word Processing...   (Ctrl+Shift+F8)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[44]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Local File...   (Ctrl+Shift+F9)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[45]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Mail Recipient   (Ctrl+F7)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[31]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "ABC Analysis   (Ctrl+F1)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[25]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Graphic View   (Ctrl+Shift+F11)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[47]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Change Layout...   (Ctrl+F8)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Choose Layout...   (Ctrl+F9)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Save Layout...   (Ctrl+F10)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[34]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Information   (Ctrl+F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[36]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Basic List   (Shift+F7)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[19]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Account Assignment   (Shift+F12)",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[24]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "New GUI Window",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[419]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/sbar/pane[6]",
+          "ControlType": "Unknown",
+          "Value": null
+        },
+        {
+          "FriendlyName": "Generates shortcut",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[418]",
+          "ControlType": "GuiButton",
+          "Value": null
+        },
+        {
+          "FriendlyName": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "Id": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[1945]",
+          "ControlType": "Unknown",
+          "Value": null
+        }
+      ],
+      "ScanHash": "c4fdc102e3"
+    },
+    {
+      "Step": "29",
+      "Action": "click",
+      "ControlId": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
+      "ControlName": "RB_OTHERS",
+      "Value": "",
+      "ControlType": "__ComObject",
+      "Timestamp": "2025-04-28T10:11:23.1400075-04:00"
+    }
+  ]
+}

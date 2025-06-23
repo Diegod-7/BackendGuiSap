@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  sap-gui-flow:
+    build: .
+    container_name: sap-gui-flow-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./sap-gui-env:/app/sap-gui-env
+      - ./output:/app/output
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DEBUG=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/api/files/input"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s 

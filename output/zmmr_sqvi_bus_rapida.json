@@ -1,0 +1,134 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00002-LOW",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00002-LOW",
+      "paramKey": "Sp00002Low",
+      "next": "step3",
+      "paramValue": "0",
+      "controlType": "GuiTextField"
+    },
+    "step3": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00002-HIGH",
+      "next": "step4",
+      "controlType": "GuiTextField"
+    },
+    "step4": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00002-HIGH",
+      "paramKey": "Sp00002High",
+      "next": "step5",
+      "paramValue": "900",
+      "controlType": "GuiTextField"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SP$00002_%_APP_%-TEXT",
+      "next": "step6",
+      "controlType": "GuiTextField"
+    },
+    "step6": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SP$00002_%_APP_%-TO_TEXT",
+      "next": "step7",
+      "controlType": "GuiTextField"
+    },
+    "step7": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00008-HIGH",
+      "next": "step8",
+      "controlType": "GuiTextField"
+    },
+    "step8": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00008-HIGH",
+      "paramKey": "Sp00008High",
+      "next": "step9",
+      "paramValue": "900",
+      "controlType": "GuiTextField"
+    },
+    "step9": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step10",
+      "controlType": "__ComObject"
+    },
+    "step10": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+      "next": "step11",
+      "controlType": "GuiButton"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
+      "next": "step12",
+      "controlType": "__ComObject"
+    },
+    "step12": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
+      "next": "step13",
+      "controlType": "__ComObject"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]",
+      "next": "step14",
+      "controlType": "GuiFrameWindow"
+    },
+    "step14": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500",
+      "next": "step15",
+      "controlType": "__ComObject"
+    },
+    "step15": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCONTAINER/shellcont/shell",
+      "next": "step16",
+      "controlType": "GuiGridView"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCONTAINER/shellcont/shell",
+      "next": "step17",
+      "controlType": "GuiGridView"
+    },
+    "step17": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
+      "controlType": "__ComObject",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "zmmr_sqvi_bus_rapida",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiMainWindow",
+      "GuiTextField",
+      "__ComObject",
+      "GuiButton",
+      "GuiFrameWindow",
+      "GuiGridView"
+    ]
+  }
+}

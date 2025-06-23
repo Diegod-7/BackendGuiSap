@@ -1,0 +1,290 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
+      "next": "step3",
+      "controlType": "GuiTextField"
+    },
+    "step3": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
+      "paramKey": "WerksLow",
+      "next": "step4",
+      "paramValue": "0",
+      "controlType": "GuiTextField"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
+      "next": "step5",
+      "controlType": "GuiTextField"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
+      "next": "step6",
+      "controlType": "GuiTextField"
+    },
+    "step6": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
+      "paramKey": "WerksHigh",
+      "next": "step7",
+      "paramValue": "5000",
+      "controlType": "GuiTextField"
+    },
+    "step7": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step8",
+      "controlType": "__ComObject"
+    },
+    "step8": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-LOW",
+      "next": "step9",
+      "controlType": "GuiTextField"
+    },
+    "step9": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-LOW",
+      "next": "step10",
+      "controlType": "GuiTextField"
+    },
+    "step10": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-LOW",
+      "paramKey": "BdterLow",
+      "next": "step11",
+      "paramValue": "01.01.2025",
+      "controlType": "GuiTextField"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-LOW",
+      "next": "step12",
+      "controlType": "GuiTextField"
+    },
+    "step12": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-LOW",
+      "next": "step13",
+      "controlType": "GuiTextField"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-HIGH",
+      "next": "step14",
+      "controlType": "GuiTextField"
+    },
+    "step14": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-HIGH",
+      "next": "step15",
+      "controlType": "GuiTextField"
+    },
+    "step15": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-HIGH",
+      "paramKey": "BdterHigh",
+      "next": "step16",
+      "paramValue": "15.01.2025",
+      "controlType": "GuiTextField"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-HIGH",
+      "next": "step17",
+      "controlType": "GuiTextField"
+    },
+    "step17": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
+      "next": "step18",
+      "controlType": "GuiCheckBox"
+    },
+    "step18": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_OPEN",
+      "next": "step19",
+      "controlType": "GuiCheckBox"
+    },
+    "step19": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[5]",
+      "next": "step20",
+      "controlType": "GuiButton"
+    },
+    "step20": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_OPEN",
+      "paramKey": "OpenReservations",
+      "next": "step21",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step21": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_OPEN",
+      "next": "step22",
+      "controlType": "GuiCheckBox"
+    },
+    "step22": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
+      "next": "step23",
+      "controlType": "__ComObject"
+    },
+    "step23": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CANCEL",
+      "next": "step24",
+      "controlType": "GuiCheckBox"
+    },
+    "step24": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
+      "next": "step25",
+      "controlType": "__ComObject"
+    },
+    "step25": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CANCEL",
+      "paramKey": "CancellableReservations",
+      "next": "step26",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step26": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CANCEL",
+      "next": "step27",
+      "controlType": "GuiCheckBox"
+    },
+    "step27": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
+      "next": "step28",
+      "controlType": "GuiCheckBox"
+    },
+    "step28": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
+      "paramKey": "GoodsMovementNotPossible",
+      "next": "step29",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step29": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
+      "next": "step30",
+      "controlType": "GuiCheckBox"
+    },
+    "step30": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ISSUES",
+      "next": "step31",
+      "controlType": "GuiCheckBox"
+    },
+    "step31": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ISSUES",
+      "paramKey": "Issues",
+      "next": "step32",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step32": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ISSUES",
+      "next": "step33",
+      "controlType": "GuiCheckBox"
+    },
+    "step33": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_RECEIP",
+      "next": "step34",
+      "controlType": "GuiCheckBox"
+    },
+    "step34": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_RECEIP",
+      "paramKey": "Receipts",
+      "next": "step35",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step35": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_RECEIP",
+      "next": "step36",
+      "controlType": "GuiCheckBox"
+    },
+    "step36": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_ALV_DEF_%_APP_%-TEXT",
+      "next": "step37",
+      "controlType": "GuiTextField"
+    },
+    "step37": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtALV_DEF",
+      "next": "step38",
+      "controlType": "GuiTextField"
+    },
+    "step38": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step39",
+      "controlType": "__ComObject"
+    },
+    "step39": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/titl",
+      "next": "step40",
+      "controlType": "__ComObject"
+    },
+    "step40": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+      "next": "step41",
+      "controlType": "GuiButton"
+    },
+    "step41": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]",
+      "controlType": "GuiFrameWindow",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "mb25",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiTextField",
+      "__ComObject",
+      "GuiCheckBox",
+      "GuiMainWindow",
+      "GuiButton",
+      "GuiFrameWindow"
+    ]
+  }
+}

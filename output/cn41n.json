@@ -1,0 +1,252 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/ctxtTCNTT-PROFID",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]",
+      "next": "step3",
+      "controlType": "GuiFrameWindow"
+    },
+    "step3": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/ctxtTCNTT-PROFID",
+      "paramKey": "TcnttProfid",
+      "next": "step4",
+      "paramValue": "000000000001",
+      "controlType": "GuiTextField"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]",
+      "next": "step5",
+      "controlType": "GuiFrameWindow"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/ctxtTCNTT-PROFID",
+      "next": "step6",
+      "controlType": "GuiTextField"
+    },
+    "step6": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step7",
+      "controlType": "__ComObject"
+    },
+    "step7": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[2]/usr/lbl[14,1]",
+      "next": "step8",
+      "controlType": "__ComObject"
+    },
+    "step8": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/lbl%_U012%%_",
+      "next": "step9",
+      "controlType": "__ComObject"
+    },
+    "step9": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_DISVAR",
+      "next": "step10",
+      "controlType": "GuiTextField"
+    },
+    "step10": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[2]/usr/lbl[1,3]",
+      "next": "step11",
+      "controlType": "__ComObject"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[47]",
+      "next": "step12",
+      "controlType": "GuiButton"
+    },
+    "step12": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]",
+      "next": "step13",
+      "controlType": "GuiFrameWindow"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[2]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+      "next": "step14",
+      "controlType": "GuiGridView"
+    },
+    "step14": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step15",
+      "controlType": "__ComObject"
+    },
+    "step15": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCN_PROJN-LOW",
+      "next": "step16",
+      "controlType": "GuiTextField"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[2]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+      "next": "step17",
+      "controlType": "GuiGridView"
+    },
+    "step17": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCN_PROJN-LOW",
+      "paramKey": "CnProjnLow",
+      "next": "step18",
+      "paramValue": "2000-CAP*",
+      "controlType": "GuiTextField"
+    },
+    "step18": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[2]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING",
+      "next": "step19",
+      "controlType": "GuiButton"
+    },
+    "step19": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCN_PSPNR-LOW",
+      "next": "step20",
+      "controlType": "GuiTextField"
+    },
+    "step20": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[2]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step21",
+      "controlType": "GuiGridView"
+    },
+    "step21": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtCN_STUFE-LOW",
+      "next": "step22",
+      "controlType": "GuiTextField"
+    },
+    "step22": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[2]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
+      "next": "step23",
+      "controlType": "GuiButton"
+    },
+    "step23": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtCN_STUFE-HIGH",
+      "next": "step24",
+      "controlType": "GuiTextField"
+    },
+    "step24": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCUSTCONTAINER_ALV_TREE/shellcont/shell/shellcont[1]/shell[1]",
+      "next": "step25",
+      "controlType": "__ComObject"
+    },
+    "step25": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[47]",
+      "next": "step26",
+      "controlType": "GuiButton"
+    },
+    "step26": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCUSTCONTAINER_ALV_TREE/shellcont/shell/shellcont[1]/shell[1]",
+      "next": "step27",
+      "controlType": "__ComObject"
+    },
+    "step27": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step28",
+      "controlType": "__ComObject"
+    },
+    "step28": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]",
+      "next": "step29",
+      "controlType": "GuiFrameWindow"
+    },
+    "step29": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[47]",
+      "next": "step30",
+      "controlType": "GuiButton"
+    },
+    "step30": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_DYN0500:SAPLSKBH:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+      "next": "step31",
+      "controlType": "GuiGridView"
+    },
+    "step31": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCUSTCONTAINER_ALV_TREE/shellcont/shell/shellcont[1]/shell[0]",
+      "next": "step32",
+      "controlType": "__ComObject"
+    },
+    "step32": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCUSTCONTAINER_ALV_TREE/shellcont/shell/shellcont[1]/shell[1]",
+      "next": "step33",
+      "controlType": "__ComObject"
+    },
+    "step33": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[0,0]",
+      "next": "step34",
+      "controlType": "__ComObject"
+    },
+    "step34": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCUSTCONTAINER_ALV_TREE/shellcont/shell/shellcont[1]/shell[1]",
+      "next": "step35",
+      "controlType": "__ComObject"
+    },
+    "step35": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCUSTCONTAINER_ALV_TREE/shellcont/shell/shellcont[1]/shell[1]",
+      "next": "step36",
+      "controlType": "__ComObject"
+    },
+    "step36": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlCUSTCONTAINER_ALV_TREE/shellcont/shell/shellcont[1]/shell[1]",
+      "next": "step37",
+      "controlType": "__ComObject"
+    },
+    "step37": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]",
+      "controlType": "GuiFrameWindow",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "cn41n",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiTextField",
+      "GuiFrameWindow",
+      "GuiMainWindow",
+      "__ComObject",
+      "GuiButton",
+      "GuiGridView"
+    ]
+  }
+}

@@ -1,0 +1,293 @@
+{
+  "$meta": {
+    "version": "2.2",
+    "tx": "mainFlow completo con todos los subflujos",
+    "created": "2025-06-23"
+  },
+  "prefixes": {
+    "usr": "/app/con[0]/ses[0]/wnd[1]/usr/",
+    "popup": "/app/con[0]/ses[0]/wnd[1]/usr/"
+  },
+  "aliases": {
+    "main": {
+      "filter.svald-value0,21": "{{usr}}sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
+      "control.usr": "/app/con[0]/ses[0]/wnd[1]/usr",
+      "control.lbl141": "/app/con[0]/ses[0]/wnd[2]/usr/lbl[14,1]",
+      "control.lbl_U012_": "/app/con[0]/ses[0]/wnd[0]/usr/lbl%_U012%%_",
+      "control.wnd1": "/app/con[0]/ses[0]/wnd[1]",
+      "filter.koagr": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
+      "filter.cn_projnlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCN_PROJN-LOW",
+      "filter.%_p_disvar_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_DISVAR_%_APP_%-TEXT",
+      "button.btn14": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[14]",
+      "button.btn32": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
+      "button.btnAPP_FL_SING": "{{usr}}tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
+      "filter.r_budatlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-LOW",
+      "gridResult": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell/shellcont[0]/shell",
+      "button.btnAPP_WL_SING": "{{usr}}tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING",
+      "filter.r_budathigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
+      "filter.p_disvar": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_DISVAR",
+      "button.btn43": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[43]",
+      "control.radRB_OTHERS": "{{usr}}radRB_OTHERS",
+      "variant.execBtn": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[8]",
+      "control.lbl13": "/app/con[0]/ses[0]/wnd[2]/usr/lbl[1,3]",
+      "control.wnd0": "/app/con[0]/ses[0]/wnd[0]",
+      "control.tbar1": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+      "control.titl": "/app/con[0]/ses[0]/wnd[0]/titl",
+      "control.boxBBAV074_BLOCK_1000": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
+      "button.btn33": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
+      "control.subSUB_CONFIGURATIONSAPLSALV_CUL_LAYOUT_CHOOSE0500": "{{usr}}subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500",
+      "filter.werkslow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
+      "filter.werkshigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
+      "filter.usnamhigh": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-HIGH",
+      "filter.alv_def": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtALV_DEF",
+      "filter.lgortlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLGORT-LOW",
+      "control.sbar": "/app/con[0]/ses[0]/wnd[0]/sbar",
+      "control.tbar0": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
+      "button.btn28": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
+      "control.lbl14": "{{usr}}lbl[1,4]",
+      "filter.s_werkslow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
+      "filter.s_werkshigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
+      "button.btn12": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
+      "button.btn3": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[3]"
+    },
+    "cji3": {
+      "filter.tcnt-prof_db": "{{usr}}ctxtTCNT-PROF_DB",
+      "filter.cn_netnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCN_NETNR-LOW",
+      "control.lbl644": "{{usr}}lbl[64,4]"
+    },
+    "cn41n": {
+      "filter.tcntt-profid": "{{usr}}ctxtTCNTT-PROFID",
+      "button.btn47": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[47]",
+      "filter.cn_pspnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCN_PSPNR-LOW",
+      "filter.cn_stufelow": "/app/con[0]/ses[0]/wnd[0]/usr/txtCN_STUFE-LOW",
+      "filter.cn_stufehigh": "/app/con[0]/ses[0]/wnd[0]/usr/txtCN_STUFE-HIGH",
+      "control.radSPOPLISELFLAG00": "{{usr}}subSUBSCREEN_STEPLOOP:SAPLSPO5:0150/sub:SAPLSPO5:0150/radSPOPLI-SELFLAG[0,0]"
+    },
+    "iw49n": {
+      "filter.sp_ofn": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_OFN",
+      "filter.sp_iar": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_IAR",
+      "filter.sp_mab": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_MAB",
+      "filter.sp_his": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_HIS",
+      "filter.sp_selid": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP_SELID",
+      "filter.sp_vari": "/app/con[0]/ses[0]/wnd[0]/usr/tabsTABSTRIP_TABBLOCK1/tabpS_TAB9/ssub%_SUBSCREEN_TABBLOCK1:RI_ORDER_OPERATION_LIST:1900/ctxtSP_VARI",
+      "control.lbl1411": "{{usr}}lbl[14,11]",
+      "filter.%_sp_tuni_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/tabsTABSTRIP_TABBLOCK1/tabpS_TAB9/ssub%_SUBSCREEN_TABBLOCK1:RI_ORDER_OPERATION_LIST:1900/txt%_SP_TUNI_%_APP_%-TEXT"
+    },
+    "kob1": {
+      "filter.aufnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-LOW",
+      "filter.aufnrhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-HIGH",
+      "filter.gs_screen-layout_title": "{{usr}}txtGS_SCREEN-LAYOUT_TITLE"
+    },
+    "ksb1": {
+      "filter.kstgr": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKSTGR",
+      "control.cmbG51_SCREENUSPEC_LBOX": "{{usr}}subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cmbG51_SCREEN-USPEC_LBOX"
+    },
+    "mb25": {
+      "filter.bdterlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-LOW",
+      "filter.usnamlow": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-LOW",
+      "filter.bdterhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-HIGH",
+      "filter.p_closed": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
+      "filter.p_open": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_OPEN",
+      "button.btn5": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[5]",
+      "filter.p_cancel": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CANCEL",
+      "filter.p_issues": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ISSUES",
+      "filter.p_receip": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_RECEIP",
+      "filter.%_alv_def_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_ALV_DEF_%_APP_%-TEXT"
+    },
+    "mb51": {
+      "filter.budatlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-LOW",
+      "filter.budathigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-HIGH",
+      "control.radRHIER_L": "/app/con[0]/ses[0]/wnd[0]/usr/radRHIER_L",
+      "control.radRFLAT_L": "/app/con[0]/ses[0]/wnd[0]/usr/radRFLAT_L",
+      "button.btn38": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[38]",
+      "filter.cb_always": "{{usr}}chkCB_ALWAYS"
+    },
+    "mb52": {
+      "filter.lgorthigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLGORT-HIGH",
+      "filter.negativ": "/app/con[0]/ses[0]/wnd[0]/usr/chkNEGATIV",
+      "filter.xmchb": "/app/con[0]/ses[0]/wnd[0]/usr/chkXMCHB",
+      "filter.nozero": "/app/con[0]/ses[0]/wnd[0]/usr/chkNOZERO",
+      "filter.novalues": "/app/con[0]/ses[0]/wnd[0]/usr/chkNOVALUES",
+      "filter.matnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtMATNR-LOW",
+      "filter.matnrhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtMATNR-HIGH",
+      "filter.charglow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCHARG-LOW",
+      "filter.charghigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtCHARG-HIGH",
+      "filter.matartlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtMATART-LOW",
+      "filter.matarthigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtMATART-HIGH",
+      "filter.matklalow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtMATKLA-LOW",
+      "filter.matklahigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtMATKLA-HIGH",
+      "filter.ekgruplow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEKGRUP-LOW",
+      "filter.so_sobkzlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_SOBKZ-LOW",
+      "filter.so_sobkzhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_SOBKZ-HIGH",
+      "filter.p_vari": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_VARI"
+    },
+    "me2l": {
+      "filter.el_ekorglow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-LOW",
+      "filter.s_ekgrplow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-LOW",
+      "filter.listu": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLISTU",
+      "filter.el_ekorghigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtEL_EKORG-HIGH",
+      "filter.s_ekgrphigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EKGRP-HIGH",
+      "filter.s_bedatlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-LOW",
+      "filter.s_ean11low": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-LOW",
+      "filter.s_bedathigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BEDAT-HIGH",
+      "filter.s_eindtlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_EINDT-LOW",
+      "filter.s_ean11high": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_EAN11-HIGH"
+    },
+    "me5a": {
+      "filter.ba_ekgrphigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
+      "filter.p_lstub": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
+      "filter.s_bsartlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BSART-LOW",
+      "filter.p_zugba": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ZUGBA",
+      "filter.p_memory": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_MEMORY",
+      "filter.p_erlba": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ERLBA",
+      "filter.p_bstba": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_BSTBA",
+      "filter.p_freig": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
+      "filter.p_selgs": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELGS",
+      "filter.p_selpo": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELPO",
+      "button.btn34": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[34]",
+      "control.okcd": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
+      "popup.accept": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]"
+    },
+    "s_p99_41000062": {
+      "filter.%_p_werks_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_P_WERKS_%_APP_%-TEXT",
+      "filter.p_werks": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_WERKS",
+      "control.boxB102034_BLOCK_1000": "/app/con[0]/ses[0]/wnd[0]/usr/box%B102034_BLOCK_1000",
+      "filter.p_poper": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_POPER",
+      "filter.p_bdatj": "/app/con[0]/ses[0]/wnd[0]/usr/txtP_BDATJ",
+      "filter.p_varian": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_VARIAN",
+      "filter.%f103036_1000": "/app/con[0]/ses[0]/wnd[0]/usr/txt%F103036_1000",
+      "button.btn2": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[2]"
+    },
+    "zfir_statsload": {
+      "filter.s_kokrslow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KOKRS-LOW",
+      "filter.s_bukrslow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BUKRS-LOW",
+      "filter.s_periolow": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-LOW",
+      "filter.s_bukrshigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BUKRS-HIGH",
+      "filter.%_s_perio_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PERIO_%_APP_%-TEXT",
+      "filter.s_periohigh": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-HIGH",
+      "filter.%_s_versn_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_VERSN_%_APP_%-TEXT",
+      "filter.s_versnlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_VERSN-LOW",
+      "filter.%_s_frcst_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_FRCST_%_APP_%-TEXT",
+      "filter.s_frcstlow": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_FRCST-LOW",
+      "filter.s_frcsthigh": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_FRCST-HIGH",
+      "filter.%_s_ceg_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_CEG_%_APP_%-TEXT",
+      "filter.s_ceglow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_CEG-LOW",
+      "filter.%_s_kosar_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_KOSAR_%_APP_%-TEXT",
+      "filter.s_kosarlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KOSAR-LOW",
+      "filter.s_kosarhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KOSAR-HIGH",
+      "filter.%_s_prctr_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PRCTR_%_APP_%-TEXT",
+      "filter.s_prctrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PRCTR-LOW",
+      "control.cmbG_LISTBOX": "{{usr}}cmbG_LISTBOX"
+    },
+    "zmmr_mrko": {
+      "filter.so_bukrslow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_BUKRS-LOW",
+      "filter.so_bukrshigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_BUKRS-HIGH",
+      "filter.so_lifnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_LIFNR-LOW",
+      "filter.so_lifnrhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_LIFNR-HIGH",
+      "filter.so_werkslow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_WERKS-LOW",
+      "filter.so_werkshigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_WERKS-HIGH",
+      "filter.so_matnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_MATNR-LOW",
+      "filter.so_matnrhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_MATNR-HIGH",
+      "filter.so_bldatlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_BLDAT-LOW",
+      "filter.so_bldathigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_BLDAT-HIGH",
+      "filter.so_budatlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_BUDAT-LOW",
+      "filter.so_budathigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_BUDAT-HIGH",
+      "filter.so_mblnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_MBLNR-LOW",
+      "filter.so_mblnrhigh": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSO_MBLNR-HIGH",
+      "filter.s_wgliflow": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_WGLIF-LOW",
+      "filter.s_wglifhigh": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_WGLIF-HIGH",
+      "filter.so_belnrlow": "/app/con[0]/ses[0]/wnd[0]/usr/txtSO_BELNR-LOW",
+      "filter.so_belnrhigh": "/app/con[0]/ses[0]/wnd[0]/usr/txtSO_BELNR-HIGH",
+      "filter.pa_xninv": "/app/con[0]/ses[0]/wnd[0]/usr/chkPA_XNINV",
+      "filter.pa_xinv": "/app/con[0]/ses[0]/wnd[0]/usr/chkPA_XINV",
+      "filter.pa_varia": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtPA_VARIA",
+      "filter.%_so_belnr_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SO_BELNR_%_APP_%-TEXT",
+      "control.boxB001000_BLOCK_1000": "/app/con[0]/ses[0]/wnd[0]/usr/box%B001000_BLOCK_1000",
+      "button.btn13": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[13]"
+    },
+    "zmmr_sqvi_bus_rapida": {
+      "filter.sp$00002low": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00002-LOW",
+      "filter.sp$00002high": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00002-HIGH",
+      "filter.%_sp$00002_%_app_%-text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SP$00002_%_APP_%-TEXT",
+      "filter.%_sp$00002_%_app_%-to_text": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_SP$00002_%_APP_%-TO_TEXT",
+      "filter.sp$00008high": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP$00008-HIGH"
+    }
+  },
+  "$mainFlow": {
+    "steps": {
+      "runCji3": {
+        "action": "callSubflow",
+        "subflow": "cji3",
+        "next": "runCn41n"
+      },
+      "runCn41n": {
+        "action": "callSubflow",
+        "subflow": "cn41n",
+        "next": "runIw49n"
+      },
+      "runIw49n": {
+        "action": "callSubflow",
+        "subflow": "iw49n",
+        "next": "runKob1"
+      },
+      "runKob1": {
+        "action": "callSubflow",
+        "subflow": "kob1",
+        "next": "runKsb1"
+      },
+      "runKsb1": {
+        "action": "callSubflow",
+        "subflow": "ksb1",
+        "next": "runMb25"
+      },
+      "runMb25": {
+        "action": "callSubflow",
+        "subflow": "mb25",
+        "next": "runMb51"
+      },
+      "runMb51": {
+        "action": "callSubflow",
+        "subflow": "mb51",
+        "next": "runMb52"
+      },
+      "runMb52": {
+        "action": "callSubflow",
+        "subflow": "mb52",
+        "next": "runMe2l"
+      },
+      "runMe2l": {
+        "action": "callSubflow",
+        "subflow": "me2l",
+        "next": "runMe5a"
+      },
+      "runMe5a": {
+        "action": "callSubflow",
+        "subflow": "me5a",
+        "next": "runS_p99_41000062"
+      },
+      "runS_p99_41000062": {
+        "action": "callSubflow",
+        "subflow": "s_p99_41000062",
+        "next": "runZfir_statsload"
+      },
+      "runZfir_statsload": {
+        "action": "callSubflow",
+        "subflow": "zfir_statsload",
+        "next": "runZmmr_mrko"
+      },
+      "runZmmr_mrko": {
+        "action": "callSubflow",
+        "subflow": "zmmr_mrko",
+        "next": "runZmmr_sqvi_bus_rapida"
+      },
+      "runZmmr_sqvi_bus_rapida": {
+        "action": "callSubflow",
+        "subflow": "zmmr_sqvi_bus_rapida",
+        "next": "end"
+      },
+      "end": {
+        "action": "exit"
+      }
+    }
+  }
+}

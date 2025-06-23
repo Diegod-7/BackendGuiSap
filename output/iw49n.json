@@ -1,0 +1,143 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
+      "next": "step2",
+      "controlType": "__ComObject"
+    },
+    "step2": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_OFN",
+      "next": "step3",
+      "controlType": "GuiCheckBox"
+    },
+    "step3": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_OFN",
+      "paramKey": "Outstandin",
+      "next": "step4",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_OFN",
+      "next": "step5",
+      "controlType": "GuiCheckBox"
+    },
+    "step5": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_IAR",
+      "next": "step6",
+      "controlType": "GuiCheckBox"
+    },
+    "step6": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_IAR",
+      "paramKey": "InProcess",
+      "next": "step7",
+      "paramValue": false,
+      "controlType": "GuiCheckBox"
+    },
+    "step7": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_IAR",
+      "next": "step8",
+      "controlType": "GuiCheckBox"
+    },
+    "step8": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_MAB",
+      "next": "step9",
+      "controlType": "GuiCheckBox"
+    },
+    "step9": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkSP_HIS",
+      "next": "step10",
+      "controlType": "GuiCheckBox"
+    },
+    "step10": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtSP_SELID",
+      "next": "step11",
+      "controlType": "GuiTextField"
+    },
+    "step11": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/tabsTABSTRIP_TABBLOCK1/tabpS_TAB9/ssub%_SUBSCREEN_TABBLOCK1:RI_ORDER_OPERATION_LIST:1900/ctxtSP_VARI",
+      "next": "step12",
+      "controlType": "GuiTextField"
+    },
+    "step12": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[14,11]",
+      "next": "step13",
+      "controlType": "__ComObject"
+    },
+    "step13": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/tabsTABSTRIP_TABBLOCK1/tabpS_TAB9/ssub%_SUBSCREEN_TABBLOCK1:RI_ORDER_OPERATION_LIST:1900/txt%_SP_TUNI_%_APP_%-TEXT",
+      "next": "step14",
+      "controlType": "GuiTextField"
+    },
+    "step14": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/tabsTABSTRIP_TABBLOCK1/tabpS_TAB9/ssub%_SUBSCREEN_TABBLOCK1:RI_ORDER_OPERATION_LIST:1900/txt%_SP_TUNI_%_APP_%-TEXT",
+      "next": "step15",
+      "controlType": "GuiTextField"
+    },
+    "step15": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/tabsTABSTRIP_TABBLOCK1/tabpS_TAB9/ssub%_SUBSCREEN_TABBLOCK1:RI_ORDER_OPERATION_LIST:1900/ctxtSP_VARI",
+      "next": "step16",
+      "controlType": "GuiTextField"
+    },
+    "step16": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[8]",
+      "next": "step17",
+      "controlType": "GuiButton"
+    },
+    "step17": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
+      "next": "step18",
+      "controlType": "__ComObject"
+    },
+    "step18": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/titl",
+      "next": "step19",
+      "controlType": "__ComObject"
+    },
+    "step19": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlIMAGE_CONTAINER/shellcont/shell/shellcont[1]/shell",
+      "controlType": "__ComObject",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "iw49n",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiMainWindow",
+      "__ComObject",
+      "GuiCheckBox",
+      "GuiTextField",
+      "GuiButton"
+    ]
+  }
+}
