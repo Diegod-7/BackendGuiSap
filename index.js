@@ -10,15 +10,15 @@ const path = require('path');
 const parser = require('./lib/parser');
 const aliasGenerator = require('./lib/aliasGenerator');
 const flowGenerator = require('./lib/flowGenerator');
-const orchestrator = require('./lib/orchestrator');
+// const orchestrator = require('./lib/orchestrator'); // Ya no se usa mainFlow.json
 
 // Configuración
 const config = {
     inputDir: './sap-gui-env',
     outputDir: './output',
     metaInfo: {
-        version: '2.2',
-        tx: 'mainFlow completo con todos los subflujos',
+        version: '2.3',
+        tx: 'Procesamiento individual de flujos SAP',
         created: new Date().toISOString().split('T')[0]
     }
 };
@@ -41,16 +41,48 @@ async function main() {
             const tcode = path.basename(inputFile, '.json').toLowerCase();
             console.log(`Procesando ${tcode}...`);
             
-            const rawData = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
-            parsedFlows[tcode] = parser.parseRawData(rawData, tcode);
+            try {
+                // Leer el archivo con manejo de errores mejorado
+                const fileContent = fs.readFileSync(inputFile, 'utf8');
+                console.log(`  - Archivo leído: ${fileContent.length} caracteres`);
+                
+                // Verificar BOM
+                const cleanContent = fileContent.replace(/^\uFEFF/, '');
+                if (cleanContent !== fileContent) {
+                    console.log(`  - Removido BOM del archivo ${tcode}`);
+                }
+                
+                const rawData = JSON.parse(cleanContent);
+                parsedFlows[tcode] = parser.parseRawData(rawData, tcode);
+                console.log(`  - ✅ ${tcode} procesado correctamente`);
+            } catch (jsonError) {
+                console.error(`  - ❌ Error en archivo ${tcode}: ${jsonError.message}`);
+                
+                // Mostrar contexto del error si es posible
+                if (jsonError.message.includes('position')) {
+                    const position = jsonError.message.match(/position (\d+)/);
+                    if (position) {
+                        const pos = parseInt(position[1]);
+                        const content = fs.readFileSync(inputFile, 'utf8');
+                        const start = Math.max(0, pos - 30);
+                        const end = Math.min(content.length, pos + 30);
+                        console.error(`  - Contexto del error: "${content.substring(start, end)}"`);
+                    }
+                }
+                
+                // Continuar con el siguiente archivo en lugar de fallar completamente
+                console.log(`  - Saltando archivo ${tcode} debido a errores`);
+                continue;
+            }
         }
         
         // 3. Generar prefijos y alias
         console.log('Generando prefijos y alias...');
         const { prefixes, aliases } = aliasGenerator.generateAliases(parsedFlows);
         
-        // 4. Generar archivos de subflujo
-        console.log('Generando archivos de subflujo...');
+        // 4. Generar archivos de subflujo individuales
+        console.log('Generando archivos de flujo individuales...');
+        let processedCount = 0;
         for (const tcode in parsedFlows) {
             const flowData = flowGenerator.generateFlow(
                 parsedFlows[tcode], 
@@ -59,26 +91,20 @@ async function main() {
                 aliases
             );
             
-            // Guardar archivo de subflujo
+            // Guardar archivo de flujo individual
             const outputPath = path.join(config.outputDir, `${tcode}.json`);
             fs.writeFileSync(outputPath, JSON.stringify(flowData, null, 2));
             console.log(`  - Generado ${outputPath}`);
+            processedCount++;
         }
         
-        // 5. Generar archivo principal mainFlow.json
-        console.log('Generando archivo principal mainFlow.json...');
-        const mainFlowData = orchestrator.generateMainFlow(
-            Object.keys(parsedFlows),
-            prefixes,
-            aliases,
-            config.metaInfo
-        );
+        console.log(`\n✅ Procesamiento completado con éxito`);
+        console.log(`📊 Estadísticas:`);
+        console.log(`   - Archivos procesados: ${processedCount}`);
+        console.log(`   - Flujos generados: ${processedCount}`);
+        console.log(`   - Directorio de salida: ${config.outputDir}`);
+        console.log(`\n📝 Nota: mainFlow.json ya no se genera (descontinuado)`);
         
-        const mainFlowPath = path.join(config.outputDir, 'mainFlow.json');
-        fs.writeFileSync(mainFlowPath, JSON.stringify(mainFlowData, null, 2));
-        console.log(`  - Generado ${mainFlowPath}`);
-        
-        console.log('Procesamiento completado con éxito');
     } catch (error) {
         console.error('Error durante el procesamiento:', error);
         process.exit(1);

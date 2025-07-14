@@ -1,0 +1,77 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "step1"
+    },
+    "step1": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
+      "next": "step2",
+      "controlType": "GuiTextField"
+    },
+    "step2": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
+      "paramKey": "SvaldValue",
+      "next": "step3",
+      "paramValue": "/STANDARD",
+      "controlType": "GuiTextField"
+    },
+    "step3": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
+      "next": "step4",
+      "controlType": "GuiBox"
+    },
+    "step4": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-LOW",
+      "next": "step5",
+      "controlType": "GuiTextField"
+    },
+    "step5": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-LOW",
+      "paramKey": "AufnrLow",
+      "next": "step6",
+      "paramValue": "10000000",
+      "controlType": "GuiTextField"
+    },
+    "step6": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-HIGH",
+      "next": "step7",
+      "controlType": "GuiTextField"
+    },
+    "step7": {
+      "action": "set",
+      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-HIGH",
+      "paramKey": "AufnrHigh",
+      "next": "step8",
+      "paramValue": "60000000",
+      "controlType": "GuiTextField"
+    },
+    "step8": {
+      "action": "click",
+      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[8]",
+      "controlType": "GuiButton",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  },
+  "metadata": {
+    "tcode": "ejemplo-entrada",
+    "version": "1.0",
+    "created": "2025-06-23",
+    "controlTypes": [
+      "GuiTextField",
+      "GuiBox",
+      "GuiButton"
+    ]
+  }
+}

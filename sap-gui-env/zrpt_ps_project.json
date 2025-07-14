@@ -1,0 +1,148 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action":   "callProgram",
+      "method":   "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next":     "waitVariant"
+    },
+    "waitVariant": {
+      "action":  "waitFor",
+      "target":  "variant.window",
+      "timeout": "30s",
+      "next":    "setIncludeZero"
+    },
+    "setIncludeZero": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.includeZeroValues",
+      "paramKey": "IncludeZeroValues",
+      "next":     "setForecastVersion"
+    },
+    "setForecastVersion": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.forecastVersion",
+      "paramKey": "ForecastVersion",
+      "next":     "setAlvLayout"
+    },
+    "setAlvLayout": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.alvLayout",
+      "paramKey": "ALVLayout",
+      "next":     "setCompanyCodeLow"
+    },
+    "setCompanyCodeLow": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.companyCodeLow",
+      "paramKey": "CompanyCodeLow",
+      "next":     "setCompanyCodeHigh"
+    },
+    "setCompanyCodeHigh": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.companyCodeHigh",
+      "paramKey": "CompanyCodeHigh",
+      "next":     "setSBukrxLow"
+    },
+    "setSBukrxLow": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.s_bukrxLow",
+      "paramKey": "S_BUKRX",
+      "next":     "setProjDefLow"
+    },
+    "setProjDefLow": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.projectDefLow",
+      "paramKey": "ProjectDefinitionLow",
+      "next":     "setProjDefHigh"
+    },
+    "setProjDefHigh": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.projectDefHigh",
+      "paramKey": "ProjectDefinitionHigh",
+      "next":     "setProjTypeLow"
+    },
+    "setProjTypeLow": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.projectTypeLow",
+      "paramKey": "ProjectTypeLow",
+      "next":     "setProjTypeHigh"
+    },
+    "setProjTypeHigh": {
+      "action":   "set",
+      "target":   "zrpt_ps_project.filter.projectTypeHigh",
+      "paramKey": "ProjectTypeHigh",
+      "next":     "clickExecute"
+    },
+    "clickExecute": {
+      "action": "click",
+      "target": "variant.execBtn",
+      "next":   "waitProcessing"
+    },
+    "waitProcessing": {
+      "action":  "waitFor",
+      "target":  "processing",
+      "timeout": "60s",
+      "next":    "checkError"
+    },
+    "checkError": {
+      "action":   "condition",
+      "target":   "errorDialog",
+      "operator": "exists",
+      "true":     "notifyErr",
+      "false":    "handleLayout"
+    },
+    "notifyErr": {
+      "action":   "notify",
+      "paramKey": "ErrorMessage",
+      "next":     "end"
+    },
+    "handleLayout": {
+      "action":    "condition",
+      "paramKey":  "HasLayout",
+      "operator":  "==",
+      "value":     true,
+      "true":      "chooseLayout",
+      "false":     "handleColumns"
+    },
+    "chooseLayout": {
+      "action": "click",
+      "target": "chooseLayout.btn",
+      "next":   "setLayoutName"
+    },
+    "setLayoutName": {
+      "action":   "set",
+      "target":   "chooseLayout.table",
+      "paramKey": "LayoutName",
+      "next":     "confirmLayout"
+    },
+    "confirmLayout": {
+      "action": "click",
+      "target": "chooseLayout.confirm",
+      "next":   "handleColumns"
+    },
+    "handleColumns": {
+      "action":    "condition",
+      "paramKey":  "Columns",
+      "operator":  "exists",
+      "true":      "changeLayout",
+      "false":     "download"
+    },
+    "changeLayout": {
+      "action": "click",
+      "target": "changeLayout.btn",
+      "next":   "adoptLayout"
+    },
+    "adoptLayout": {
+      "action": "click",
+      "target": "changeLayout.adopt",
+      "next":   "download"
+    },
+    "download": {
+      "action": "click",
+      "target": "saveAs.btn",
+      "next":   "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  }
+}

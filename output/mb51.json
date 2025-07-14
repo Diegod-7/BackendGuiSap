@@ -4,294 +4,223 @@
       "action": "callProgram",
       "method": "sapSession.StartTransaction",
       "paramKey": "Tcode",
-      "next": "step1"
+      "next": "waitVariant"
     },
-    "step1": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
-      "next": "step2",
-      "controlType": "GuiTextField"
+    "waitVariant": {
+      "action": "waitFor",
+      "target": "variant.window",
+      "timeout": "30s",
+      "next": "setDatabase"
     },
-    "step2": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
-      "next": "step3",
-      "controlType": "GuiTextField"
-    },
-    "step3": {
+    "setDatabase": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
-      "paramKey": "WerksLow",
-      "next": "step4",
-      "paramValue": "2000",
-      "controlType": "GuiTextField"
+      "target": "mb51.filter.database",
+      "paramKey": "Database",
+      "next": "setShortDocuments"
     },
-    "step4": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
-      "next": "step5",
-      "controlType": "GuiTextField"
-    },
-    "step5": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
-      "next": "step6",
-      "controlType": "GuiTextField"
-    },
-    "step6": {
+    "setShortDocuments": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
-      "paramKey": "WerksHigh",
-      "next": "step7",
-      "paramValue": "2100",
-      "controlType": "GuiTextField"
+      "target": "mb51.filter.shortDocuments",
+      "paramKey": "ShortDocuments",
+      "next": "setRereadArchive"
     },
-    "step7": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-LOW",
-      "next": "step8",
-      "controlType": "GuiTextField"
-    },
-    "step8": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtLGORT-LOW",
-      "next": "step9",
-      "controlType": "GuiTextField"
-    },
-    "step9": {
+    "setRereadArchive": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-LOW",
-      "paramKey": "BudatLow",
-      "next": "step10",
-      "paramValue": "01.04.2025",
-      "controlType": "GuiTextField"
+      "target": "mb51.filter.rereadShortDocsInArchive",
+      "paramKey": "RereadShortDocsInArchive",
+      "next": "setAlvDef"
     },
-    "step10": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
-      "next": "step11",
-      "controlType": "__ComObject"
-    },
-    "step11": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-HIGH",
-      "next": "step12",
-      "controlType": "GuiTextField"
-    },
-    "step12": {
+    "setAlvDef": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-HIGH",
-      "paramKey": "BudatHigh",
-      "next": "step13",
-      "paramValue": "15.04.2025",
-      "controlType": "GuiTextField"
+      "target": "mb51.filter.alvDef",
+      "paramKey": "ALV_DEF",
+      "next": "setPaAistr"
     },
-    "step13": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,3]",
-      "next": "step14",
-      "controlType": "__ComObject"
-    },
-    "step14": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step15",
-      "controlType": "__ComObject"
-    },
-    "step15": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/sbar",
-      "next": "step16",
-      "controlType": "__ComObject"
-    },
-    "step16": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step17",
-      "controlType": "__ComObject"
-    },
-    "step17": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/radRHIER_L",
-      "next": "step18",
-      "controlType": "__ComObject"
-    },
-    "step18": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/radRFLAT_L",
-      "next": "step19",
-      "controlType": "__ComObject"
-    },
-    "step19": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[38]",
-      "next": "step20",
-      "controlType": "GuiButton"
-    },
-    "step20": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-LOW",
-      "next": "step21",
-      "controlType": "GuiTextField"
-    },
-    "step21": {
+    "setPaAistr": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-LOW",
-      "paramKey": "BudatLow",
-      "next": "step22",
-      "paramValue": "01.03.2025",
-      "controlType": "GuiTextField"
+      "target": "mb51.filter.paAistr",
+      "paramKey": "PA_AISTR",
+      "next": "setMaterialLow"
     },
-    "step22": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]",
-      "next": "step23",
-      "controlType": "GuiFrameWindow"
-    },
-    "step23": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-HIGH",
-      "next": "step24",
-      "controlType": "GuiTextField"
-    },
-    "step24": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]",
-      "next": "step25",
-      "controlType": "GuiFrameWindow"
-    },
-    "step25": {
+    "setMaterialLow": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBUDAT-HIGH",
-      "paramKey": "BudatHigh",
-      "next": "step26",
-      "paramValue": "31.03.2025",
-      "controlType": "GuiTextField"
+      "target": "mb51.filter.materialLow",
+      "paramKey": "MaterialLow",
+      "next": "setMaterialHigh"
     },
-    "step26": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
-      "next": "step27",
-      "controlType": "__ComObject"
+    "setMaterialHigh": {
+      "action": "set",
+      "target": "mb51.filter.materialHigh",
+      "paramKey": "MaterialHigh",
+      "next": "setPlantLow"
     },
-    "step27": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-HIGH",
-      "next": "step28",
-      "controlType": "GuiTextField"
+    "setPlantLow": {
+      "action": "set",
+      "target": "mb51.filter.plantLow",
+      "paramKey": "PlantLow",
+      "next": "setPlantHigh"
     },
-    "step28": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtALV_DEF",
-      "next": "step29",
-      "controlType": "GuiTextField"
+    "setPlantHigh": {
+      "action": "set",
+      "target": "mb51.filter.plantHigh",
+      "paramKey": "PlantHigh",
+      "next": "setStorageLocationLow"
     },
-    "step29": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]",
-      "next": "step30",
-      "controlType": "GuiFrameWindow"
+    "setStorageLocationLow": {
+      "action": "set",
+      "target": "mb51.filter.storageLocationLow",
+      "paramKey": "StorageLocationLow",
+      "next": "setStorageLocationHigh"
     },
-    "step30": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/tbar[0]",
-      "next": "step31",
-      "controlType": "__ComObject"
+    "setStorageLocationHigh": {
+      "action": "set",
+      "target": "mb51.filter.storageLocationHigh",
+      "paramKey": "StorageLocationHigh",
+      "next": "setBatchLow"
     },
-    "step31": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/sbar",
-      "next": "step32",
-      "controlType": "__ComObject"
+    "setBatchLow": {
+      "action": "set",
+      "target": "mb51.filter.batchLow",
+      "paramKey": "BatchLow",
+      "next": "setBatchHigh"
     },
-    "step32": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]",
-      "next": "step33",
-      "controlType": "GuiFrameWindow"
+    "setBatchHigh": {
+      "action": "set",
+      "target": "mb51.filter.batchHigh",
+      "paramKey": "BatchHigh",
+      "next": "setVendorLow"
     },
-    "step33": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]",
-      "next": "step34",
-      "controlType": "GuiFrameWindow"
+    "setVendorLow": {
+      "action": "set",
+      "target": "mb51.filter.vendorLow",
+      "paramKey": "VendorLow",
+      "next": "setVendorHigh"
     },
-    "step34": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step35",
-      "controlType": "__ComObject"
+    "setVendorHigh": {
+      "action": "set",
+      "target": "mb51.filter.vendorHigh",
+      "paramKey": "VendorHigh",
+      "next": "setCustomerLow"
     },
-    "step35": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]",
-      "next": "step36",
-      "controlType": "GuiFrameWindow"
+    "setCustomerLow": {
+      "action": "set",
+      "target": "mb51.filter.customerLow",
+      "paramKey": "CustomerLow",
+      "next": "setCustomerHigh"
     },
-    "step36": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step37",
-      "controlType": "__ComObject"
+    "setCustomerHigh": {
+      "action": "set",
+      "target": "mb51.filter.customerHigh",
+      "paramKey": "CustomerHigh",
+      "next": "setMovementTypeLow"
     },
-    "step37": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step38",
-      "controlType": "__ComObject"
+    "setMovementTypeLow": {
+      "action": "set",
+      "target": "mb51.filter.movementTypeLow",
+      "paramKey": "MovementTypeLow",
+      "next": "setMovementTypeHigh"
     },
-    "step38": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
-      "next": "step39",
-      "controlType": "__ComObject"
+    "setMovementTypeHigh": {
+      "action": "set",
+      "target": "mb51.filter.movementTypeHigh",
+      "paramKey": "MovementTypeHigh",
+      "next": "setSpecialStockLow"
     },
-    "step39": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
-      "next": "step40",
-      "controlType": "__ComObject"
+    "setSpecialStockLow": {
+      "action": "set",
+      "target": "mb51.filter.specialStockLow",
+      "paramKey": "SpecialStockLow",
+      "next": "setSpecialStockHigh"
     },
-    "step40": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
-      "next": "step41",
-      "controlType": "GuiGridView"
+    "setSpecialStockHigh": {
+      "action": "set",
+      "target": "mb51.filter.specialStockHigh",
+      "paramKey": "SpecialStockHigh",
+      "next": "setTransEventTypeLow"
     },
-    "step41": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step42",
-      "controlType": "__ComObject"
+    "setTransEventTypeLow": {
+      "action": "set",
+      "target": "mb51.filter.transEventTypeLow",
+      "paramKey": "TransEventTypeLow",
+      "next": "setTransEventTypeHigh"
     },
-    "step42": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/chkCB_ALWAYS",
-      "next": "step43",
-      "controlType": "GuiCheckBox"
+    "setTransEventTypeHigh": {
+      "action": "set",
+      "target": "mb51.filter.transEventTypeHigh",
+      "paramKey": "TransEventTypeHigh",
+      "next": "clickExecute"
     },
-    "step43": {
+    "clickExecute": {
       "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]",
-      "controlType": "GuiFrameWindow",
+      "target": "variant.execBtn",
+      "next": "waitProcessing"
+    },
+    "waitProcessing": {
+      "action": "waitFor",
+      "target": "processing",
+      "timeout": "60s",
+      "next": "checkError"
+    },
+    "checkError": {
+      "action": "condition",
+      "target": "errorDialog",
+      "operator": "exists",
+      "true": "notifyErr",
+      "false": "handleLayout"
+    },
+    "notifyErr": {
+      "action": "notify",
+      "paramKey": "ErrorMessage",
+      "next": "end"
+    },
+    "handleLayout": {
+      "action": "condition",
+      "paramKey": "HasLayout",
+      "operator": "==",
+      "value": true,
+      "true": "chooseLayout",
+      "false": "handleColumns"
+    },
+    "chooseLayout": {
+      "action": "click",
+      "target": "chooseLayout.btn",
+      "next": "setLayoutName"
+    },
+    "setLayoutName": {
+      "action": "set",
+      "target": "chooseLayout.table",
+      "paramKey": "LayoutName",
+      "next": "confirmLayout"
+    },
+    "confirmLayout": {
+      "action": "click",
+      "target": "chooseLayout.confirm",
+      "next": "handleColumns"
+    },
+    "handleColumns": {
+      "action": "condition",
+      "paramKey": "Columns",
+      "operator": "exists",
+      "true": "changeLayout",
+      "false": "download"
+    },
+    "changeLayout": {
+      "action": "click",
+      "target": "changeLayout.btn",
+      "next": "adoptLayout"
+    },
+    "adoptLayout": {
+      "action": "click",
+      "target": "changeLayout.adopt",
+      "next": "download"
+    },
+    "download": {
+      "action": "click",
+      "target": "saveAs.btn",
       "next": "end"
     },
     "end": {
       "action": "exit"
     }
-  },
-  "metadata": {
-    "tcode": "mb51",
-    "version": "1.0",
-    "created": "2025-06-23",
-    "controlTypes": [
-      "GuiMainWindow",
-      "GuiTextField",
-      "__ComObject",
-      "GuiButton",
-      "GuiFrameWindow",
-      "GuiGridView",
-      "GuiCheckBox"
-    ]
   }
 }

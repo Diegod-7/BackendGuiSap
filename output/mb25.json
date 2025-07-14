@@ -4,287 +4,271 @@
       "action": "callProgram",
       "method": "sapSession.StartTransaction",
       "paramKey": "Tcode",
-      "next": "step1"
+      "next": "waitVariant"
     },
-    "step1": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
-      "next": "step2",
-      "controlType": "GuiTextField"
+    "waitVariant": {
+      "action": "waitFor",
+      "target": "variant.window",
+      "timeout": "30s",
+      "next": "setWoAccAssgt"
     },
-    "step2": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
-      "next": "step3",
-      "controlType": "GuiTextField"
-    },
-    "step3": {
+    "setWoAccAssgt": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-LOW",
-      "paramKey": "WerksLow",
-      "next": "step4",
-      "paramValue": "0",
-      "controlType": "GuiTextField"
+      "target": "mb25.filter.woAccountAssgt",
+      "paramKey": "W/oaccountassgt.",
+      "next": "setOpenRes"
     },
-    "step4": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
-      "next": "step5",
-      "controlType": "GuiTextField"
-    },
-    "step5": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
-      "next": "step6",
-      "controlType": "GuiTextField"
-    },
-    "step6": {
+    "setOpenRes": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtWERKS-HIGH",
-      "paramKey": "WerksHigh",
-      "next": "step7",
-      "paramValue": "5000",
-      "controlType": "GuiTextField"
-    },
-    "step7": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step8",
-      "controlType": "__ComObject"
-    },
-    "step8": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-LOW",
-      "next": "step9",
-      "controlType": "GuiTextField"
-    },
-    "step9": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-LOW",
-      "next": "step10",
-      "controlType": "GuiTextField"
-    },
-    "step10": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-LOW",
-      "paramKey": "BdterLow",
-      "next": "step11",
-      "paramValue": "01.01.2025",
-      "controlType": "GuiTextField"
-    },
-    "step11": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-LOW",
-      "next": "step12",
-      "controlType": "GuiTextField"
-    },
-    "step12": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-LOW",
-      "next": "step13",
-      "controlType": "GuiTextField"
-    },
-    "step13": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-HIGH",
-      "next": "step14",
-      "controlType": "GuiTextField"
-    },
-    "step14": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-HIGH",
-      "next": "step15",
-      "controlType": "GuiTextField"
-    },
-    "step15": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBDTER-HIGH",
-      "paramKey": "BdterHigh",
-      "next": "step16",
-      "paramValue": "15.01.2025",
-      "controlType": "GuiTextField"
-    },
-    "step16": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtUSNAM-HIGH",
-      "next": "step17",
-      "controlType": "GuiTextField"
-    },
-    "step17": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
-      "next": "step18",
-      "controlType": "GuiCheckBox"
-    },
-    "step18": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_OPEN",
-      "next": "step19",
-      "controlType": "GuiCheckBox"
-    },
-    "step19": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[5]",
-      "next": "step20",
-      "controlType": "GuiButton"
-    },
-    "step20": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_OPEN",
+      "target": "mb25.filter.openReservations",
       "paramKey": "OpenReservations",
-      "next": "step21",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setCancellable"
     },
-    "step21": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_OPEN",
-      "next": "step22",
-      "controlType": "GuiCheckBox"
-    },
-    "step22": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
-      "next": "step23",
-      "controlType": "__ComObject"
-    },
-    "step23": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CANCEL",
-      "next": "step24",
-      "controlType": "GuiCheckBox"
-    },
-    "step24": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
-      "next": "step25",
-      "controlType": "__ComObject"
-    },
-    "step25": {
+    "setCancellable": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CANCEL",
+      "target": "mb25.filter.cancellableReservations",
       "paramKey": "CancellableReservations",
-      "next": "step26",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setGoodsMovNotPossible"
     },
-    "step26": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CANCEL",
-      "next": "step27",
-      "controlType": "GuiCheckBox"
-    },
-    "step27": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
-      "next": "step28",
-      "controlType": "GuiCheckBox"
-    },
-    "step28": {
+    "setGoodsMovNotPossible": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
+      "target": "mb25.filter.goodsMovementNotPossible",
       "paramKey": "GoodsMovementNotPossible",
-      "next": "step29",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setLayout"
     },
-    "step29": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_CLOSED",
-      "next": "step30",
-      "controlType": "GuiCheckBox"
-    },
-    "step30": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ISSUES",
-      "next": "step31",
-      "controlType": "GuiCheckBox"
-    },
-    "step31": {
+    "setLayout": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ISSUES",
+      "target": "mb25.filter.layout",
+      "paramKey": "Layout",
+      "next": "setIssues"
+    },
+    "setIssues": {
+      "action": "set",
+      "target": "mb25.filter.issues",
       "paramKey": "Issues",
-      "next": "step32",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setReceipts"
     },
-    "step32": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ISSUES",
-      "next": "step33",
-      "controlType": "GuiCheckBox"
-    },
-    "step33": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_RECEIP",
-      "next": "step34",
-      "controlType": "GuiCheckBox"
-    },
-    "step34": {
+    "setReceipts": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_RECEIP",
+      "target": "mb25.filter.receipts",
       "paramKey": "Receipts",
-      "next": "step35",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setMaterialLow"
     },
-    "step35": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_RECEIP",
-      "next": "step36",
-      "controlType": "GuiCheckBox"
+    "setMaterialLow": {
+      "action": "set",
+      "target": "mb25.filter.materialLow",
+      "paramKey": "MaterialLow",
+      "next": "setMaterialHigh"
     },
-    "step36": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_ALV_DEF_%_APP_%-TEXT",
-      "next": "step37",
-      "controlType": "GuiTextField"
+    "setMaterialHigh": {
+      "action": "set",
+      "target": "mb25.filter.materialHigh",
+      "paramKey": "MaterialHigh",
+      "next": "setPlantLow"
     },
-    "step37": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtALV_DEF",
-      "next": "step38",
-      "controlType": "GuiTextField"
+    "setPlantLow": {
+      "action": "set",
+      "target": "mb25.filter.plantLow",
+      "paramKey": "PlantLow",
+      "next": "setPlantHigh"
     },
-    "step38": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step39",
-      "controlType": "__ComObject"
+    "setPlantHigh": {
+      "action": "set",
+      "target": "mb25.filter.plantHigh",
+      "paramKey": "PlantHigh",
+      "next": "setReqDateLow"
     },
-    "step39": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/titl",
-      "next": "step40",
-      "controlType": "__ComObject"
+    "setReqDateLow": {
+      "action": "set",
+      "target": "mb25.filter.requirementDateLow",
+      "paramKey": "RequirementDateLow",
+      "next": "setReqDateHigh"
     },
-    "step40": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
-      "next": "step41",
-      "controlType": "GuiButton"
+    "setReqDateHigh": {
+      "action": "set",
+      "target": "mb25.filter.requirementDateHigh",
+      "paramKey": "RequirementDateHigh",
+      "next": "setCostCenterLow"
     },
-    "step41": {
+    "setCostCenterLow": {
+      "action": "set",
+      "target": "mb25.filter.costCenterLow",
+      "paramKey": "CostCenterLow",
+      "next": "setCostCenterHigh"
+    },
+    "setCostCenterHigh": {
+      "action": "set",
+      "target": "mb25.filter.costCenterHigh",
+      "paramKey": "CostCenterHigh",
+      "next": "setOrderLow"
+    },
+    "setOrderLow": {
+      "action": "set",
+      "target": "mb25.filter.orderLow",
+      "paramKey": "OrderLow",
+      "next": "setOrderHigh"
+    },
+    "setOrderHigh": {
+      "action": "set",
+      "target": "mb25.filter.orderHigh",
+      "paramKey": "OrderHigh",
+      "next": "setWbsLow"
+    },
+    "setWbsLow": {
+      "action": "set",
+      "target": "mb25.filter.wbsElementLow",
+      "paramKey": "WBSElementLow",
+      "next": "setWbsHigh"
+    },
+    "setWbsHigh": {
+      "action": "set",
+      "target": "mb25.filter.wbsElementHigh",
+      "paramKey": "WBSElementHigh",
+      "next": "setNetworkLow"
+    },
+    "setNetworkLow": {
+      "action": "set",
+      "target": "mb25.filter.networkLow",
+      "paramKey": "NetworkLow",
+      "next": "setNetworkHigh"
+    },
+    "setNetworkHigh": {
+      "action": "set",
+      "target": "mb25.filter.networkHigh",
+      "paramKey": "NetworkHigh",
+      "next": "setAssetLow"
+    },
+    "setAssetLow": {
+      "action": "set",
+      "target": "mb25.filter.assetLow",
+      "paramKey": "AssetLow",
+      "next": "setAssetHigh"
+    },
+    "setAssetHigh": {
+      "action": "set",
+      "target": "mb25.filter.assetHigh",
+      "paramKey": "AssetHigh",
+      "next": "setSubnumberLow"
+    },
+    "setSubnumberLow": {
+      "action": "set",
+      "target": "mb25.filter.subnumberLow",
+      "paramKey": "SubnumberLow",
+      "next": "setSubnumberHigh"
+    },
+    "setSubnumberHigh": {
+      "action": "set",
+      "target": "mb25.filter.subnumberHigh",
+      "paramKey": "SubnumberHigh",
+      "next": "setReceivingPlantLow"
+    },
+    "setReceivingPlantLow": {
+      "action": "set",
+      "target": "mb25.filter.receivingPlantLow",
+      "paramKey": "ReceivingPlantLow",
+      "next": "setReceivingPlantHigh"
+    },
+    "setReceivingPlantHigh": {
+      "action": "set",
+      "target": "mb25.filter.receivingPlantHigh",
+      "paramKey": "ReceivingPlantHigh",
+      "next": "setReceivingStorageLocLow"
+    },
+    "setReceivingStorageLocLow": {
+      "action": "set",
+      "target": "mb25.filter.receivingStorageLocLow",
+      "paramKey": "ReceivingStorageLocLow",
+      "next": "setReceivingStorageLocHigh"
+    },
+    "setReceivingStorageLocHigh": {
+      "action": "set",
+      "target": "mb25.filter.receivingStorageLocHigh",
+      "paramKey": "ReceivingStorageLocHigh",
+      "next": "setSalesOrderLow"
+    },
+    "setSalesOrderLow": {
+      "action": "set",
+      "target": "mb25.filter.salesOrderLow",
+      "paramKey": "SalesOrderLow",
+      "next": "setSalesOrderHigh"
+    },
+    "setSalesOrderHigh": {
+      "action": "set",
+      "target": "mb25.filter.salesOrderHigh",
+      "paramKey": "SalesOrderHigh",
+      "next": "clickExecute"
+    },
+    "clickExecute": {
       "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]",
-      "controlType": "GuiFrameWindow",
+      "target": "variant.execBtn",
+      "next": "waitProcessing"
+    },
+    "waitProcessing": {
+      "action": "waitFor",
+      "target": "processing",
+      "timeout": "60s",
+      "next": "checkError"
+    },
+    "checkError": {
+      "action": "condition",
+      "target": "errorDialog",
+      "operator": "exists",
+      "true": "notifyErr",
+      "false": "handleLayout"
+    },
+    "notifyErr": {
+      "action": "notify",
+      "paramKey": "ErrorMessage",
+      "next": "end"
+    },
+    "handleLayout": {
+      "action": "condition",
+      "paramKey": "HasLayout",
+      "operator": "==",
+      "value": true,
+      "true": "chooseLayout",
+      "false": "handleColumns"
+    },
+    "chooseLayout": {
+      "action": "click",
+      "target": "chooseLayout.btn",
+      "next": "setLayoutName"
+    },
+    "setLayoutName": {
+      "action": "set",
+      "target": "chooseLayout.table",
+      "paramKey": "LayoutName",
+      "next": "confirmLayout"
+    },
+    "confirmLayout": {
+      "action": "click",
+      "target": "chooseLayout.confirm",
+      "next": "handleColumns"
+    },
+    "handleColumns": {
+      "action": "condition",
+      "paramKey": "Columns",
+      "operator": "exists",
+      "true": "changeLayout",
+      "false": "download"
+    },
+    "changeLayout": {
+      "action": "click",
+      "target": "changeLayout.btn",
+      "next": "adoptLayout"
+    },
+    "adoptLayout": {
+      "action": "click",
+      "target": "changeLayout.adopt",
+      "next": "download"
+    },
+    "download": {
+      "action": "click",
+      "target": "saveAs.btn",
       "next": "end"
     },
     "end": {
       "action": "exit"
     }
-  },
-  "metadata": {
-    "tcode": "mb25",
-    "version": "1.0",
-    "created": "2025-06-23",
-    "controlTypes": [
-      "GuiTextField",
-      "__ComObject",
-      "GuiCheckBox",
-      "GuiMainWindow",
-      "GuiButton",
-      "GuiFrameWindow"
-    ]
   }
 }

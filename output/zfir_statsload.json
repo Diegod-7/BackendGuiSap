@@ -4,329 +4,138 @@
       "action": "callProgram",
       "method": "sapSession.StartTransaction",
       "paramKey": "Tcode",
-      "next": "step1"
+      "next": "ZSCLI.waitScreen"
     },
-    "step1": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KOKRS-LOW",
-      "next": "step2",
-      "controlType": "GuiTextField"
+    "ZSCLI": {
+      "waitScreen": {
+        "action": "waitFor",
+        "target": "Cost Center Stats Load",
+        "timeout": "5s",
+        "next": "setControllingArea"
+      },
+      "setControllingArea": {
+        "action": "set",
+        "target": "Controlling Area Low",
+        "next": "setCompanyCodeLow"
+      },
+      "setCompanyCodeLow": {
+        "action": "set",
+        "target": "Company Code LOW",
+        "next": "setCompanyCodeHigh"
+      },
+      "setCompanyCodeHigh": {
+        "action": "set",
+        "target": "Company Code HIGH",
+        "next": "setFiscalActualLow"
+      },
+      "setFiscalActualLow": {
+        "action": "set",
+        "target": "Fiscal Period Actual(YYYYMM) LOW",
+        "next": "setFiscalActualHigh"
+      },
+      "setFiscalActualHigh": {
+        "action": "set",
+        "target": "Fiscal Period Actual(YYYYMM) HIGH",
+        "next": "setForecastVersion"
+      },
+      "setForecastVersion": {
+        "action": "set",
+        "target": "ctxtS_VERSN-LOW",
+        "next": "setForecastPeriodLow"
+      },
+      "setForecastPeriodLow": {
+        "action": "set",
+        "target": "Forecast Period(YYYYMM) LOW",
+        "next": "setForecastPeriodHigh"
+      },
+      "setForecastPeriodHigh": {
+        "action": "set",
+        "target": "Forecast Period(YYYYMM) HIGH",
+        "next": "setCostElementGroup"
+      },
+      "setCostElementGroup": {
+        "action": "set",
+        "target": "Cost Element Group Low",
+        "next": "setCostCenterCategory"
+      },
+      "setCostCenterCategory": {
+        "action": "set",
+        "target": "Cost Center Category",
+        "next": "setProfitCenter"
+      },
+      "setProfitCenter": {
+        "action": "set",
+        "target": "Profit Center",
+        "next": "execute"
+      },
+      "execute": {
+        "action": "click",
+        "target": "Execute   (F8)",
+        "next": "ZSCLO.waitGrid"
+      }
     },
-    "step2": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KOKRS-LOW",
-      "paramKey": "SKokrsLow",
-      "next": "step3",
-      "paramValue": "2000",
-      "controlType": "GuiTextField"
+    "ZSCLO::1": {
+      "waitGrid": {
+        "action": "waitFor",
+        "target": "detailgrid",
+        "timeout": "5s",
+        "next": "clickExport"
+      },
+      "clickExport": {
+        "action": "click",
+        "target": "export",
+        "next": "clickSpreadsheet"
+      },
+      "clickSpreadsheet": {
+        "action": "click",
+        "target": "spreadsheet",
+        "next": "SELSS.waitDialog"
+      }
     },
-    "step3": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BUKRS-LOW",
-      "next": "step4",
-      "controlType": "GuiTextField"
+    "SELSS": {
+      "waitDialog": {
+        "action": "waitFor",
+        "target": "Select Spreadsheet",
+        "timeout": "3s",
+        "next": "pressContinue"
+      },
+      "pressContinue": {
+        "action": "click",
+        "target": "Continue   (Enter)",
+        "next": "handleSaveAs"
+      },
+      "handleSaveAs": {
+        "action": "saveas",
+        "timeout": "15s",
+        "next": "resetSAP.main"
+      }
     },
-    "step4": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BUKRS-LOW",
-      "paramKey": "SBukrsLow",
-      "next": "step5",
-      "paramValue": "2000",
-      "controlType": "GuiTextField"
-    },
-    "step5": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-LOW",
-      "next": "step6",
-      "controlType": "GuiTextField"
-    },
-    "step6": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BUKRS-HIGH",
-      "next": "step7",
-      "controlType": "GuiTextField"
-    },
-    "step7": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BUKRS-HIGH",
-      "paramKey": "SBukrsHigh",
-      "next": "step8",
-      "paramValue": "2100",
-      "controlType": "GuiTextField"
-    },
-    "step8": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-LOW",
-      "next": "step9",
-      "controlType": "GuiTextField"
-    },
-    "step9": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PERIO_%_APP_%-TEXT",
-      "next": "step10",
-      "controlType": "GuiTextField"
-    },
-    "step10": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-LOW",
-      "next": "step11",
-      "controlType": "GuiTextField"
-    },
-    "step11": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-HIGH",
-      "next": "step12",
-      "controlType": "GuiTextField"
-    },
-    "step12": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_VERSN_%_APP_%-TEXT",
-      "next": "step13",
-      "controlType": "GuiTextField"
-    },
-    "step13": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_VERSN-LOW",
-      "next": "step14",
-      "controlType": "GuiTextField"
-    },
-    "step14": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_FRCST_%_APP_%-TEXT",
-      "next": "step15",
-      "controlType": "GuiTextField"
-    },
-    "step15": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_FRCST-LOW",
-      "next": "step16",
-      "controlType": "GuiTextField"
-    },
-    "step16": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_FRCST-HIGH",
-      "next": "step17",
-      "controlType": "GuiTextField"
-    },
-    "step17": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_CEG_%_APP_%-TEXT",
-      "next": "step18",
-      "controlType": "GuiTextField"
-    },
-    "step18": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_CEG-LOW",
-      "next": "step19",
-      "controlType": "GuiTextField"
-    },
-    "step19": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_CEG-LOW",
-      "paramKey": "SCegLow",
-      "next": "step20",
-      "paramValue": "CE_STD",
-      "controlType": "GuiTextField"
-    },
-    "step20": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step21",
-      "controlType": "__ComObject"
-    },
-    "step21": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_KOSAR_%_APP_%-TEXT",
-      "next": "step22",
-      "controlType": "GuiTextField"
-    },
-    "step22": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KOSAR-LOW",
-      "next": "step23",
-      "controlType": "GuiTextField"
-    },
-    "step23": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_KOSAR-HIGH",
-      "next": "step24",
-      "controlType": "GuiTextField"
-    },
-    "step24": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txt%_S_PRCTR_%_APP_%-TEXT",
-      "next": "step25",
-      "controlType": "GuiTextField"
-    },
-    "step25": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PRCTR-LOW",
-      "next": "step26",
-      "controlType": "GuiTextField"
-    },
-    "step26": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[8]",
-      "next": "step27",
-      "controlType": "GuiButton"
-    },
-    "step27": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-LOW",
-      "next": "step28",
-      "controlType": "GuiTextField"
-    },
-    "step28": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-LOW",
-      "paramKey": "SPerioLow",
-      "next": "step29",
-      "paramValue": "01.01.",
-      "controlType": "GuiTextField"
-    },
-    "step29": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step30",
-      "controlType": "__ComObject"
-    },
-    "step30": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_VERSN-LOW",
-      "next": "step31",
-      "controlType": "GuiTextField"
-    },
-    "step31": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/txtS_PERIO-HIGH",
-      "next": "step32",
-      "controlType": "GuiTextField"
-    },
-    "step32": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
-      "next": "step33",
-      "controlType": "GuiButton"
-    },
-    "step33": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[3]",
-      "next": "step34",
-      "controlType": "GuiButton"
-    },
-    "step34": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PRCTR-LOW",
-      "next": "step35",
-      "controlType": "GuiTextField"
-    },
-    "step35": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_PRCTR-LOW",
-      "paramKey": "SPrctrLow",
-      "next": "step36",
-      "paramValue": "2000",
-      "controlType": "GuiTextField"
-    },
-    "step36": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step37",
-      "controlType": "__ComObject"
-    },
-    "step37": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[12]",
-      "next": "step38",
-      "controlType": "GuiButton"
-    },
-    "step38": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step39",
-      "controlType": "__ComObject"
-    },
-    "step39": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step40",
-      "controlType": "GuiGridView"
-    },
-    "step40": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
-      "next": "step41",
-      "controlType": "GuiButton"
-    },
-    "step41": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
-      "next": "step42",
-      "controlType": "GuiButton"
-    },
-    "step42": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
-      "next": "step43",
-      "controlType": "GuiGridView"
-    },
-    "step43": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING",
-      "next": "step44",
-      "controlType": "GuiButton"
-    },
-    "step44": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
-      "next": "step45",
-      "controlType": "GuiGridView"
-    },
-    "step45": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING",
-      "next": "step46",
-      "controlType": "GuiButton"
-    },
-    "step46": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step47",
-      "controlType": "GuiGridView"
-    },
-    "step47": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
-      "next": "step48",
-      "controlType": "GuiButton"
-    },
-    "step48": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/cmbG_LISTBOX",
-      "next": "step49",
-      "controlType": "GuiComboBox"
-    },
-    "step49": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
-      "controlType": "__ComObject",
-      "next": "end"
-    },
-    "end": {
-      "action": "exit"
+    "resetSAP": {
+      "main": {
+        "action": "reset"
+      }
     }
   },
-  "metadata": {
-    "tcode": "zfir_statsload",
-    "version": "1.0",
-    "created": "2025-06-23",
-    "controlTypes": [
-      "GuiTextField",
-      "__ComObject",
-      "GuiButton",
-      "GuiMainWindow",
-      "GuiGridView",
-      "GuiComboBox"
-    ]
+  "$meta": {
+    "tcode": "ZFIR_STATSLOAD",
+    "description": "Carga estad�sticas de Cost Center y exporta ALV."
+  },
+  "targetContext": {
+    "ZSCLI": {
+      "FriendlyName": "Cost Center Stats Load",
+      "deepaliases": {
+        "ctxtS_VERSN-LOW": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_VERSN-LOW"
+      }
+    },
+    "ZSCLO": {
+      "FriendlyName": "FIN NAOM Stats Load",
+      "waitMax": "25s",
+      "deepaliases": {
+        "detailgrid": "/app/con[0]/ses[0]/wnd[0]/usr/tabsMAIN_TAB/tabpDET/ssubDETAIL_REF:ZRPT_FI_STATSLOADN:9100/cntlCC_9100/shellcont/shell",
+        "export": "/app/con[0]/ses[0]/wnd[0]/usr/tabsMAIN_TAB/tabpDET/ssubDETAIL_REF:ZRPT_FI_STATSLOADN:9100/cntlCC_9100/shellcont/shell/tbarbtn#&MB_EXPORT",
+        "spreadsheet": "/app/con[0]/ses[0]/wnd[0]/usr/tabsMAIN_TAB/tabpDET/ssubDETAIL_REF:ZRPT_FI_STATSLOADN:9100/cntlCC_9100/shellcont/shell/tbarbtn#&XXL"
+      }
+    },
+    "SELSS": "Select Spreadsheet"
   }
 }

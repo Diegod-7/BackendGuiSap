@@ -1,0 +1,30 @@
+{
+  "totalTests": 22,
+  "byCategory": {
+    "FUNCIONAL": 6,
+    "API": 6,
+    "ERROR": 4,
+    "INTEGRACION": 2,
+    "FORMATO": 2,
+    "REGRESION": 2
+  },
+  "byPriority": {
+    "Alta": 11,
+    "Media": 11
+  },
+  "byModule": {
+    "Procesamiento de Archivos": 4,
+    "Nuevas Transacciones": 2,
+    "Eliminación mainFlow": 1,
+    "SAP Targets API": 3,
+    "Flows API": 3,
+    "API Endpoints": 3,
+    "Flujo Completo": 1,
+    "Compatibilidad": 1,
+    "Detección de Formato": 1,
+    "Preservación de Estructura": 1,
+    "Funcionalidad Existente": 1,
+    "Performance": 1
+  },
+  "totalEffort": 680
+}

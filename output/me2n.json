@@ -1,0 +1,298 @@
+{
+  "steps": {
+    "startTransaction": {
+      "action": "callProgram",
+      "method": "sapSession.StartTransaction",
+      "paramKey": "Tcode",
+      "next": "waitVariant"
+    },
+    "waitVariant": {
+      "action": "waitFor",
+      "target": "variant.window",
+      "timeout": "30s",
+      "next": "setScopeOfList"
+    },
+    "setScopeOfList": {
+      "action": "set",
+      "target": "me2n.filter.scopeOfList",
+      "paramKey": "ScopeofList",
+      "next": "setValidityKeyDate"
+    },
+    "setValidityKeyDate": {
+      "action": "set",
+      "target": "me2n.filter.validityKeyDate",
+      "paramKey": "ValidityKeyDate",
+      "next": "setRangeofCoverageto"
+    },
+    "setRangeofCoverageto": {
+      "action": "set",
+      "target": "me2n.filter.rangeofCoverageto",
+      "paramKey": "RangeofCoverageto",
+      "next": "setVendorLow"
+    },
+    "setVendorLow": {
+      "action": "set",
+      "target": "me2n.filter.vendorLow",
+      "paramKey": "VendorLow",
+      "next": "setVendorHigh"
+    },
+    "setVendorHigh": {
+      "action": "set",
+      "target": "me2n.filter.vendorHigh",
+      "paramKey": "VendorHigh",
+      "next": "setPurchasingOrganizationLow"
+    },
+    "setPurchasingOrganizationLow": {
+      "action": "set",
+      "target": "me2n.filter.purchasingOrganizationLow",
+      "paramKey": "PurchasingOrganizationLow",
+      "next": "setPurchasingOrganizationHigh"
+    },
+    "setPurchasingOrganizationHigh": {
+      "action": "set",
+      "target": "me2n.filter.purchasingOrganizationHigh",
+      "paramKey": "PurchasingOrganizationHigh",
+      "next": "setSelectionParametersLow"
+    },
+    "setSelectionParametersLow": {
+      "action": "set",
+      "target": "me2n.filter.selectionParametersLow",
+      "paramKey": "SelectionParametersLow",
+      "next": "setSelectionParametersHigh"
+    },
+    "setSelectionParametersHigh": {
+      "action": "set",
+      "target": "me2n.filter.selectionParametersHigh",
+      "paramKey": "SelectionParametersHigh",
+      "next": "setDocumentTypeLow"
+    },
+    "setDocumentTypeLow": {
+      "action": "set",
+      "target": "me2n.filter.documentTypeLow",
+      "paramKey": "DocumentTypeLow",
+      "next": "setDocumentTypeHigh"
+    },
+    "setDocumentTypeHigh": {
+      "action": "set",
+      "target": "me2n.filter.documentTypeHigh",
+      "paramKey": "DocumentTypeHigh",
+      "next": "setPurchasingGroupLow"
+    },
+    "setPurchasingGroupLow": {
+      "action": "set",
+      "target": "me2n.filter.purchasingGroupLow",
+      "paramKey": "PurchasingGroupLow",
+      "next": "setPurchasingGroupHigh"
+    },
+    "setPurchasingGroupHigh": {
+      "action": "set",
+      "target": "me2n.filter.purchasingGroupHigh",
+      "paramKey": "PurchasingGroupHigh",
+      "next": "setPlantLow"
+    },
+    "setPlantLow": {
+      "action": "set",
+      "target": "me2n.filter.plantLow",
+      "paramKey": "PlantLow",
+      "next": "setPlantHigh"
+    },
+    "setPlantHigh": {
+      "action": "set",
+      "target": "me2n.filter.plantHigh",
+      "paramKey": "PlantHigh",
+      "next": "setItemCategoryLow"
+    },
+    "setItemCategoryLow": {
+      "action": "set",
+      "target": "me2n.filter.itemCategoryLow",
+      "paramKey": "ItemCategoryLow",
+      "next": "setItemCategoryHigh"
+    },
+    "setItemCategoryHigh": {
+      "action": "set",
+      "target": "me2n.filter.itemCategoryHigh",
+      "paramKey": "ItemCategoryHigh",
+      "next": "setAccountAssignmentCategoryLow"
+    },
+    "setAccountAssignmentCategoryLow": {
+      "action": "set",
+      "target": "me2n.filter.accountAssignmentCategoryLow",
+      "paramKey": "AccountAssignmentCategoryLow",
+      "next": "setAccountAssignmentCategoryHigh"
+    },
+    "setAccountAssignmentCategoryHigh": {
+      "action": "set",
+      "target": "me2n.filter.accountAssignmentCategoryHigh",
+      "paramKey": "AccountAssignmentCategoryHigh",
+      "next": "setDeliveryDateLow"
+    },
+    "setDeliveryDateLow": {
+      "action": "set",
+      "target": "me2n.filter.deliveryDateLow",
+      "paramKey": "DeliveryDateLow",
+      "next": "setDeliveryDateHigh"
+    },
+    "setDeliveryDateHigh": {
+      "action": "set",
+      "target": "me2n.filter.deliveryDateHigh",
+      "paramKey": "DeliveryDateHigh",
+      "next": "setDocumentNumberLow"
+    },
+    "setDocumentNumberLow": {
+      "action": "set",
+      "target": "me2n.filter.documentNumberLow",
+      "paramKey": "DocumentNumberLow",
+      "next": "setDocumentNumberHigh"
+    },
+    "setDocumentNumberHigh": {
+      "action": "set",
+      "target": "me2n.filter.documentNumberHigh",
+      "paramKey": "DocumentNumberHigh",
+      "next": "setMaterialLow"
+    },
+    "setMaterialLow": {
+      "action": "set",
+      "target": "me2n.filter.materialLow",
+      "paramKey": "MaterialLow",
+      "next": "setMaterialHigh"
+    },
+    "setMaterialHigh": {
+      "action": "set",
+      "target": "me2n.filter.materialHigh",
+      "paramKey": "MaterialHigh",
+      "next": "setMaterialGroupLow"
+    },
+    "setMaterialGroupLow": {
+      "action": "set",
+      "target": "me2n.filter.materialGroupLow",
+      "paramKey": "MaterialGroupLow",
+      "next": "setMaterialGroupHigh"
+    },
+    "setMaterialGroupHigh": {
+      "action": "set",
+      "target": "me2n.filter.materialGroupHigh",
+      "paramKey": "MaterialGroupHigh",
+      "next": "setDocumentDateLow"
+    },
+    "setDocumentDateLow": {
+      "action": "set",
+      "target": "me2n.filter.documentDateLow",
+      "paramKey": "DocumentDateLow",
+      "next": "setDocumentDateHigh"
+    },
+    "setDocumentDateHigh": {
+      "action": "set",
+      "target": "me2n.filter.documentDateHigh",
+      "paramKey": "DocumentDateHigh",
+      "next": "setVendorSubrangeLow"
+    },
+    "setVendorSubrangeLow": {
+      "action": "set",
+      "target": "me2n.filter.vendorSubrangeLow",
+      "paramKey": "VendorSubrangeLow",
+      "next": "setVendorSubrangeHigh"
+    },
+    "setVendorSubrangeHigh": {
+      "action": "set",
+      "target": "me2n.filter.vendorSubrangeHigh",
+      "paramKey": "VendorSubrangeHigh",
+      "next": "setPromotionLow"
+    },
+    "setPromotionLow": {
+      "action": "set",
+      "target": "me2n.filter.promotionLow",
+      "paramKey": "PromotionLow",
+      "next": "setPromotionHigh"
+    },
+    "setPromotionHigh": {
+      "action": "set",
+      "target": "me2n.filter.promotionHigh",
+      "paramKey": "PromotionHigh",
+      "next": "setSeasonLow"
+    },
+    "setSeasonLow": {
+      "action": "set",
+      "target": "me2n.filter.seasonLow",
+      "paramKey": "SeasonLow",
+      "next": "setSeasonHigh"
+    },
+    "setSeasonHigh": {
+      "action": "set",
+      "target": "me2n.filter.seasonHigh",
+      "paramKey": "SeasonHigh",
+      "next": "clickExecute"
+    },
+    "clickExecute": {
+      "action": "click",
+      "target": "variant.execBtn",
+      "next": "waitProcessing"
+    },
+    "waitProcessing": {
+      "action": "waitFor",
+      "target": "processing",
+      "timeout": "60s",
+      "next": "checkError"
+    },
+    "checkError": {
+      "action": "condition",
+      "target": "errorDialog",
+      "operator": "exists",
+      "true": "notifyErr",
+      "false": "handleLayout"
+    },
+    "notifyErr": {
+      "action": "notify",
+      "paramKey": "ErrorMessage",
+      "next": "end"
+    },
+    "handleLayout": {
+      "action": "condition",
+      "paramKey": "HasLayout",
+      "operator": "==",
+      "value": true,
+      "true": "chooseLayout",
+      "false": "handleColumns"
+    },
+    "chooseLayout": {
+      "action": "click",
+      "target": "chooseLayout.btn",
+      "next": "setLayoutName"
+    },
+    "setLayoutName": {
+      "action": "set",
+      "target": "chooseLayout.table",
+      "paramKey": "LayoutName",
+      "next": "confirmLayout"
+    },
+    "confirmLayout": {
+      "action": "click",
+      "target": "chooseLayout.confirm",
+      "next": "handleColumns"
+    },
+    "handleColumns": {
+      "action": "condition",
+      "paramKey": "Columns",
+      "operator": "exists",
+      "true": "changeLayout",
+      "false": "download"
+    },
+    "changeLayout": {
+      "action": "click",
+      "target": "changeLayout.btn",
+      "next": "adoptLayout"
+    },
+    "adoptLayout": {
+      "action": "click",
+      "target": "changeLayout.adopt",
+      "next": "download"
+    },
+    "download": {
+      "action": "click",
+      "target": "saveAs.btn",
+      "next": "end"
+    },
+    "end": {
+      "action": "exit"
+    }
+  }
+}

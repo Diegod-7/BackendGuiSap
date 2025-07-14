@@ -4,518 +4,385 @@
       "action": "callProgram",
       "method": "sapSession.StartTransaction",
       "paramKey": "Tcode",
-      "next": "step1"
+      "next": "waitVariant"
     },
-    "step1": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
-      "next": "step2",
-      "controlType": "GuiTextField"
+    "waitVariant": {
+      "action": "waitFor",
+      "target": "variant.window",
+      "timeout": "30s",
+      "next": "setAssignedPRs"
     },
-    "step2": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step3",
-      "controlType": "__ComObject"
-    },
-    "step3": {
+    "setAssignedPRs": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
-      "paramKey": "BaEkgrpHigh",
-      "next": "step4",
-      "paramValue": "900",
-      "controlType": "GuiTextField"
-    },
-    "step4": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
-      "next": "step5",
-      "controlType": "GuiTextField"
-    },
-    "step5": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
-      "next": "step6",
-      "controlType": "GuiTextField"
-    },
-    "step6": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
-      "paramKey": "BaEkgrpHigh",
-      "next": "step7",
-      "paramValue": "900",
-      "controlType": "GuiTextField"
-    },
-    "step7": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
-      "paramKey": "PLstub",
-      "next": "step8",
-      "paramValue": "ALV",
-      "controlType": "GuiTextField"
-    },
-    "step8": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
-      "next": "step9",
-      "controlType": "GuiTextField"
-    },
-    "step9": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step10",
-      "controlType": "__ComObject"
-    },
-    "step10": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]",
-      "next": "step11",
-      "controlType": "GuiFrameWindow"
-    },
-    "step11": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
-      "next": "step12",
-      "controlType": "GuiTextField"
-    },
-    "step12": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
-      "paramKey": "SWerksLow",
-      "next": "step13",
-      "paramValue": "2000",
-      "controlType": "GuiTextField"
-    },
-    "step13": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/lbl[1,4]",
-      "next": "step14",
-      "controlType": "__ComObject"
-    },
-    "step14": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_BSART-LOW",
-      "next": "step15",
-      "controlType": "GuiTextField"
-    },
-    "step15": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step16",
-      "controlType": "__ComObject"
-    },
-    "step16": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
-      "next": "step17",
-      "controlType": "GuiTextField"
-    },
-    "step17": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ZUGBA",
-      "next": "step18",
-      "controlType": "GuiCheckBox"
-    },
-    "step18": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
-      "paramKey": "SWerksHigh",
-      "next": "step19",
-      "paramValue": "2200",
-      "controlType": "GuiTextField"
-    },
-    "step19": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ZUGBA",
+      "target": "me5a.filter.assignedPurchaseRequisitions",
       "paramKey": "AssignedPurchaseRequisitions",
-      "next": "step20",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setAlsoListHeld"
     },
-    "step20": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step21",
-      "controlType": "__ComObject"
-    },
-    "step21": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ZUGBA",
-      "next": "step22",
-      "controlType": "GuiCheckBox"
-    },
-    "step22": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
-      "next": "step23",
-      "controlType": "GuiButton"
-    },
-    "step23": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_MEMORY",
-      "next": "step24",
-      "controlType": "GuiCheckBox"
-    },
-    "step24": {
+    "setAlsoListHeld": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_MEMORY",
-      "paramKey": "AlsoListHeldPreqs",
-      "next": "step25",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "target": "me5a.filter.alsoListHeldPReqs",
+      "paramKey": "AlsoListHeldPReqs",
+      "next": "setClosedReqs"
     },
-    "step25": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_MEMORY",
-      "next": "step26",
-      "controlType": "GuiCheckBox"
-    },
-    "step26": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
-      "next": "step27",
-      "controlType": "GuiGridView"
-    },
-    "step27": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ERLBA",
-      "next": "step28",
-      "controlType": "GuiCheckBox"
-    },
-    "step28": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
-      "next": "step29",
-      "controlType": "GuiGridView"
-    },
-    "step29": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_BSTBA",
-      "next": "step30",
-      "controlType": "GuiCheckBox"
-    },
-    "step30": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step31",
-      "controlType": "GuiGridView"
-    },
-    "step31": {
+    "setClosedReqs": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_BSTBA",
+      "target": "me5a.filter.closedRequisitions",
+      "paramKey": "ClosedRequisitions",
+      "next": "setPartlyOrdered"
+    },
+    "setPartlyOrdered": {
+      "action": "set",
+      "target": "me5a.filter.partlyOrderedRequisitions",
       "paramKey": "PartlyOrderedRequisitions",
-      "next": "step32",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setReleasedOnly"
     },
-    "step32": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step33",
-      "controlType": "GuiGridView"
-    },
-    "step33": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_BSTBA",
-      "next": "step34",
-      "controlType": "GuiCheckBox"
-    },
-    "step34": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
-      "next": "step35",
-      "controlType": "GuiButton"
-    },
-    "step35": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
-      "next": "step36",
-      "controlType": "GuiCheckBox"
-    },
-    "step36": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step37",
-      "controlType": "GuiGridView"
-    },
-    "step37": {
+    "setReleasedOnly": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
+      "target": "me5a.filter.releasedRequisitionsOnly",
       "paramKey": "ReleasedRequisitionsOnly",
-      "next": "step38",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "next": "setOverallRelease"
     },
-    "step38": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step39",
-      "controlType": "GuiGridView"
-    },
-    "step39": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
-      "next": "step40",
-      "controlType": "GuiCheckBox"
-    },
-    "step40": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step41",
-      "controlType": "GuiGridView"
-    },
-    "step41": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELGS",
-      "next": "step42",
-      "controlType": "GuiCheckBox"
-    },
-    "step42": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step43",
-      "controlType": "GuiGridView"
-    },
-    "step43": {
+    "setOverallRelease": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELGS",
-      "paramKey": "RequisnsForOverallRelease",
-      "next": "step44",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "target": "me5a.filter.requisnsforOverallRelease",
+      "paramKey": "RequisnsforOverallRelease",
+      "next": "setItemWiseRelease"
     },
-    "step44": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step45",
-      "controlType": "GuiGridView"
-    },
-    "step45": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELGS",
-      "next": "step46",
-      "controlType": "GuiCheckBox"
-    },
-    "step46": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[33]",
-      "next": "step47",
-      "controlType": "GuiButton"
-    },
-    "step47": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_FREIG",
-      "next": "step48",
-      "controlType": "GuiCheckBox"
-    },
-    "step48": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELPO",
-      "next": "step49",
-      "controlType": "GuiCheckBox"
-    },
-    "step49": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
-      "next": "step50",
-      "controlType": "GuiGridView"
-    },
-    "step50": {
+    "setItemWiseRelease": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELPO",
-      "paramKey": "RequisnsForItemWiseRelease",
-      "next": "step51",
-      "paramValue": false,
-      "controlType": "GuiCheckBox"
+      "target": "me5a.filter.requisnsforItemWiseRelease",
+      "paramKey": "RequisnsforItemWiseRelease",
+      "next": "setScopeOfList"
     },
-    "step51": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
-      "next": "step52",
-      "controlType": "GuiGridView"
-    },
-    "step52": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_SELPO",
-      "next": "step53",
-      "controlType": "GuiCheckBox"
-    },
-    "step53": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
-      "next": "step54",
-      "controlType": "GuiGridView"
-    },
-    "step54": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/chkP_ERLBA",
-      "next": "step55",
-      "controlType": "GuiCheckBox"
-    },
-    "step55": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/subSUB_CONFIGURATION:SAPLSALV_CUL_LAYOUT_CHOOSE:0500/cntlD500_CONTAINER/shellcont/shell",
-      "next": "step56",
-      "controlType": "GuiGridView"
-    },
-    "step56": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
-      "next": "step57",
-      "controlType": "__ComObject"
-    },
-    "step57": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
-      "next": "step58",
-      "controlType": "GuiGridView"
-    },
-    "step58": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[34]",
-      "next": "step59",
-      "controlType": "GuiButton"
-    },
-    "step59": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/titl",
-      "next": "step60",
-      "controlType": "__ComObject"
-    },
-    "step60": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/cntlGRID1/shellcont/shell",
-      "next": "step61",
-      "controlType": "GuiGridView"
-    },
-    "step61": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]",
-      "next": "step62",
-      "controlType": "__ComObject"
-    },
-    "step62": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[43]",
-      "next": "step63",
-      "controlType": "GuiButton"
-    },
-    "step63": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/okcd",
-      "next": "step64",
-      "controlType": "__ComObject"
-    },
-    "step64": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[0]/btn[0]",
-      "next": "step65",
-      "controlType": "GuiButton"
-    },
-    "step65": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
-      "next": "step66",
-      "controlType": "GuiTextField"
-    },
-    "step66": {
+    "setScopeOfList": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtBA_EKGRP-HIGH",
-      "paramKey": "BaEkgrpHigh",
-      "next": "step67",
-      "paramValue": "900",
-      "controlType": "GuiTextField"
+      "target": "me5a.filter.scopeOfList",
+      "paramKey": "ScopeofList",
+      "next": "setRequisitioner"
     },
-    "step67": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
-      "next": "step68",
-      "controlType": "GuiTextField"
-    },
-    "step68": {
+    "setRequisitioner": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtP_LSTUB",
-      "paramKey": "PLstub",
-      "next": "step69",
-      "paramValue": "ALV",
-      "controlType": "GuiTextField"
+      "target": "me5a.filter.requisitioner",
+      "paramKey": "Requisitioner",
+      "next": "setSortIndicator"
     },
-    "step69": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
-      "next": "step70",
-      "controlType": "GuiTextField"
-    },
-    "step70": {
+    "setSortIndicator": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-LOW",
-      "paramKey": "SWerksLow",
-      "next": "step71",
-      "paramValue": "2000",
-      "controlType": "GuiTextField"
+      "target": "me5a.filter.sortIndicator",
+      "paramKey": "SortIndicator",
+      "next": "setPRLow"
     },
-    "step71": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step72",
-      "controlType": "__ComObject"
-    },
-    "step72": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
-      "next": "step73",
-      "controlType": "GuiTextField"
-    },
-    "step73": {
+    "setPRLow": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
-      "paramKey": "SWerksHigh",
-      "next": "step74",
-      "paramValue": "2100",
-      "controlType": "GuiTextField"
+      "target": "me5a.filter.purchaserequisitionLow",
+      "paramKey": "PurchaserequisitionLow",
+      "next": "setPRHigh"
     },
-    "step74": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
-      "next": "step75",
-      "controlType": "GuiTextField"
-    },
-    "step75": {
+    "setPRHigh": {
       "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtS_WERKS-HIGH",
-      "paramKey": "SWerksHigh",
-      "next": "step76",
-      "paramValue": "2200",
-      "controlType": "GuiTextField"
+      "target": "me5a.filter.purchaserequisitionHigh",
+      "paramKey": "PurchaserequisitionHigh",
+      "next": "setPurchasingGroupLow"
     },
-    "step76": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step77",
-      "controlType": "__ComObject"
+    "setPurchasingGroupLow": {
+      "action": "set",
+      "target": "me5a.filter.purchasingGroupLow",
+      "paramKey": "PurchasingGroupLow",
+      "next": "setPurchasingGroupHigh"
     },
-    "step77": {
+    "setPurchasingGroupHigh": {
+      "action": "set",
+      "target": "me5a.filter.purchasingGroupHigh",
+      "paramKey": "PurchasingGroupHigh",
+      "next": "setMaterialLow"
+    },
+    "setMaterialLow": {
+      "action": "set",
+      "target": "me5a.filter.materialLow",
+      "paramKey": "MaterialLow",
+      "next": "setMaterialHigh"
+    },
+    "setMaterialHigh": {
+      "action": "set",
+      "target": "me5a.filter.materialHigh",
+      "paramKey": "MaterialHigh",
+      "next": "setMaterialGroupLow"
+    },
+    "setMaterialGroupLow": {
+      "action": "set",
+      "target": "me5a.filter.materialgroupLow",
+      "paramKey": "MaterialgroupLow",
+      "next": "setMaterialGroupHigh"
+    },
+    "setMaterialGroupHigh": {
+      "action": "set",
+      "target": "me5a.filter.materialgroupHigh",
+      "paramKey": "MaterialgroupHigh",
+      "next": "setPlantLow"
+    },
+    "setPlantLow": {
+      "action": "set",
+      "target": "me5a.filter.plantLow",
+      "paramKey": "PlantLow",
+      "next": "setPlantHigh"
+    },
+    "setPlantHigh": {
+      "action": "set",
+      "target": "me5a.filter.plantHigh",
+      "paramKey": "PlantHigh",
+      "next": "setDocumentTypeLow"
+    },
+    "setDocumentTypeLow": {
+      "action": "set",
+      "target": "me5a.filter.documentTypeLow",
+      "paramKey": "DocumentTypeLow",
+      "next": "setDocumentTypeHigh"
+    },
+    "setDocumentTypeHigh": {
+      "action": "set",
+      "target": "me5a.filter.documentTypeHigh",
+      "paramKey": "DocumentTypeHigh",
+      "next": "setItemCategoryLow"
+    },
+    "setItemCategoryLow": {
+      "action": "set",
+      "target": "me5a.filter.itemCategoryLow",
+      "paramKey": "ItemCategoryLow",
+      "next": "setItemCategoryHigh"
+    },
+    "setItemCategoryHigh": {
+      "action": "set",
+      "target": "me5a.filter.itemCategoryHigh",
+      "paramKey": "ItemCategoryHigh",
+      "next": "setAccountCatLow"
+    },
+    "setAccountCatLow": {
+      "action": "set",
+      "target": "me5a.filter.accountAssignmentCategoryLow",
+      "paramKey": "AccountAssignmentCategoryLow",
+      "next": "setAccountCatHigh"
+    },
+    "setAccountCatHigh": {
+      "action": "set",
+      "target": "me5a.filter.accountAssignmentCategoryHigh",
+      "paramKey": "AccountAssignmentCategoryHigh",
+      "next": "setDeliveryDateLow"
+    },
+    "setDeliveryDateLow": {
+      "action": "set",
+      "target": "me5a.filter.deliveryDateLow",
+      "paramKey": "DeliveryDateLow",
+      "next": "setDeliveryDateHigh"
+    },
+    "setDeliveryDateHigh": {
+      "action": "set",
+      "target": "me5a.filter.deliveryDateHigh",
+      "paramKey": "DeliveryDateHigh",
+      "next": "setReleaseDateLow"
+    },
+    "setReleaseDateLow": {
+      "action": "set",
+      "target": "me5a.filter.releaseDateLow",
+      "paramKey": "ReleaseDateLow",
+      "next": "setReleaseDateHigh"
+    },
+    "setReleaseDateHigh": {
+      "action": "set",
+      "target": "me5a.filter.releaseDateHigh",
+      "paramKey": "ReleaseDateHigh",
+      "next": "setMaterialsPlannerCtrlLow"
+    },
+    "setMaterialsPlannerCtrlLow": {
+      "action": "set",
+      "target": "me5a.filter.materialsPlannerControllerLow",
+      "paramKey": "MaterialsPlannerControllerLow",
+      "next": "setMaterialsPlannerCtrlHigh"
+    },
+    "setMaterialsPlannerCtrlHigh": {
+      "action": "set",
+      "target": "me5a.filter.materialsPlannerControllerHigh",
+      "paramKey": "MaterialsPlannerControllerHigh",
+      "next": "setProcessingStatusLow"
+    },
+    "setProcessingStatusLow": {
+      "action": "set",
+      "target": "me5a.filter.processingStatusLow",
+      "paramKey": "ProcessingStatusLow",
+      "next": "setProcessingStatusHigh"
+    },
+    "setProcessingStatusHigh": {
+      "action": "set",
+      "target": "me5a.filter.processingStatusHigh",
+      "paramKey": "ProcessingStatusHigh",
+      "next": "setFixedVendorLow"
+    },
+    "setFixedVendorLow": {
+      "action": "set",
+      "target": "me5a.filter.fixedVendorLow",
+      "paramKey": "FixedVendorLow",
+      "next": "setFixedVendorHigh"
+    },
+    "setFixedVendorHigh": {
+      "action": "set",
+      "target": "me5a.filter.fixedVendorHigh",
+      "paramKey": "FixedVendorHigh",
+      "next": "setPReqStateLow"
+    },
+    "setPReqStateLow": {
+      "action": "set",
+      "target": "me5a.filter.pReqProcessingStateLow",
+      "paramKey": "PReqProcessingStateLow",
+      "next": "setPReqStateHigh"
+    },
+    "setPReqStateHigh": {
+      "action": "set",
+      "target": "me5a.filter.pReqProcessingStateHigh",
+      "paramKey": "PReqProcessingStateHigh",
+      "next": "setBlockingIndicatorLow"
+    },
+    "setBlockingIndicatorLow": {
+      "action": "set",
+      "target": "me5a.filter.blockingIndicatorLow",
+      "paramKey": "BlockingIndicatorLow",
+      "next": "setBlockingIndicatorHigh"
+    },
+    "setBlockingIndicatorHigh": {
+      "action": "set",
+      "target": "me5a.filter.blockingIndicatorHigh",
+      "paramKey": "BlockingIndicatorHigh",
+      "next": "setCostCenterLow"
+    },
+    "setCostCenterLow": {
+      "action": "set",
+      "target": "me5a.filter.costCenterLow",
+      "paramKey": "CostCenterLow",
+      "next": "setCostCenterHigh"
+    },
+    "setCostCenterHigh": {
+      "action": "set",
+      "target": "me5a.filter.costCenterHigh",
+      "paramKey": "CostCenterHigh",
+      "next": "setWbsLow"
+    },
+    "setWbsLow": {
+      "action": "set",
+      "target": "me5a.filter.wbsElementLow",
+      "paramKey": "WBSElementLow",
+      "next": "setWbsHigh"
+    },
+    "setWbsHigh": {
+      "action": "set",
+      "target": "me5a.filter.wbsElementHigh",
+      "paramKey": "WBSElementHigh",
+      "next": "setOrderLow"
+    },
+    "setOrderLow": {
+      "action": "set",
+      "target": "me5a.filter.orderLow",
+      "paramKey": "OrderLow",
+      "next": "setOrderHigh"
+    },
+    "setOrderHigh": {
+      "action": "set",
+      "target": "me5a.filter.orderHigh",
+      "paramKey": "OrderHigh",
+      "next": "setAssetLow"
+    },
+    "setAssetLow": {
+      "action": "set",
+      "target": "me5a.filter.assetLow",
+      "paramKey": "AssetLow",
+      "next": "setAssetHigh"
+    },
+    "setAssetHigh": {
+      "action": "set",
+      "target": "me5a.filter.assetHigh",
+      "paramKey": "AssetHigh",
+      "next": "setAssetSubnumberLow"
+    },
+    "setAssetSubnumberLow": {
+      "action": "set",
+      "target": "me5a.filter.assetSubnumberLow",
+      "paramKey": "AssetSubnumberLow",
+      "next": "setAssetSubnumberHigh"
+    },
+    "setAssetSubnumberHigh": {
+      "action": "set",
+      "target": "me5a.filter.assetSubnumberHigh",
+      "paramKey": "AssetSubnumberHigh",
+      "next": "clickExecute"
+    },
+    "clickExecute": {
       "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[28]",
-      "controlType": "GuiButton",
+      "target": "variant.execBtn",
+      "next": "waitProcessing"
+    },
+    "waitProcessing": {
+      "action": "waitFor",
+      "target": "processing",
+      "timeout": "60s",
+      "next": "checkError"
+    },
+    "checkError": {
+      "action": "condition",
+      "target": "errorDialog",
+      "operator": "exists",
+      "true": "notifyErr",
+      "false": "handleLayout"
+    },
+    "notifyErr": {
+      "action": "notify",
+      "paramKey": "ErrorMessage",
+      "next": "end"
+    },
+    "handleLayout": {
+      "action": "condition",
+      "paramKey": "HasLayout",
+      "operator": "==",
+      "value": true,
+      "true": "chooseLayout",
+      "false": "handleColumns"
+    },
+    "chooseLayout": {
+      "action": "click",
+      "target": "chooseLayout.btn",
+      "next": "setLayoutName"
+    },
+    "setLayoutName": {
+      "action": "set",
+      "target": "chooseLayout.table",
+      "paramKey": "LayoutName",
+      "next": "confirmLayout"
+    },
+    "confirmLayout": {
+      "action": "click",
+      "target": "chooseLayout.confirm",
+      "next": "handleColumns"
+    },
+    "handleColumns": {
+      "action": "condition",
+      "paramKey": "Columns",
+      "operator": "exists",
+      "true": "changeLayout",
+      "false": "download"
+    },
+    "changeLayout": {
+      "action": "click",
+      "target": "changeLayout.btn",
+      "next": "adoptLayout"
+    },
+    "adoptLayout": {
+      "action": "click",
+      "target": "changeLayout.adopt",
+      "next": "download"
+    },
+    "download": {
+      "action": "click",
+      "target": "saveAs.btn",
       "next": "end"
     },
     "end": {
       "action": "exit"
     }
-  },
-  "metadata": {
-    "tcode": "me5a",
-    "version": "1.0",
-    "created": "2025-06-23",
-    "controlTypes": [
-      "GuiMainWindow",
-      "GuiTextField",
-      "__ComObject",
-      "GuiFrameWindow",
-      "GuiCheckBox",
-      "GuiButton",
-      "GuiGridView"
-    ]
   }
 }

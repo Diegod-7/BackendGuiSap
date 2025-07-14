@@ -16,7 +16,7 @@ const { exec } = require('child_process');
 const parser = require('./lib/parser');
 const aliasGenerator = require('./lib/aliasGenerator');
 const flowGenerator = require('./lib/flowGenerator');
-const orchestrator = require('./lib/orchestrator');
+// const orchestrator = require('./lib/orchestrator'); // Ya no se usa mainFlow.json
 
 // Configuración
 const app = express();
@@ -396,29 +396,11 @@ app.post('/api/flow/upload', upload.single('file'), async (req, res) => {
                 });
             }
             
-            // 5. Generar archivo principal mainFlow.json
-            console.log('Generando archivo principal mainFlow.json...');
-            const mainFlowData = orchestrator.generateMainFlow(
-                Object.keys(parsedFlows),
-                prefixes,
-                aliases,
-                config.metaInfo
-            );
-            
-            const mainFlowPath = path.join(config.outputDir, 'mainFlow.json');
-            const mainFlowContent = JSON.stringify(mainFlowData, null, 2);
-            fs.writeFileSync(mainFlowPath, mainFlowContent);
-            console.log(`  - Generado ${mainFlowPath}`);
-            
-            outputFiles.push({
-                name: 'mainFlow.json',
-                path: mainFlowPath,
-                size: Buffer.byteLength(mainFlowContent),
-                modified: new Date(),
-                content: mainFlowContent
-            });
-            
-            console.log('Procesamiento completado con éxito');
+            console.log('✅ Procesamiento completado con éxito');
+            console.log(`📊 Estadísticas:`);
+            console.log(`   - Archivos procesados: ${inputFiles.length}`);
+            console.log(`   - Flujos generados: ${outputFiles.length}`);
+            console.log(`📝 Nota: mainFlow.json ya no se genera (descontinuado)`);
             
             // Devolver tanto los archivos originales como los procesados
             res.json({
@@ -512,28 +494,11 @@ app.post('/api/process', async (req, res) => {
             });
         }
         
-        // 5. Generar archivo principal mainFlow.json
-        console.log('Generando archivo principal mainFlow.json...');
-        const mainFlowData = orchestrator.generateMainFlow(
-            Object.keys(parsedFlows),
-            prefixes,
-            aliases,
-            config.metaInfo
-        );
-        
-        const mainFlowPath = path.join(config.outputDir, 'mainFlow.json');
-        fs.writeFileSync(mainFlowPath, JSON.stringify(mainFlowData, null, 2));
-        console.log(`  - Generado ${mainFlowPath}`);
-        
-        outputFiles.push({
-            name: 'mainFlow.json',
-            path: mainFlowPath,
-            size: fs.statSync(mainFlowPath).size,
-            modified: new Date(),
-            content: JSON.stringify(mainFlowData, null, 2)
-        });
-        
-        console.log('Procesamiento completado con éxito');
+        console.log('✅ Procesamiento completado con éxito');
+        console.log(`📊 Estadísticas:`);
+        console.log(`   - Archivos procesados: ${inputFiles.length}`);
+        console.log(`   - Flujos generados: ${outputFiles.length}`);
+        console.log(`📝 Nota: mainFlow.json ya no se genera (descontinuado)`);
         res.json({
             success: true,
             message: 'Archivos procesados correctamente',
@@ -745,6 +710,346 @@ app.get('/api/control-types', (req, res) => {
         });
     } catch (error) {
         console.error('Error al obtener tipos de controles:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// ===== ENDPOINTS PARA SAP-TARGETS =====
+
+// Obtener lista de archivos sap-targets disponibles
+app.get('/api/targets', (req, res) => {
+    try {
+        const targetsDir = path.join(__dirname, '..', 'sap-targets');
+        
+        if (!fs.existsSync(targetsDir)) {
+            return res.status(404).json({ 
+                error: 'Directorio sap-targets no encontrado',
+                path: targetsDir 
+            });
+        }
+        
+        const files = fs.readdirSync(targetsDir)
+            .filter(file => file.endsWith('.json'))
+            .map(filename => {
+                const filePath = path.join(targetsDir, filename);
+                const stats = fs.statSync(filePath);
+                const tcode = filename.replace('-targets.json', '').toUpperCase();
+                
+                return {
+                    name: filename,
+                    tcode: tcode,
+                    path: filePath,
+                    size: stats.size,
+                    modified: stats.mtime
+                };
+            });
+        
+        res.json({
+            success: true,
+            targets: files
+        });
+    } catch (error) {
+        console.error('Error al obtener archivos sap-targets:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Obtener contenido de un archivo sap-targets específico
+app.get('/api/targets/:tcode', (req, res) => {
+    try {
+        const { tcode } = req.params;
+        const targetsDir = path.join(__dirname, '..', 'sap-targets');
+        
+        // Buscar el archivo (puede tener diferentes formatos de nombre)
+        const possibleNames = [
+            `${tcode.toUpperCase()}-targets.json`,
+            `${tcode.toLowerCase()}-targets.json`,
+            `${tcode}-targets.json`
+        ];
+        
+        let targetFile = null;
+        for (const name of possibleNames) {
+            const filePath = path.join(targetsDir, name);
+            if (fs.existsSync(filePath)) {
+                targetFile = filePath;
+                break;
+            }
+        }
+        
+        if (!targetFile) {
+            return res.status(404).json({ 
+                error: `Archivo targets para ${tcode} no encontrado`,
+                searchedNames: possibleNames
+            });
+        }
+        
+        const content = fs.readFileSync(targetFile, 'utf8');
+        const targetsData = JSON.parse(content);
+        
+        res.json({
+            success: true,
+            tcode: tcode.toUpperCase(),
+            targets: targetsData
+        });
+    } catch (error) {
+        console.error(`Error al obtener targets para ${req.params.tcode}:`, error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Obtener controles organizados por tipo para un tcode específico
+app.get('/api/targets/:tcode/controls', (req, res) => {
+    try {
+        const { tcode } = req.params;
+        const targetsDir = path.join(__dirname, '..', 'sap-targets');
+        
+        // Buscar el archivo
+        const possibleNames = [
+            `${tcode.toUpperCase()}-targets.json`,
+            `${tcode.toLowerCase()}-targets.json`,
+            `${tcode}-targets.json`
+        ];
+        
+        let targetFile = null;
+        for (const name of possibleNames) {
+            const filePath = path.join(targetsDir, name);
+            if (fs.existsSync(filePath)) {
+                targetFile = filePath;
+                break;
+            }
+        }
+        
+        if (!targetFile) {
+            return res.status(404).json({ 
+                error: `Archivo targets para ${tcode} no encontrado`
+            });
+        }
+        
+        const content = fs.readFileSync(targetFile, 'utf8');
+        const targetsData = JSON.parse(content);
+        
+        // Organizar controles por tipo
+        const controlsByType = {};
+        const controlsByGroup = {};
+        
+        if (targetsData.TargetControls) {
+            Object.keys(targetsData.TargetControls).forEach(groupName => {
+                const controls = targetsData.TargetControls[groupName];
+                
+                controlsByGroup[groupName] = controls;
+                
+                controls.forEach(control => {
+                    const controlType = control.ControlType || 'Unknown';
+                    
+                    if (!controlsByType[controlType]) {
+                        controlsByType[controlType] = [];
+                    }
+                    
+                    controlsByType[controlType].push({
+                        ...control,
+                        group: groupName
+                    });
+                });
+            });
+        }
+        
+        res.json({
+            success: true,
+            tcode: tcode.toUpperCase(),
+            controlsByType,
+            controlsByGroup,
+            summary: {
+                totalGroups: Object.keys(controlsByGroup).length,
+                totalControls: Object.values(controlsByGroup).reduce((total, group) => total + group.length, 0),
+                controlTypes: Object.keys(controlsByType)
+            }
+        });
+    } catch (error) {
+        console.error(`Error al obtener controles para ${req.params.tcode}:`, error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// ===== ENDPOINTS PARA EDITOR DE FLUJOS =====
+
+// Obtener flujo específico para edición
+app.get('/api/flows/:tcode', (req, res) => {
+    try {
+        const { tcode } = req.params;
+        const flowFile = path.join(config.outputDir, `${tcode.toLowerCase()}.json`);
+        
+        if (!fs.existsSync(flowFile)) {
+            return res.status(404).json({ 
+                error: `Flujo para ${tcode} no encontrado`
+            });
+        }
+        
+        const content = fs.readFileSync(flowFile, 'utf8');
+        const flowData = JSON.parse(content);
+        
+        res.json({
+            success: true,
+            tcode: tcode.toUpperCase(),
+            flow: flowData
+        });
+    } catch (error) {
+        console.error(`Error al obtener flujo para ${req.params.tcode}:`, error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Actualizar flujo específico
+app.put('/api/flows/:tcode', (req, res) => {
+    try {
+        const { tcode } = req.params;
+        const { flow } = req.body;
+        
+        if (!flow) {
+            return res.status(400).json({ error: 'Se requiere el objeto flow' });
+        }
+        
+        const flowFile = path.join(config.outputDir, `${tcode.toLowerCase()}.json`);
+        
+        // Validar estructura básica del flujo
+        if (!flow.steps || typeof flow.steps !== 'object') {
+            return res.status(400).json({ error: 'El flujo debe tener una propiedad steps válida' });
+        }
+        
+        // Guardar el flujo actualizado
+        fs.writeFileSync(flowFile, JSON.stringify(flow, null, 2));
+        
+        res.json({
+            success: true,
+            message: `Flujo ${tcode} actualizado correctamente`,
+            tcode: tcode.toUpperCase()
+        });
+    } catch (error) {
+        console.error(`Error al actualizar flujo para ${req.params.tcode}:`, error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Actualizar archivo de flujo (endpoint genérico)
+app.put('/api/flow/update', (req, res) => {
+    try {
+        const { name, content, path: filePath } = req.body;
+        
+        if (!name || !content) {
+            return res.status(400).json({ error: 'Se requiere el nombre y contenido del archivo' });
+        }
+        
+        // Determinar la ruta del archivo
+        let targetPath;
+        if (filePath) {
+            targetPath = filePath;
+        } else {
+            // Por defecto, guardar en el directorio de salida
+            targetPath = path.join(config.outputDir, name);
+        }
+        
+        // Validar que el contenido es JSON válido
+        try {
+            JSON.parse(content);
+        } catch (jsonError) {
+            return res.status(400).json({ error: 'El contenido no es JSON válido' });
+        }
+        
+        // Crear el directorio si no existe
+        const dir = path.dirname(targetPath);
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, { recursive: true });
+        }
+        
+        // Escribir el archivo
+        fs.writeFileSync(targetPath, content, 'utf8');
+        
+        // Obtener información del archivo actualizado
+        const stats = fs.statSync(targetPath);
+        const updatedFile = {
+            name,
+            path: targetPath,
+            size: stats.size,
+            modified: stats.mtime,
+            content
+        };
+        
+        console.log(`Archivo actualizado: ${name}`);
+        
+        res.json(updatedFile);
+    } catch (error) {
+        console.error('Error al actualizar archivo:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// Validar targets en un flujo
+app.post('/api/flows/:tcode/validate', (req, res) => {
+    try {
+        const { tcode } = req.params;
+        const { flow } = req.body;
+        
+        if (!flow || !flow.steps) {
+            return res.status(400).json({ error: 'Se requiere un flujo válido' });
+        }
+        
+        // Cargar targets disponibles para este tcode
+        const targetsDir = path.join(__dirname, '..', 'sap-targets');
+        const possibleNames = [
+            `${tcode.toUpperCase()}-targets.json`,
+            `${tcode.toLowerCase()}-targets.json`,
+            `${tcode}-targets.json`
+        ];
+        
+        let availableTargets = [];
+        for (const name of possibleNames) {
+            const filePath = path.join(targetsDir, name);
+            if (fs.existsSync(filePath)) {
+                const content = fs.readFileSync(filePath, 'utf8');
+                const targetsData = JSON.parse(content);
+                
+                if (targetsData.TargetControls) {
+                    Object.values(targetsData.TargetControls).forEach(group => {
+                        availableTargets.push(...group);
+                    });
+                }
+                break;
+            }
+        }
+        
+        // Validar cada paso del flujo
+        const validationResults = [];
+        const availableIds = new Set(availableTargets.map(t => t.Id));
+        
+        Object.keys(flow.steps).forEach(stepId => {
+            const step = flow.steps[stepId];
+            
+            if (step.target && !step.target.includes('{{') && !step.target.includes('programmatic')) {
+                const isValid = availableIds.has(step.target);
+                
+                if (!isValid) {
+                    validationResults.push({
+                        stepId,
+                        issue: 'target_not_found',
+                        message: `Target '${step.target}' no encontrado en los controles disponibles`,
+                        severity: 'error'
+                    });
+                }
+            }
+        });
+        
+        res.json({
+            success: true,
+            tcode: tcode.toUpperCase(),
+            valid: validationResults.length === 0,
+            issues: validationResults,
+            summary: {
+                totalSteps: Object.keys(flow.steps).length,
+                validSteps: Object.keys(flow.steps).length - validationResults.length,
+                availableTargets: availableTargets.length
+            }
+        });
+    } catch (error) {
+        console.error(`Error al validar flujo para ${req.params.tcode}:`, error);
         res.status(500).json({ error: error.message });
     }
 });

@@ -4,310 +4,214 @@
       "action": "callProgram",
       "method": "sapSession.StartTransaction",
       "paramKey": "Tcode",
-      "next": "step1"
+      "next": "SCAREA.waitPopup"
     },
-    "step1": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
-      "next": "step2",
-      "controlType": "GuiTextField"
+    "SCAREA": {
+      "waitPopup": {
+        "action": "waitFor",
+        "target": "Set Controlling Area",
+        "timeout": "5s",
+        "next": "setControllingArea"
+      },
+      "setControllingArea": {
+        "action": "set",
+        "target": "Controlling Area",
+        "next": "acceptPopup"
+      },
+      "acceptPopup": {
+        "action": "click",
+        "target": "Continue   (Enter)",
+        "next": "DACLI.waitVariant"
+      }
     },
-    "step2": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
-      "next": "step3",
-      "controlType": "GuiTextField"
+    "DACLI": {
+      "waitVariant": {
+        "action": "waitFor",
+        "target": "Order Group",
+        "timeout": "5s",
+        "next": "setCCOR104"
+      },
+      "setCCOR104": {
+        "action": "set",
+        "target": "txt%CCOR104_1000",
+        "next": "setCCOR043"
+      },
+      "setCCOR043": {
+        "action": "set",
+        "target": "txt%CCOR043_1000",
+        "next": "setVariantName"
+      },
+      "setVariantName": {
+        "action": "set",
+        "target": "txtVARNAME",
+        "next": "setOrderGroup"
+      },
+      "setOrderGroup": {
+        "action": "set",
+        "target": "Order Group",
+        "next": "setCostElementGroup"
+      },
+      "setCostElementGroup": {
+        "action": "set",
+        "target": "Cost Element Group",
+        "next": "setLayout"
+      },
+      "setLayout": {
+        "action": "set",
+        "target": "Layout",
+        "next": "setOrderLow"
+      },
+      "setOrderLow": {
+        "action": "set",
+        "target": "OrderLow",
+        "next": "setOrderHigh"
+      },
+      "setOrderHigh": {
+        "action": "set",
+        "target": "OrderHigh",
+        "next": "setCostLow"
+      },
+      "setCostLow": {
+        "action": "set",
+        "target": "Cost Element",
+        "next": "setCostHigh"
+      },
+      "setCostHigh": {
+        "action": "set",
+        "target": "Cost Element",
+        "next": "setDateLow"
+      },
+      "setDateLow": {
+        "action": "set",
+        "target": "Posting Date LOW",
+        "next": "setDateHigh"
+      },
+      "setDateHigh": {
+        "action": "set",
+        "target": "Posting Date HIGH",
+        "next": "execute"
+      },
+      "execute": {
+        "action": "click",
+        "target": "Execute   (F8)",
+        "next": "DACLO.waitGrid"
+      }
     },
-    "step3": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
-      "next": "step4",
-      "controlType": "GuiTextField"
+    "DACLO::1": {
+      "waitGrid": {
+        "action": "waitFor",
+        "target": "gridResul",
+        "timeout": "5s",
+        "next": "layoutNeeded?"
+      },
+      "layoutNeeded?": {
+        "action": "condition",
+        "paramKey": "HasLayout",
+        "operator": "==",
+        "value": true,
+        "true": "openChooseLayout",
+        "false": "columnsNeeded?"
+      },
+      "openChooseLayout": {
+        "action": "click",
+        "target": "Select Layout...   (Ctrl+F9)",
+        "next": "CHLYT.typeLayoutName"
+      },
+      "columnsNeeded?": {
+        "action": "condition",
+        "paramKey": "Columns",
+        "operator": "exists",
+        "true": "openChangeLayout",
+        "false": "download"
+      },
+      "openChangeLayout": {
+        "action": "click",
+        "target": "Change Layout...   (Ctrl+F8)",
+        "next": "CHNLY.waitCL"
+      },
+      "download": {
+        "action": "click",
+        "target": "Spreadsheet...   (Ctrl+Shift+F7)",
+        "next": "SELSS.waitDialog"
+      }
     },
-    "step4": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/sub:SAPLSPO4:0300/ctxtSVALD-VALUE[0,21]",
-      "paramKey": "SvaldValue",
-      "next": "step5",
-      "paramValue": "2000",
-      "controlType": "GuiTextField"
+    "CHLYT": {
+      "typeLayoutName": {
+        "action": "set",
+        "target": "cmbG51_SCREEN-USPEC_LBOX",
+        "next": "confirmChooseLayout"
+      },
+      "confirmChooseLayout": {
+        "action": "click",
+        "target": "Adopt   (Enter)",
+        "next": "DACLO.columnsNeeded?"
+      }
     },
-    "step5": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
-      "next": "step6",
-      "controlType": "__ComObject"
+    "CHNLY": {
+      "waitCL": {
+        "action": "waitFor",
+        "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620",
+        "timeout": "5s",
+        "next": "arrangeColumns"
+      },
+      "arrangeColumns": {
+        "action": "columns",
+        "paramKey": "Columns",
+        "next": "toggleSum",
+        "targetMap": {
+          "left": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+          "right": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
+          "l2r": "Hide selected fields (F6)",
+          "r2l": "Show selected fields (F7)"
+        }
+      },
+      "toggleSum": {
+        "action": "columnsSum",
+        "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
+        "paramKey": "NoSum",
+        "next": "adoptChangeLayout",
+        "operator": "off"
+      },
+      "adoptChangeLayout": {
+        "action": "click",
+        "target": "Adopt   (Enter)",
+        "next": "DACLO.download"
+      }
     },
-    "step6": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr",
-      "next": "step7",
-      "controlType": "__ComObject"
+    "SELSS": {
+      "waitDialog": {
+        "action": "waitFor",
+        "target": "Select Spreadsheet",
+        "timeout": "3s",
+        "next": "pressContinue"
+      },
+      "pressContinue": {
+        "action": "click",
+        "target": "Continue   (Enter)",
+        "next": "handleSaveAs"
+      },
+      "handleSaveAs": {
+        "action": "saveas",
+        "timeout": "15s",
+        "next": "resetSAP.main"
+      }
     },
-    "step7": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-LOW",
-      "next": "step8",
-      "controlType": "GuiTextField"
-    },
-    "step8": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
-      "next": "step9",
-      "controlType": "__ComObject"
-    },
-    "step9": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-LOW",
-      "paramKey": "AufnrLow",
-      "next": "step10",
-      "paramValue": "50000000",
-      "controlType": "GuiTextField"
-    },
-    "step10": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-LOW",
-      "next": "step11",
-      "controlType": "GuiTextField"
-    },
-    "step11": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step12",
-      "controlType": "__ComObject"
-    },
-    "step12": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-LOW",
-      "paramKey": "AufnrLow",
-      "next": "step13",
-      "paramValue": "50000000",
-      "controlType": "GuiTextField"
-    },
-    "step13": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-HIGH",
-      "next": "step14",
-      "controlType": "GuiTextField"
-    },
-    "step14": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step15",
-      "controlType": "__ComObject"
-    },
-    "step15": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-HIGH",
-      "paramKey": "AufnrHigh",
-      "next": "step16",
-      "paramValue": "60000000",
-      "controlType": "GuiTextField"
-    },
-    "step16": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-HIGH",
-      "next": "step17",
-      "controlType": "GuiTextField"
-    },
-    "step17": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step18",
-      "controlType": "__ComObject"
-    },
-    "step18": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtAUFNR-HIGH",
-      "paramKey": "AufnrHigh",
-      "next": "step19",
-      "paramValue": "60000000",
-      "controlType": "GuiTextField"
-    },
-    "step19": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
-      "next": "step20",
-      "controlType": "GuiTextField"
-    },
-    "step20": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step21",
-      "controlType": "__ComObject"
-    },
-    "step21": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
-      "next": "step22",
-      "controlType": "GuiTextField"
-    },
-    "step22": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
-      "next": "step23",
-      "controlType": "GuiTextField"
-    },
-    "step23": {
-      "action": "set",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtKOAGR",
-      "paramKey": "Koagr",
-      "next": "step24",
-      "paramValue": "CE_STD",
-      "controlType": "GuiTextField"
-    },
-    "step24": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step25",
-      "controlType": "__ComObject"
-    },
-    "step25": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step26",
-      "controlType": "__ComObject"
-    },
-    "step26": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-LOW",
-      "next": "step27",
-      "controlType": "GuiTextField"
-    },
-    "step27": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step28",
-      "controlType": "__ComObject"
-    },
-    "step28": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
-      "next": "step29",
-      "controlType": "GuiTextField"
-    },
-    "step29": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
-      "next": "step30",
-      "controlType": "GuiTextField"
-    },
-    "step30": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/ctxtR_BUDAT-HIGH",
-      "next": "step31",
-      "controlType": "GuiTextField"
-    },
-    "step31": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step32",
-      "controlType": "__ComObject"
-    },
-    "step32": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
-      "next": "step33",
-      "controlType": "__ComObject"
-    },
-    "step33": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr/box%BBAV074_BLOCK_1000",
-      "next": "step34",
-      "controlType": "__ComObject"
-    },
-    "step34": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step35",
-      "controlType": "__ComObject"
-    },
-    "step35": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step36",
-      "controlType": "__ComObject"
-    },
-    "step36": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/usr",
-      "next": "step37",
-      "controlType": "__ComObject"
-    },
-    "step37": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[14]",
-      "next": "step38",
-      "controlType": "GuiButton"
-    },
-    "step38": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[14]",
-      "next": "step39",
-      "controlType": "GuiButton"
-    },
-    "step39": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[32]",
-      "next": "step40",
-      "controlType": "GuiButton"
-    },
-    "step40": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[0]/tbar[1]/btn[43]",
-      "next": "step41",
-      "controlType": "GuiButton"
-    },
-    "step41": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER1_LAYO/shellcont/shell",
-      "next": "step42",
-      "controlType": "GuiGridView"
-    },
-    "step42": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/radRB_OTHERS",
-      "next": "step43",
-      "controlType": "__ComObject"
-    },
-    "step43": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_WL_SING",
-      "next": "step44",
-      "controlType": "GuiButton"
-    },
-    "step44": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/cntlCONTAINER2_LAYO/shellcont/shell",
-      "next": "step45",
-      "controlType": "GuiGridView"
-    },
-    "step45": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/tabsG_TS_ALV/tabpALV_M_R1/ssubSUB_CONFIGURATION:SAPLSALV_CUL_COLUMN_SELECTION:0620/btnAPP_FL_SING",
-      "next": "step46",
-      "controlType": "GuiButton"
-    },
-    "step46": {
-      "action": "click",
-      "target": "/app/con[0]/ses[0]/wnd[1]/usr/txtGS_SCREEN-LAYOUT_TITLE",
-      "controlType": "GuiTextField",
-      "next": "end"
-    },
-    "end": {
-      "action": "exit"
+    "resetSAP": {
+      "main": {
+        "action": "reset"
+      }
     }
   },
-  "metadata": {
-    "tcode": "kob1",
-    "version": "1.0",
-    "created": "2025-06-23",
-    "controlTypes": [
-      "GuiTextField",
-      "__ComObject",
-      "GuiButton",
-      "GuiMainWindow",
-      "GuiGridView"
-    ]
+  "$meta": {
+    "tcode": "KOB1",
+    "description": "Aplica filtros, gestiona layouts y descarga el ALV."
+  },
+  "targetContext": {
+    "SCAREA": "Set Controlling Area",
+    "DACLI": "Display Actual Cost Line Items for Orders : Initial Screen",
+    "DACLO": "Display Actual Cost Line Items for Orders",
+    "CHLYT": "Choose Layout",
+    "CHNLY": "Change Layout",
+    "SELSS": "Select Spreadsheet"
   }
 }
