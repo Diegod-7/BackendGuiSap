@@ -23,6 +23,8 @@ const SyncPackagesStorage = require('./lib/syncPackagesStorage');
 const JsonValidator = require('./lib/jsonValidator');
 // Usar ssh2 directamente en lugar de ssh2-sftp-client para mayor compatibilidad
 const SftpService = require('./lib/sftpServiceV2');
+// Módulo para SCHEDULER - conexión a base de datos
+const DbService = require('./lib/dbService');
 
 // Configuración
 const app = express();
@@ -39,7 +41,9 @@ const config = {
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+// Aumentar límite de tamaño para body-parser (50MB) para permitir archivos JSON grandes
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
 
 // Configuración de multer para subida de archivos
@@ -942,55 +946,52 @@ app.put('/api/flows/:tcode', (req, res) => {
 });
 
 // Actualizar archivo de flujo (endpoint genérico)
-app.put('/api/flow/update', (req, res) => {
+// PUT /api/flow/update - Actualizar un archivo de flujo en SFTP
+app.put('/api/flow/update', async (req, res) => {
     try {
-        const { name, content, path: filePath } = req.body;
-        
-        if (!name || !content) {
-            return res.status(400).json({ error: 'Se requiere el nombre y contenido del archivo' });
+        const { name, path: filePath, content, size, modified } = req.body;
+
+        // Validar campos requeridos
+        if (!name || typeof name !== 'string' || !name.trim()) {
+            return res.status(400).json({ error: 'El nombre del archivo es requerido' });
         }
-        
-        // Determinar la ruta del archivo
-        let targetPath;
-        if (filePath) {
-            targetPath = filePath;
+
+        if (!filePath || typeof filePath !== 'string' || !filePath.trim()) {
+            return res.status(400).json({ error: 'La ruta del archivo es requerida' });
+        }
+
+        if (!content || typeof content !== 'string' || !content.trim()) {
+            return res.status(400).json({ error: 'El contenido del archivo es requerido' });
+        }
+
+        // Actualizar archivo en SFTP
+        const result = await sftpService.updateFlowFile(filePath.trim(), content.trim());
+
+        if (result.status) {
+            // Retornar respuesta exitosa con el formato esperado
+            res.json({
+                name: result.name,
+                path: result.path,
+                size: result.size,
+                modified: result.modified,
+                content: result.content
+            });
         } else {
-            // Por defecto, guardar en el directorio de salida
-            targetPath = path.join(config.outputDir, name);
+            // Determinar código de estado según el tipo de error
+            if (result.error && result.error.includes('JSON')) {
+                res.status(400).json({ error: result.error });
+            } else if (result.error && result.error.includes('permisos')) {
+                res.status(403).json({ error: result.error });
+            } else {
+                res.status(500).json({ error: result.error || result.message || 'Error al actualizar el archivo' });
+            }
         }
-        
-        // Validar que el contenido es JSON válido
-        try {
-            JSON.parse(content);
-        } catch (jsonError) {
-            return res.status(400).json({ error: 'El contenido no es JSON válido' });
-        }
-        
-        // Crear el directorio si no existe
-        const dir = path.dirname(targetPath);
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-        
-        // Escribir el archivo
-        fs.writeFileSync(targetPath, content, 'utf8');
-        
-        // Obtener información del archivo actualizado
-        const stats = fs.statSync(targetPath);
-        const updatedFile = {
-            name,
-            path: targetPath,
-            size: stats.size,
-            modified: stats.mtime,
-            content
-        };
-        
-        console.log(`Archivo actualizado: ${name}`);
-        
-        res.json(updatedFile);
     } catch (error) {
-        console.error('Error al actualizar archivo:', error);
-        res.status(500).json({ error: error.message });
+        console.error('Error inesperado al actualizar flujo en SFTP:', error);
+        res.status(500).json({ 
+            error: 'Error inesperado al procesar la solicitud',
+            details: error.message 
+        });
     }
 });
 
@@ -1615,7 +1616,7 @@ function getControlsFromTargetContext(targetContextKey, targetContextData) {
         Object.keys(targetContextData.targetMap).forEach(mapKey => {
             const path = targetContextData.targetMap[mapKey];
             
-            // Solo agregar si es una ruta (no una acción de teclado)
+            // Solo agregar si esl una ruta (no una acción de teclado)
             if (path && path.startsWith('/')) {
                 const controlType = inferControlTypeFromPath(path);
                 const isManipulable = isControlManipulable(controlType);
@@ -1763,7 +1764,7 @@ app.post('/api/sftp/check-package-exists', async (req, res) => {
 // POST /api/sftp/save-package - Guardar paquete completo en SFTP
 app.post('/api/sftp/save-package', async (req, res) => {
     try {
-        const { packageName, packageData, overwrite } = req.body;
+        const { packageName, packageData, overwrite, targetDirectory } = req.body;
 
         if (!packageName || typeof packageName !== 'string' || !packageName.trim()) {
             return res.status(400).json({
@@ -1783,9 +1784,26 @@ app.post('/api/sftp/save-package', async (req, res) => {
             });
         }
 
-        // Verificar si el paquete existe (a menos que overwrite sea true)
-        if (!overwrite) {
-            const existsCheck = await sftpService.checkPackageExists(packageName.trim());
+        // Detectar si el paquete contiene múltiples formularios
+        // Si es así y tiene targetDirectory, no verificar existencia porque el frontend debería
+        // estar enviando archivos individuales con nombres únicos
+        const formKeys = Object.keys(packageData || {});
+        const isMultiFormPackage = formKeys.length > 1 && 
+            formKeys.some(key => {
+                const form = packageData[key];
+                return form && typeof form === 'object' && (form.tcode || key.includes('KSB1') || key.includes('KOB1') || key.includes('CJI3') || key.includes('ZFIR'));
+            });
+
+        // Solo verificar existencia si:
+        // 1. NO es un paquete múltiple con targetDirectory (porque se generarán nombres únicos)
+        // 2. Y overwrite no es true
+        const shouldCheckExists = !(isMultiFormPackage && targetDirectory) && !overwrite;
+        
+        if (shouldCheckExists) {
+            const existsCheck = await sftpService.checkPackageExists(
+                packageName.trim(), 
+                targetDirectory || null
+            );
             if (existsCheck.exists) {
                 return res.status(409).json({
                     status: false,
@@ -1797,9 +1815,26 @@ app.post('/api/sftp/save-package', async (req, res) => {
             }
         }
 
-        const result = await sftpService.savePackageToSftp(packageName.trim(), packageData);
+        const result = await sftpService.savePackageToSftp(
+            packageName.trim(), 
+            packageData, 
+            targetDirectory || null
+        );
 
-        if (result.status) {
+        // Si se guardaron múltiples archivos, la respuesta tiene estructura diferente
+        if (result.savedFiles && result.savedFiles.length > 0) {
+            // Respuesta para múltiples archivos guardados
+            res.json({
+                status: true,
+                message: result.message || `Se guardaron ${result.savedFiles.length} archivos correctamente`,
+                savedFiles: result.savedFiles,
+                errorFiles: result.errorFiles || [],
+                totalFiles: result.totalFiles || result.savedFiles.length,
+                successCount: result.successCount || result.savedFiles.length,
+                errorCount: result.errorCount || 0
+            });
+        } else if (result.status) {
+            // Respuesta para un solo archivo guardado
             res.json(result);
         } else {
             res.status(500).json(result);
@@ -1811,6 +1846,292 @@ app.post('/api/sftp/save-package', async (req, res) => {
             message: 'Error inesperado al procesar la solicitud',
             filePath: null,
             fileName: null
+        });
+    }
+});
+
+// POST /api/sftp/delete-file - Eliminar archivo del servidor SFTP
+app.post('/api/sftp/delete-file', async (req, res) => {
+    try {
+        const { filePath, directory } = req.body;
+
+        // Validar entrada
+        if (!filePath || typeof filePath !== 'string' || !filePath.trim()) {
+            return res.status(400).json({
+                status: false,
+                message: 'Ruta de archivo no proporcionada'
+            });
+        }
+
+        // Eliminar archivo
+        const result = await sftpService.deleteFileFromSftp(filePath.trim(), directory || null);
+
+        if (result.status) {
+            res.json(result);
+        } else {
+            // Determinar código de estado según el tipo de error
+            if (result.message.includes('no encontrado')) {
+                res.status(404).json(result);
+            } else if (result.message.includes('permisos') || result.message.includes('Permission')) {
+                res.status(403).json(result);
+            } else if (result.message.includes('no válida') || result.message.includes('path traversal')) {
+                res.status(400).json(result);
+            } else {
+                res.status(500).json(result);
+            }
+        }
+    } catch (error) {
+        console.error('Error inesperado al eliminar archivo en SFTP:', error);
+        res.status(500).json({
+            status: false,
+            message: `Error inesperado al procesar la solicitud: ${error.message}`
+        });
+    }
+});
+
+// POST /api/sftp/list-directory - Listar contenido de un directorio
+app.post('/api/sftp/list-directory', async (req, res) => {
+    try {
+        const { path: directoryPath } = req.body;
+
+        // path es opcional, si no se proporciona se usa el directorio raíz
+        const result = await sftpService.listDirectory(directoryPath || '');
+
+        if (result.status) {
+            res.json(result);
+        } else {
+            if (result.message.includes('no encontrado')) {
+                res.status(404).json(result);
+            } else {
+                res.status(500).json(result);
+            }
+        }
+    } catch (error) {
+        console.error('Error inesperado al listar directorio en SFTP:', error);
+        res.status(500).json({
+            status: false,
+            message: `Error inesperado al procesar la solicitud: ${error.message}`,
+            files: []
+        });
+    }
+});
+
+// POST /api/sftp/create-file - Crear un nuevo archivo
+app.post('/api/sftp/create-file', async (req, res) => {
+    try {
+        const { directory, fileName, content } = req.body;
+
+        if (!fileName || typeof fileName !== 'string' || !fileName.trim()) {
+            return res.status(400).json({
+                status: false,
+                message: 'El nombre del archivo es requerido'
+            });
+        }
+
+        if (content === null || content === undefined) {
+            return res.status(400).json({
+                status: false,
+                message: 'El contenido del archivo es requerido'
+            });
+        }
+
+        const result = await sftpService.createFile(
+            directory || '',
+            fileName.trim(),
+            content
+        );
+
+        if (result.status) {
+            res.json(result);
+        } else {
+            if (result.message.includes('ya existe')) {
+                res.status(409).json(result);
+            } else {
+                res.status(500).json(result);
+            }
+        }
+    } catch (error) {
+        console.error('Error inesperado al crear archivo en SFTP:', error);
+        res.status(500).json({
+            status: false,
+            message: `Error inesperado al procesar la solicitud: ${error.message}`
+        });
+    }
+});
+
+// POST /api/sftp/update-file - Actualizar contenido de un archivo
+app.post('/api/sftp/update-file', async (req, res) => {
+    try {
+        const { filePath, content } = req.body;
+
+        if (!filePath || typeof filePath !== 'string' || !filePath.trim()) {
+            return res.status(400).json({
+                status: false,
+                message: 'La ruta del archivo es requerida'
+            });
+        }
+
+        if (content === null || content === undefined) {
+            return res.status(400).json({
+                status: false,
+                message: 'El contenido del archivo es requerido'
+            });
+        }
+
+        const result = await sftpService.updateFile(filePath.trim(), content);
+
+        if (result.status) {
+            res.json(result);
+        } else {
+            if (result.message.includes('no encontrado')) {
+                res.status(404).json(result);
+            } else {
+                res.status(500).json(result);
+            }
+        }
+    } catch (error) {
+        console.error('Error inesperado al actualizar archivo en SFTP:', error);
+        res.status(500).json({
+            status: false,
+            message: `Error inesperado al procesar la solicitud: ${error.message}`
+        });
+    }
+});
+
+// POST /api/sftp/create-directory - Crear un nuevo directorio
+app.post('/api/sftp/create-directory', async (req, res) => {
+    try {
+        const { parentDirectory, directoryName } = req.body;
+
+        if (!directoryName || typeof directoryName !== 'string' || !directoryName.trim()) {
+            return res.status(400).json({
+                status: false,
+                message: 'El nombre del directorio es requerido'
+            });
+        }
+
+        const result = await sftpService.createDirectory(
+            parentDirectory || '',
+            directoryName.trim()
+        );
+
+        if (result.status) {
+            res.json(result);
+        } else {
+            if (result.message.includes('ya existe')) {
+                res.status(409).json(result);
+            } else {
+                res.status(500).json(result);
+            }
+        }
+    } catch (error) {
+        console.error('Error inesperado al crear directorio en SFTP:', error);
+        res.status(500).json({
+            status: false,
+            message: `Error inesperado al procesar la solicitud: ${error.message}`
+        });
+    }
+});
+
+// POST /api/sftp/delete-directory - Eliminar un directorio y su contenido
+app.post('/api/sftp/delete-directory', async (req, res) => {
+    try {
+        const { directoryPath } = req.body;
+
+        if (!directoryPath || typeof directoryPath !== 'string' || !directoryPath.trim()) {
+            return res.status(400).json({
+                status: false,
+                message: 'La ruta del directorio es requerida'
+            });
+        }
+
+        const result = await sftpService.deleteDirectory(directoryPath.trim());
+
+        if (result.status) {
+            res.json(result);
+        } else {
+            if (result.message.includes('no encontrado')) {
+                res.status(404).json(result);
+            } else {
+                res.status(500).json(result);
+            }
+        }
+    } catch (error) {
+        console.error('Error inesperado al eliminar directorio en SFTP:', error);
+        res.status(500).json({
+            status: false,
+            message: `Error inesperado al procesar la solicitud: ${error.message}`
+        });
+    }
+});
+
+// POST /api/sftp/download-file - Descargar un archivo del servidor SFTP
+app.post('/api/sftp/download-file', async (req, res) => {
+    try {
+        const { filePath } = req.body;
+
+        if (!filePath || typeof filePath !== 'string' || !filePath.trim()) {
+            return res.status(400).json({
+                status: false,
+                message: 'La ruta del archivo es requerida'
+            });
+        }
+
+        const result = await sftpService.downloadFile(filePath.trim());
+
+        if (result.status) {
+            // Establecer headers para descarga
+            const fileName = result.fileName || path.basename(filePath);
+            
+            // Determinar Content-Type según la extensión
+            let contentType = 'application/octet-stream';
+            const ext = path.extname(fileName).toLowerCase();
+            const mimeTypes = {
+                '.json': 'application/json',
+                '.txt': 'text/plain',
+                '.csv': 'text/csv',
+                '.xml': 'application/xml',
+                '.html': 'text/html',
+                '.css': 'text/css',
+                '.js': 'application/javascript',
+                '.pdf': 'application/pdf',
+                '.zip': 'application/zip',
+                '.sqpr': 'application/octet-stream'
+            };
+            if (mimeTypes[ext]) {
+                contentType = mimeTypes[ext];
+            }
+
+            // Establecer headers
+            res.setHeader('Content-Type', contentType);
+            res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
+            res.setHeader('Content-Length', result.size || result.content.length);
+
+            // Enviar el archivo
+            res.send(result.content);
+        } else {
+            if (result.message.includes('no encontrado')) {
+                res.status(404).json({
+                    status: false,
+                    message: result.message
+                });
+            } else if (result.message.includes('excede el tamaño')) {
+                res.status(413).json({
+                    status: false,
+                    message: result.message
+                });
+            } else {
+                res.status(500).json({
+                    status: false,
+                    message: result.message
+                });
+            }
+        }
+    } catch (error) {
+        console.error('Error inesperado al descargar archivo en SFTP:', error);
+        res.status(500).json({
+            status: false,
+            message: `Error inesperado al procesar la solicitud: ${error.message}`
         });
     }
 });
@@ -2324,6 +2645,125 @@ app.post('/api/sync-packages/validate-json', (req, res) => {
     } catch (error) {
         console.error('Error al validar JSON:', error);
         res.status(500).json({ error: error.message });
+    }
+});
+
+// ============================================================================
+// MÓDULO 4: SCHEDULER - Endpoints para programación automática
+// ============================================================================
+
+/**
+ * GET /api/scheduler/posting-dates
+ * Obtiene los posting_date faltantes desde el último registro hasta la fecha actual
+ * para las tablas CJI3, KOB1, KSB1 y MB51
+ * 
+ * Query params opcionales:
+ * - tables: string separado por comas (ej: "CJI3,KSB1") - por defecto todas
+ * - format: "detailed" | "simple" - por defecto "detailed"
+ * 
+ * Respuesta "detailed":
+ * [
+ *   {
+ *     table: "CJI3",
+ *     cat_domain: "CAN",
+ *     last_posting_date: "2025-01-15",
+ *     missing_dates: ["2025-01-16", "2025-01-17", ...],
+ *     missing_count: 5
+ *   },
+ *   ...
+ * ]
+ * 
+ * Respuesta "simple":
+ * [
+ *   {
+ *     table: "CJI3",
+ *     cat_domain: "CAN",
+ *     posting_dates: ["2025-01-16", "2025-01-17", ...]
+ *   },
+ *   ...
+ * ]
+ */
+app.get('/api/scheduler/posting-dates', async (req, res) => {
+    try {
+        const { tables, format = 'detailed' } = req.query;
+        
+        // Parsear tablas si se proporcionan
+        let tablesArray = ['CJI3', 'KOB1', 'KSB1', 'MB51'];
+        if (tables) {
+            tablesArray = tables.split(',').map(t => t.trim().toUpperCase());
+        }
+
+        // Obtener posting_date faltantes
+        const result = await DbService.getMissingPostingDates(tablesArray);
+
+        // Formatear respuesta según el parámetro format
+        if (format === 'simple') {
+            const simpleResult = result.map(item => ({
+                table: item.table,
+                cat_domain: item.cat_domain,
+                posting_dates: item.missing_dates
+            }));
+            res.json(simpleResult);
+        } else {
+            // Formato detailed (por defecto)
+            res.json(result);
+        }
+    } catch (error) {
+        console.error('Error al obtener posting_date faltantes:', error);
+        res.status(500).json({ 
+            error: error.message,
+            details: 'Error al consultar la base de datos o calcular fechas faltantes'
+        });
+    }
+});
+
+/**
+ * GET /api/scheduler/posting-dates/summary
+ * Obtiene un resumen de los posting_date faltantes
+ * Retorna el total de paquetes de sincronización que se necesitan crear
+ */
+app.get('/api/scheduler/posting-dates/summary', async (req, res) => {
+    try {
+        const { tables } = req.query;
+        
+        let tablesArray = ['CJI3', 'KOB1', 'KSB1', 'MB51'];
+        if (tables) {
+            tablesArray = tables.split(',').map(t => t.trim().toUpperCase());
+        }
+
+        const result = await DbService.getMissingPostingDates(tablesArray);
+        
+        // Calcular resumen
+        const totalPackages = result.reduce((sum, item) => sum + item.missing_count, 0);
+        const byTable = {};
+        const byDomain = {};
+        
+        result.forEach(item => {
+            // Por tabla
+            if (!byTable[item.table]) {
+                byTable[item.table] = 0;
+            }
+            byTable[item.table] += item.missing_count;
+            
+            // Por dominio
+            if (!byDomain[item.cat_domain]) {
+                byDomain[item.cat_domain] = 0;
+            }
+            byDomain[item.cat_domain] += item.missing_count;
+        });
+
+        res.json({
+            total_packages_needed: totalPackages,
+            by_table: byTable,
+            by_domain: byDomain,
+            details: result
+        });
+    } catch (error) {
+        console.error('Error al obtener resumen de posting_date:', error);
+        res.status(500).json({ 
+            error: error.message,
+            details: 'Error al consultar la base de datos'
+        });
     }
 });
 
